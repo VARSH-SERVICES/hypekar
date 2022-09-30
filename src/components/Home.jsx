@@ -56,7 +56,7 @@ const Home = () => {
             <>
 
             <Box  bg={useColorModeValue('gray.200', 'gray.800')}>
-                <Heading textAlign={"center"}>HOME</Heading>
+                {/* <Heading textAlign={"center"}>HOME</Heading> */}
                 <CaptionCarousel/>    
                 <footer/>
             </Box>

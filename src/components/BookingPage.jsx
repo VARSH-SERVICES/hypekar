@@ -16,7 +16,9 @@ import {
   import {
     Menu,
     MenuButton,
+    Center,
     MenuList,
+    Spinner,
     MenuItem,
     MenuItemOption,
     MenuGroup,
@@ -70,6 +72,14 @@ import { useContext } from 'react'
 
     //console.log("calender value is",newDate)
 
+    const [loading, setLoading] = useState(false);
+
+    useEffect(()=>{
+      setLoading(true) // After entering the application loading should be true
+          setTimeout(()=>{ 
+              setLoading(false) // After 4 seconds loading should be false
+      },1000) // Loading indicator will be appeared in UI for 4 seconds.
+    },[])
    
 
     useEffect(()=>{
@@ -98,7 +108,7 @@ import { useContext } from 'react'
     },[model])
 
     const getData = async() => {
-      const res = await axios.get(`https://2bbe-103-148-62-156.in.ngrok.io/mycarmodel?email=${email}&brand=${text.brand}`)
+      const res = await axios.get("https://2bbe-103-148-62-156.in.ngrok.io/carmodel")
       setTotalModel(res.data)
       //console.log("res",res.data)
     } 
@@ -115,12 +125,12 @@ import { useContext } from 'react'
 
     console.log(text)
 
-    // const submitDetails = async() =>{
-    //   await axios.post("https://e589-103-148-62-156.in.ngrok.io/carform/", text)
-    //   .then(alert("submitted successfully"))
-    //   setText({brand : "", model_Name : "", fuel_Type : "", year_Of_Model : ""
-    //   , vehicle_number : "", mobile_number : ""})
-    // }
+    const submitDetails = async() =>{
+      await axios.post("https://2bbe-103-148-62-156.in.ngrok.io/book/", text)
+      .then(alert("submitted successfully"))
+      setText({brand : "", model_Name : "", fuel_Type : "", year_Of_Model : ""
+      , vehicle_number : "", mobile_number : ""})
+    }
 
     //const [check, setChecked] = useState("")
     
@@ -166,7 +176,7 @@ import { useContext } from 'react'
           key: "rzp_test_fInDysLRBFwbcb",
           currency: "INR",
           amount: amount * 100,
-          name: "Code with akky",
+          name: "Pay with akhilesh",
           description: "Thanks for purchasing",
           image:
             "https://mern-blog-akky.herokuapp.com/static/media/logo.8c649bfa.png",
@@ -185,6 +195,20 @@ import { useContext } from 'react'
     }
 
     return (
+      <>
+       {
+        loading == true  ? 
+        <Center mt="200px">
+        <Spinner
+        thickness='4px'
+        speed='0.65s'
+        emptyColor='gray.200'
+        color='blue.500'
+        size='xl'
+       />
+       </Center>
+        :
+      
       <Stack minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
         <Flex p={8} flex={1} align={'center'} justify={'center'}>
           <Stack spacing={4} w={'full'} maxW={'md'}>
@@ -285,7 +309,7 @@ import { useContext } from 'react'
             </FormControl>
 
             <Stack spacing={6}>
-              <Button onClick={()=>displayRazorpay(laptopPrice)} colorScheme={'blue'} variant={'solid'}>
+              <Button  onClick={()=>{ displayRazorpay(laptopPrice); submitDetails() }} colorScheme={'blue'} variant={'solid'}>
                 SUBMIT
               </Button>
             </Stack>
@@ -302,5 +326,7 @@ import { useContext } from 'react'
           <CaptionCarousel/>
         </Flex>
       </Stack>
+      }
+      </>
     );
   }

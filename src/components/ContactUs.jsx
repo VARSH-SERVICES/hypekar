@@ -26,7 +26,7 @@ const ContactUs = () => {
                 />
                 </Center>
             :
-            <Box  bg={useColorModeValue('gray.200', 'gray.800')}>
+            <Box>
            
                
                     <Heading padding={3} fontFamily="mono" textAlign={"center"}>GET A CALL FROM US</Heading>
@@ -131,8 +131,8 @@ const ContactUs = () => {
                
                 
                 <Box display="flex"  borderRadius={10} w='100%' h='200' border="1px solid red">
-                    {/* <Image h={[500, 500, 500]} src="https://thumbs.dreamstime.com/b/auto-car-repair-service-center-mechanic-examining-car-suspension-auto-car-repair-service-center-mechanic-examining-car-suspension-166202482.jpg"></Image> */}
-                    {/* <Box w="50%">
+                    <Image h={[500, 500, 500]} src="https://thumbs.dreamstime.com/b/auto-car-repair-service-center-mechanic-examining-car-suspension-auto-car-repair-service-center-mechanic-examining-car-suspension-166202482.jpg"></Image>
+                    <Box w="50%">
                         <Image src="https://imgd.aeplcdn.com/600x337/n/cw/ec/124027/urban-cruiser-hyryder-exterior-right-front-three-quarter-3.jpeg?isig=0&q=75"></Image>
                         <Heading padding={2} size="lg">
                             Barand : Maruti Suzuki
@@ -140,7 +140,7 @@ const ContactUs = () => {
                             Model : Swift Dezire
                         </Heading>
                     </Box>
-                    <Box w="50%" ></Box> */}
+                    <Box w="50%" ></Box>
                     <Center gap="10" padding="5">
                         <Button >abcd</Button>
                         <Button>dhfkds</Button>

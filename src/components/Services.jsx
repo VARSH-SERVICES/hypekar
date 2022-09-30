@@ -18,10 +18,12 @@ import { useInViewport } from "react-in-viewport";
 import { Link } from 'react-router-dom';
 import { GameStateContext } from "./context/Context";
 import { useContext } from 'react'
+import useGeoLocation from './UserLocation';
+import axios from 'axios';
 
 const Services = () => {
 
-    const {email} = useContext(GameStateContext)
+    const {email, cityName, setCityName, } = useContext(GameStateContext)
 
     const [loading, setLoading] = useState(false);
 
@@ -33,6 +35,26 @@ const Services = () => {
     },[])
 
     console.log("email of service is", email.length)
+
+    const location = useGeoLocation() 
+
+    
+
+   // console.log("location is", location.coordinates.lat)
+    
+    //console.log("items", items)
+
+    
+        
+    
+
+    const city = async() =>{
+        const res = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${location.coordinates.lat}&lon=${location.coordinates.lng}&appid=953d0a41d973f5ef36e25750b927381f`)
+        setCityName(res.data.name)
+        //console.log("city details",res.data)
+    } 
+    city ()
+    console.log("city name", cityName)
 
     return (
         <Box >
@@ -51,7 +73,7 @@ const Services = () => {
                  <Box>                
                  <Heading textAlign={"center"}>Our Services</Heading>
                  <br />
-                 <Heading size="lg" padding="5" textAlign={"left"}>car services in bangalore
+                 <Heading size="lg" padding="5" textAlign={"left"}>car services in {cityName}
                  <br />
                  <span><Heading size="sm" color="RGBA(0, 0, 0, 0.64)"> Get discounted periodic periodic car service and repair, wheel care, cashless insurance.</Heading></span> 
                  </Heading>

@@ -72,7 +72,7 @@ import {
         minH={'30vh'}
         align={'center'}
         justify={'center'}
-        bg={useColorModeValue('gray.200', 'gray.800')}>
+      >
         <Stack spacing={8} mx={'auto'} maxW={'lg'} py={10} px={6}>
           <Box
             rounded={'lg'}

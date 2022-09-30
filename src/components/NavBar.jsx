@@ -23,6 +23,7 @@ import { Link } from 'react-router-dom';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import { GameStateContext } from './context/Context';
 import { useContext } from 'react';
+import { ProfileModel } from './ProfileModel';
 
 const Links = ['Dashboard', 'Projects', 'Team'];
 
@@ -134,12 +135,13 @@ export default function NavBar() {
           </Flex> */}
          
               {
-                email.length > 0 ?
+                email.length == 0 ?
                 <Link to="/login"> 
                 <Button backgroundColor="#FFFAF0">SIGNUP/SIGNIN</Button>
                 </Link>
                 :
-                console.log(null)
+                <ProfileModel/>
+                // <Button backgroundColor="#FFFAF0">PROFILE</Button>
               }
         </Flex>
 

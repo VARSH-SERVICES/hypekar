@@ -18,8 +18,12 @@ import {
   } from '@chakra-ui/react';
   import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
   import { MdLocalShipping } from 'react-icons/md';
-  
+  import { GameStateContext } from "./context/Context";
+  import { useContext } from 'react'
+
   export default function UserDetails() {
+    const {email, setEmail} = useContext(GameStateContext)
+
     return (
       <Container overflow={"scroll"} h="500px">
         <SimpleGrid>

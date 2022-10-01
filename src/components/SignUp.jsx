@@ -74,7 +74,7 @@ import axios from 'axios';
         alert("please enter the data")
       }
       else{
-         await axios.post("https://2bbe-103-148-62-156.in.ngrok.io/reg/", text)
+         await axios.post("https://apihypekar.herokuapp.com/reg/", text)
          .then(Response=>console.log("response is ",Response))
          .then(alert("Registered successfully"))
          

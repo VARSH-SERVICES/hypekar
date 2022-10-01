@@ -61,11 +61,11 @@ import {
             alert("please enter the username and password")
         }
         else{
-        await axios.post("https://2bbe-103-148-62-156.in.ngrok.io/login/",text)
+        await axios.post("https://apihypekar.herokuapp.com/login/",text)
         //.then(Response=>setToken(Response.data.token))
         .then(Response=>setEmail(Response.data.email))
-        .catch(error=>console.log(error))
         .then(setText({username : "", password : ""}))
+        
         }
         // if(!email){
         //   alert("wrong credentials")

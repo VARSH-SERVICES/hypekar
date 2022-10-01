@@ -38,13 +38,13 @@ import { useEffect, useState } from 'react';
     },[])
 
     const getBrand = async(e) => {
-      const res = await axios.get("https://2bbe-103-148-62-156.in.ngrok.io/carbrand/")
+      const res = await axios.get("https://c56d-103-148-62-156.in.ngrok.io/carbrand/")
       setBrand(res.data)
       const {id, value} = e.target
       setText({...text, [id] : value})
     }
 
-    console.log("my car brand is",brand)
+    //console.log("my car brand is",brand)
     const [model, setModel] = useState("a")
 
     const [totalModel, setTotalModel] = useState([])
@@ -60,7 +60,7 @@ import { useEffect, useState } from 'react';
     },[model])
 
     const getData = async() => {
-      const res = await axios.get(`https://2bbe-103-148-62-156.in.ngrok.io/carmodel?brand=${model}`)
+      const res = await axios.get(`https://c56d-103-148-62-156.in.ngrok.io/carmodel?brand=${model}`)
       setTotalModel(res.data)
     } 
     
@@ -76,10 +76,10 @@ import { useEffect, useState } from 'react';
       }
     }
 
-    console.log(text)
+    //console.log(text)
 
     const submitDetails = async() =>{
-      await axios.post("https://2bbe-103-148-62-156.in.ngrok.io/carform/", text)
+      await axios.post("https://c56d-103-148-62-156.in.ngrok.io/carform/", text)
       .then(alert("submitted successfully"))
       setText({brand : "", model_Name : "", fuel_Type : "", year_Of_Model : ""
       , vehicle_number : "", mobile_number : ""})

@@ -1,4 +1,5 @@
-import { Box, Grid, Select, Flex, Spacer, useColorModeValue, Heading, Center, Spinner, Image, Text } from '@chakra-ui/react';
+import { Box, Grid, Select, Flex, Spacer, useColorModeValue,
+    GridItem, Heading, Center, Spinner, SimpleGrid ,  Image, Button, Text, VStack, StackDivider, Stack  } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react';
 import CaptionCarousel from './CaptionCarousel';
 import Footer from './Footer';
@@ -6,6 +7,7 @@ import axios from 'axios';
 import MyVehicleForm from './MyVehicleForm';
 import UserDetails from './UserDetails';
 import { GameStateContext } from "./context/Context";
+import { Link } from 'react-router-dom';
 import { useContext } from 'react'
 
 const MyVehicle = () => {
@@ -19,8 +21,8 @@ const MyVehicle = () => {
     },[])
 
     const getData = async() => {
-        const res = await axios.get("https://2bbe-103-148-62-156.in.ngrok.io/Myvechile/")
-        .then(Response=>console.log("Response is",Response.data))
+        const res = await axios.get(`https://c56d-103-148-62-156.in.ngrok.io/mycardata?email=${email}`)
+        setData(res.data)
     }
 
     const [loading, setLoading] = useState(false);
@@ -32,8 +34,10 @@ const MyVehicle = () => {
       },1000) // Loading indicator will be appeared in UI for 4 seconds.
     },[])
 
-    console.log("logged in email is", email)
+    
 
+    console.log("logged in data is", data)
+    console.log("logged in email is", email)
     return (
         <Box>
          {
@@ -48,8 +52,8 @@ const MyVehicle = () => {
                 />
                 </Center>
             :
-        <Box  bg={useColorModeValue('gray.200', 'gray.800')}>
-            <Box w="100%" >
+        <Box  >
+            <Box w="100%"  >
                 <br />
                 <Heading fontFamily='Montserrat' textAlign="center">MY VEHICLE</Heading>
             </Box>
@@ -59,39 +63,73 @@ const MyVehicle = () => {
                     <Box w="500px" border="1px solid red"></Box>
                 </Flex>
             </Box> */}
-            <Grid mt="30px" 
+            <Grid mt="30px"
+                
+                overflow={"scroll"}
                 templateColumns={{base:'repeat(1, 1fr)',
                 md:'repeat(2, 1fr)',
                 lg:'repeat(2, 1fr)'
                 }} gap={7}>
                 <Box borderRadius={10} w='100%' h='500'>
-
-                    {/* <Text textAlign="center">
-                        ─────────────────────────────────────────────────
-                    </Text> */}
-                    {/* <Image w="100%" h={[500, 500, 500]} src="https://thumbs.dreamstime.com/b/worker-uniform-disassembles-vehicle-engine-car-service-station-automobile-checking-inspection-professional-diagnostics-173424972.jpg"></Image> */}
-                        {/* <Select mt="50px" bg="blue" w={[390, 400, 600]} placeholder='Select option'>
-                            <option value='option1'>Option 1</option>
-                            <option value='option2'>Option 2</option>
-                            <option value='option3'>Option 3</option>
-                        </Select> */}
-                        <UserDetails/>
+                    <UserDetails/>
                 </Box>
                
-                
                 <Box display="flex"  borderRadius={10} w='100%' h='500'>
                     {/* <Image h={[500, 500, 500]} src="https://thumbs.dreamstime.com/b/auto-car-repair-service-center-mechanic-examining-car-suspension-auto-car-repair-service-center-mechanic-examining-car-suspension-166202482.jpg"></Image> */}
-                    <Box w="50%">
-                        <Image src="https://imgd.aeplcdn.com/600x337/n/cw/ec/124027/urban-cruiser-hyryder-exterior-right-front-three-quarter-3.jpeg?isig=0&q=75"></Image>
-                        <Heading padding={2} size="lg">
-                            Barand : Maruti Suzuki
-                            <br />
-                            Model : Swift Dezire
-                        </Heading>
-                    </Box>
-                    <Box w="50%" ></Box>
+                    
+                    
+                    {
+                        
+                        data.length > 0 ?
+                       
+                        data.map((e)=>(
+                            <>
+                            {/* <Grid  templateColumns={{base:'repeat(1, 1fr)',
+                                md:'repeat(1, 1fr)',
+                                lg:'repeat(1, 1fr)'
+                                }} gap={6}>
+
+                    
+                                <GridItem w="100%" bg='RGBA(0, 0, 0, 0.06)'>
+                                <Heading size="md" textAlign={"center"} color="RGBA(0, 0, 0, 0.64)">{e.brand}</Heading>
+                                    <Flex  justifyContent={"space-around"}>
+                                    <Image 
+                                    mt="20px" w="35%"  src="https://cdn-icons-png.flaticon.com/512/4669/4669436.png"></Image>
+                                
+                                    </Flex>
+                                    
+                                </GridItem>
+                             </Grid> */}
+                            
+                             <Box bg='RGBA(0, 0, 0, 0.06)' w="100%">
+                                <Heading color="green" textAlign="center" size="md">Cars you have uploaded</Heading>
+                                <br />
+                                <Heading color="tomato" textAlign="center" size="md">Car Brand</Heading>
+                                <Heading textAlign="center" size="md">{e.brand}</Heading>
+                                <br />
+                                <Heading color="tomato" textAlign="center" size="md">Car Model</Heading>
+                                <Heading textAlign="center" size="md" >{e.model_Name}</Heading>
+                                <br />
+                                <Heading color="tomato" textAlign="center" size="md">Fuel Type</Heading>
+                                <Heading textAlign="center" size="md">{e.fuel_Type}</Heading>
+                                <br />
+                                <Heading color="tomato" textAlign="center" size="md">Vehicle Number</Heading>
+                                <Heading textAlign="center" size="md">{e.vehicle_number}</Heading>
+                                <br />
+                                <Heading color="tomato" textAlign="center" size="md">Year of model</Heading>
+                                <Heading textAlign="center" size="md">{e.year_Of_Model}</Heading>
+                             </Box>
+                             
+                             </>
+                        ))
+                        :
+                        <Heading textAlign="right">Please add any vehicle</Heading>
+                        
+                    }
+                    
                 </Box>
             </Grid>
+
             <br />
             <Heading textAlign="center">ADD ANOTHER VEHICLE</Heading>
             <br />

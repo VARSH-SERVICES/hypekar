@@ -24,6 +24,7 @@ import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import { GameStateContext } from './context/Context';
 import { useContext } from 'react';
 import { ProfileModel } from './ProfileModel';
+import { MdRadioButtonUnchecked } from 'react-icons/md';
 
 const Links = ['Dashboard', 'Projects', 'Team'];
 
@@ -44,12 +45,13 @@ const NavLink = ({ children }) => (
 export default function NavBar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   
-  const {email} = useContext(GameStateContext);
+  const {email, userLogout} = useContext(GameStateContext);
 
   console.log("navbar email is", email)
 
   const arr = [1,2,3];
   
+  console.log("navbar userlogout", userLogout.length)
 
   return (
     <>
@@ -94,6 +96,13 @@ export default function NavBar() {
                 <Link to="/myvehicle"> 
                 <Button backgroundColor="#FFFAF0">MY VEHICLE</Button>
                 </Link>
+                :
+                console.log(null)
+              }
+
+              {
+                userLogout.length > 0 ?
+                <Button  display="none"  backgroundColor="#FFFAF0">MY VEHICLE</Button>
                 :
                 console.log(null)
               }

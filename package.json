@@ -26,6 +26,7 @@
     "react-router-dom": "^6.4.1",
     "react-slick": "^0.29.0",
     "react-spinners": "^0.13.4",
+    "react-spring": "^9.5.5",
     "route": "^0.2.5",
     "routes": "^2.1.0"
   },

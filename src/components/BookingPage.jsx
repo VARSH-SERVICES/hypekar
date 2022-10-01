@@ -58,7 +58,7 @@ import { useContext } from 'react'
       };
 
     const [text, setText] = useState({
-      email : "akhilesh@gmail.com",
+      email : email,
       customer_name : "",
       customer_address : "",
       service_address : "",
@@ -87,13 +87,13 @@ import { useContext } from 'react'
     },[])
 
     const getBrand = async(e) => {
-      const res = await axios.get(`https://2bbe-103-148-62-156.in.ngrok.io/mycarbrand?email=${email}`)
+      const res = await axios.get(`https://c56d-103-148-62-156.in.ngrok.io/mycarbrand?email=${email}`)
       setBrand(res.data)
       const {id, value} = e.target
       setText({...text, [id] : value})
     }
 
-    const [model, setModel] = useState("a")
+    const [model, setModel] = useState("")
 
     const [totalModel, setTotalModel] = useState([])
 
@@ -108,14 +108,15 @@ import { useContext } from 'react'
     },[model])
 
     const getData = async() => {
-      const res = await axios.get("https://2bbe-103-148-62-156.in.ngrok.io/carmodel")
+      const res = await axios.get(`https://c56d-103-148-62-156.in.ngrok.io/mycarmodel?email=${email}&brand=${brand}`)
       setTotalModel(res.data)
       //console.log("res",res.data)
     } 
 
     
+    console.log("brand")
     
-    // console.log("model is", brand)
+    console.log("booking page email is", email)
     console.log("total is",totalModel)
 
     const handlChange2 = (e) => {
@@ -126,12 +127,13 @@ import { useContext } from 'react'
     console.log(text)
 
     const submitDetails = async() =>{
-      await axios.post("https://2bbe-103-148-62-156.in.ngrok.io/book/", text)
+      await axios.post("https://c56d-103-148-62-156.in.ngrok.io/book/", text)
       .then(alert("submitted successfully"))
       setText({brand : "", model_Name : "", fuel_Type : "", year_Of_Model : ""
       , vehicle_number : "", mobile_number : ""})
     }
 
+    console.log(text)
     //const [check, setChecked] = useState("")
     
     const laptopPrice = 10;

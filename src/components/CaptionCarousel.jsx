@@ -41,22 +41,19 @@ export default function CaptionCarousel() {
   const cards = [
     {
       title: 'HypeKar, the best service in India',
-      text:
-        "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
+     
       image:
         'https://images.ctfassets.net/33n6gwydcv8y/5baEc7ZISMkYP9nHVZpklO/5bdf46f27ffc65a3697cfd9c9be71ad5/car-service-history.png',
     },
     {
       title: 'HypeKar, the best service in India',
-      text:
-        "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
+     
       image:
-        'https://media.sciencephoto.com/image/f0331238/800wm',
+        'https://i.ibb.co/C9Cqyg3/Whats-App-Image-2022-10-01-at-11-03-07-AM.jpg',
     },
     {
       title: 'HypeKar, the best service in India',
-      text:
-        "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
+     
       image:
         'https://media.gettyimages.com/photos/car-lifting-picture-id1036063284?s=612x612',
     },
@@ -125,7 +122,7 @@ export default function CaptionCarousel() {
                 position="absolute"
                 top="50%"
                 transform="translate(0, -50%)">
-                <Heading color="white" textAlign="center" fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}>
+                <Heading color="#3182CE" textAlign="center" fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}>
                   {card.title}
                 </Heading>
                 <Text fontSize={{ base: 'lg', lg: 'lg' }} color="#38A169">

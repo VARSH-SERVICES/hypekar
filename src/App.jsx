@@ -12,6 +12,8 @@ import { GameStateContext } from "./components/context/Context";
 const App = () => {
   const [email, setEmail] = useState("")
   const [cityName, setCityName] = useState('');
+  const [userLogout, setUserLogout] = useState('')
+  
   return (
     <Box>
       {/* <MyVehicle/> */}
@@ -20,7 +22,7 @@ const App = () => {
       {/* <NavBar/> */}
       {/* <ContactUsForm/> */}
       <GameStateContext.Provider 
-       value={{email, setEmail, cityName, setCityName}}>
+       value={{email, setEmail, cityName, setCityName, userLogout, setUserLogout}}>
        <AllRoutes/>
       </GameStateContext.Provider> 
       {/* <Footer/> */}

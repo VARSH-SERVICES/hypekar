@@ -43,13 +43,13 @@ export default function CaptionCarousel() {
       title: 'HypeKar, the best service in India',
      
       image:
-        'https://images.ctfassets.net/33n6gwydcv8y/5baEc7ZISMkYP9nHVZpklO/5bdf46f27ffc65a3697cfd9c9be71ad5/car-service-history.png',
+        '/public/images/maruti-service.jpg',
     },
     {
       title: 'HypeKar, the best service in India',
      
       image:
-        'https://i.ibb.co/C9Cqyg3/Whats-App-Image-2022-10-01-at-11-03-07-AM.jpg',
+        'https://ruiacare.com/wp-content/uploads/2021/02/banner1.jpg',
     },
     {
       title: 'HypeKar, the best service in India',
@@ -120,9 +120,9 @@ export default function CaptionCarousel() {
                 w={'full'}
                 maxW={'lg'}
                 position="absolute"
-                top="50%"
+                top="20%"
                 transform="translate(0, -50%)">
-                <Heading color="#3182CE" textAlign="center" fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}>
+                <Heading color="#38A169" textAlign="center" fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}>
                   {card.title}
                 </Heading>
                 <Text fontSize={{ base: 'lg', lg: 'lg' }} color="#38A169">

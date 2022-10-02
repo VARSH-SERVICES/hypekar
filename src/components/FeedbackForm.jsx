@@ -41,7 +41,7 @@ import { useContext } from 'react'
     }
 
     const feedbackSubmit = async() => {
-        await axios.post("https://c56d-103-148-62-156.in.ngrok.io/feedback/", text)
+        await axios.post("https://apihypekar.herokuapp.com/feedback/", text)
         .then(alert("submitted successfully"))
     }
 

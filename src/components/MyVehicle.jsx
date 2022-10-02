@@ -21,7 +21,7 @@ const MyVehicle = () => {
     },[])
 
     const getData = async() => {
-        const res = await axios.get(`https://c56d-103-148-62-156.in.ngrok.io/mycardata?email=${email}`)
+        const res = await axios.get(`https://apihypekar.herokuapp.com/mycardata?email=${email}`)
         setData(res.data)
     }
 

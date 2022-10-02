@@ -70,7 +70,7 @@ import {
         // if(!email){
         //   alert("wrong credentials")
         // }
-        if(email){
+        if(email.length > 0){
           alert("logged in succesfully")
           navigate("/")
         }

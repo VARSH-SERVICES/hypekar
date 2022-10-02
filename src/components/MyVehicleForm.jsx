@@ -38,7 +38,7 @@ import { useEffect, useState } from 'react';
     },[])
 
     const getBrand = async(e) => {
-      const res = await axios.get("https://c56d-103-148-62-156.in.ngrok.io/carbrand/")
+      const res = await axios.get("https://apihypekar.herokuapp.com/carbrand/")
       setBrand(res.data)
       const {id, value} = e.target
       setText({...text, [id] : value})
@@ -60,7 +60,7 @@ import { useEffect, useState } from 'react';
     },[model])
 
     const getData = async() => {
-      const res = await axios.get(`https://c56d-103-148-62-156.in.ngrok.io/carmodel?brand=${model}`)
+      const res = await axios.get(`https://apihypekar.herokuapp.com/carmodel?brand=${model}`)
       setTotalModel(res.data)
     } 
     
@@ -79,7 +79,7 @@ import { useEffect, useState } from 'react';
     //console.log(text)
 
     const submitDetails = async() =>{
-      await axios.post("https://c56d-103-148-62-156.in.ngrok.io/carform/", text)
+      await axios.post("https://apihypekar.herokuapp.com/carform/", text)
       .then(alert("submitted successfully"))
       setText({brand : "", model_Name : "", fuel_Type : "", year_Of_Model : ""
       , vehicle_number : "", mobile_number : ""})

@@ -33,12 +33,15 @@ import {Calendar} from 'react-calendar'
 import  {TimeBooking}  from './TimeBooking';
 import { GameStateContext } from "./context/Context";
 import { useContext } from 'react'
+import { useNavigate } from 'react-router-dom';
 
   export default function BookingPage() {
 
     const {email, setEmail} = useContext(GameStateContext)
 
     const [brand, setBrand] = useState([])
+
+    const navigate = useNavigate()
 
     const [dateState, setDateState] = useState("")
     
@@ -87,7 +90,7 @@ import { useContext } from 'react'
     },[])
 
     const getBrand = async(e) => {
-      const res = await axios.get(`https://c56d-103-148-62-156.in.ngrok.io/mycarbrand?email=${email}`)
+      const res = await axios.get("https://apihypekar.herokuapp.com/carbrand")
       setBrand(res.data)
       const {id, value} = e.target
       setText({...text, [id] : value})
@@ -108,7 +111,7 @@ import { useContext } from 'react'
     },[model])
 
     const getData = async() => {
-      const res = await axios.get(`https://c56d-103-148-62-156.in.ngrok.io/mycarmodel?email=${email}&brand=${brand}`)
+      const res = await axios.get(`https://apihypekar.herokuapp.com/carmodel?brand=${model}`)
       setTotalModel(res.data)
       //console.log("res",res.data)
     } 
@@ -127,8 +130,8 @@ import { useContext } from 'react'
     console.log(text)
 
     const submitDetails = async() =>{
-      await axios.post("https://c56d-103-148-62-156.in.ngrok.io/book/", text)
-      .then(alert("submitted successfully"))
+      await axios.post("https://apihypekar.herokuapp.com/book/", text)
+      .then(alert("Booked successfully"))
       setText({brand : "", model_Name : "", fuel_Type : "", year_Of_Model : ""
       , vehicle_number : "", mobile_number : ""})
     }
@@ -136,7 +139,7 @@ import { useContext } from 'react'
     console.log(text)
     //const [check, setChecked] = useState("")
     
-    const laptopPrice = 10;
+    const service_charge = 250;
 
     var formatter = new Intl.NumberFormat("en-US", {
         style: "currency",
@@ -186,9 +189,10 @@ import { useContext } from 'react'
           handler: function (response) {
             alert(response.razorpay_payment_id);
             alert("Payment Successfully");
+            navigate("/")
           },
           prefill: {
-            name: "code with akky",
+            name: "Akhilesh Javalagi",
           },
         };
     
@@ -274,12 +278,9 @@ import { useContext } from 'react'
                 <option value="Premium">Premium</option>
               </Select>
             </FormControl>
-            {
-                text.service_type.length > 0 ?
+           
                 <Heading size="md">Booking charge is : 250/-</Heading>
-                :
-                console.log(null)
-            }
+                
 
             <Calendar onChange={changeDate}/>
 
@@ -311,7 +312,7 @@ import { useContext } from 'react'
             </FormControl>
 
             <Stack spacing={6}>
-              <Button  onClick={()=>{ displayRazorpay(laptopPrice); submitDetails() }} colorScheme={'blue'} variant={'solid'}>
+              <Button  onClick={()=>{ displayRazorpay(service_charge); submitDetails() }} colorScheme={'blue'} variant={'solid'}>
                 SUBMIT
               </Button>
             </Stack>

@@ -41,43 +41,37 @@ export default function HomeSlider() {
   const cards = [
     {
       title: 'PERIODIC SERVICES',
-      text:
-        "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
+     
       image:
-        'https://storage.googleapis.com/gomechanic_assets/category_icons/schedule-services-v3.svg',
+        '/public/images/maruti-service.jpg',
     },
     {
       title: 'AC SERVICES',
-      text:
-        "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
+      
       image:
         'https://carfixo.in/wp-content/uploads/2021/01/ac-service-5645.jpg',
     },
     {
       title: 'WHEEL CARE',
-      text:
-        "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
+     
       image:
         'https://i0.wp.com/blog.getpitstop.com/wp-content/uploads/2021/04/Wheel-Care-Services-At-Pitstop.jpg?resize=1152%2C600&ssl=1',
     },
     {
         title: 'REPAIRS',
-        text:
-          "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
+      
         image:
           'https://www.onedios.com/blog/wp-content/uploads/2021/04/muscular-car-service-worker-repairing-vehicle_146671-19605.jpg',
       },
       {
         title: 'BATTERY SERVICES',
-        text:
-          "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
+        
         image:
           'https://car-o-man.com/wp-content/uploads/2018/04/battery-service-car-o-man-hyderabad.jpg',
       },
       {
         title: 'ACCESERIES AND SPARES',
-        text:
-          "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
+       
         image:
           'https://e7.pngegg.com/pngimages/206/235/png-clipart-assorted-vehicle-part-illustration-car-honda-legend-sport-utility-vehicle-spare-part-automotive-engine-parts-automotive-accessories.png',
       },

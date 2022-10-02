@@ -26,7 +26,7 @@ const AboutUs = () => {
                 />
                 </Center>
             :
-            <Box bg={useColorModeValue('gray.200', 'gray.800')}>
+            <Box>
 
                 <Heading fontFamily={"sans-serif"} textAlign={"center"}>ABOUT US</Heading>
                 <br />

@@ -58,7 +58,7 @@ import {
           alert("please enter the data")
         }
         else{
-           await axios.post("https://c56d-103-148-62-156.in.ngrok.io/contact/", text)
+           await axios.post("https://apihypekar.herokuapp.com/contact/", text)
           .then(alert("Registered succesfully"))
           .then(setText({firstName : "", name : "", lastName : "", mobileNumber : "", type : ""}))
          

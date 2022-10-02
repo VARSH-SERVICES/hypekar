@@ -24,11 +24,7 @@ export function ProfileModel() {
   const {email, setUserLogout, userLogout} = useContext(GameStateContext);
 
 
-  const getLogout = async() => {
-     const res = await axios.get("https://c56d-103-148-62-156.in.ngrok.io/logout/")
-     console.log("res is", res)
-     setUserLogout(res.data.massage)
-    }
+  
  
     console.log("logout message is", userLogout)
   return (
@@ -51,9 +47,9 @@ export function ProfileModel() {
             </FormControl>
 
             <FormControl mt={4}>
-                {/* <Link to="/"> */}
+                <Link to="/">
                <Button onClick={getLogout}>Logout</Button>
-               {/* </Link> */}
+               </Link>
             </FormControl>
           </ModalBody>
 

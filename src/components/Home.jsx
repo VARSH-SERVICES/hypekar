@@ -85,12 +85,12 @@ const Home = () => {
       console.log("text is", text)
 
     console.log("home email is", email)
-    // useEffect(()=>{
-    //   setLoading(true) // After entering the application loading should be true
-    //       setTimeout(()=>{ 
-    //           setLoading(false) // After 4 seconds loading should be false
-    //   },1000) // Loading indicator will be appeared in UI for 4 seconds.
-    // },[])
+    useEffect(()=>{
+      setLoading(true) // After entering the application loading should be true
+          setTimeout(()=>{ 
+              setLoading(false) // After 4 seconds loading should be false
+      },1000) // Loading indicator will be appeared in UI for 4 seconds.
+    },[])
 
     useEffect(()=>{
         
@@ -592,12 +592,13 @@ const Home = () => {
               
             </Box>
             </Grid>
+            <Footer/>
             </> 
             }
             <br />
             <br />
             <br />
-             <Footer/>
+             
         </Box>
        
     );

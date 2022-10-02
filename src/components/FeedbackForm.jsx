@@ -142,7 +142,7 @@ export default function Feedback() {
     <Stack minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
       <Flex p={8} flex={1} align={'center'} justify={'center'}>
         <Stack spacing={4} w={'full'} maxW={'md'}>
-          <Heading fontSize={'2xl'}>Sign in to your account</Heading>
+          <Heading fontSize={'2xl'}>Give your Feedback</Heading>
           <FormControl id="email">
             <FormLabel>Feedback</FormLabel>
             <Textarea value={text.description} id="description" onChange={handleChange} type="email" />
@@ -150,6 +150,7 @@ export default function Feedback() {
           <FormControl>
             <FormLabel>Rating</FormLabel>
             <Select id="rating" value={text.rating} onChange={handleChange}>
+              <option value="1">Choose your Rating</option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>

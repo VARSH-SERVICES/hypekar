@@ -37,7 +37,7 @@ import { useNavigate } from 'react-router-dom';
 
   export default function BookingPage() {
 
-    const {email, setEmail} = useContext(GameStateContext)
+    const {email, setEmail, userDetails} = useContext(GameStateContext)
 
     const [brand, setBrand] = useState([])
 
@@ -117,7 +117,7 @@ import { useNavigate } from 'react-router-dom';
     } 
 
     
-    console.log("brand")
+    //console.log("brand")
     
     console.log("booking page email is", email)
     console.log("total is",totalModel)
@@ -127,16 +127,29 @@ import { useNavigate } from 'react-router-dom';
         setText({...text, [id] : value})
     }
 
-    console.log(text)
+    //console.log(text)
 
+    const isNullish = Object.values(text).every(value => {
+      if (value === "") {
+        return true;
+      }
+      return false;
+    });
+
+   
     const submitDetails = async() =>{
+      if(text.customer_name.length == 0 && text.customer_address.length == 0 && text.service_address.length == 0 && text.time_slot.length == 0 && text.model.length == 0 && text.brand.length == 0){
+        alert("please enter the data")
+      }
+      else{
       await axios.post("https://apihypekar.herokuapp.com/book/", text)
       .then(alert("Booked successfully"))
       setText({brand : "", model_Name : "", fuel_Type : "", year_Of_Model : ""
       , vehicle_number : "", mobile_number : ""})
+      displayRazorpay(service_charge)
     }
-
-    console.log(text)
+  }
+    //console.log(text)
     //const [check, setChecked] = useState("")
     
     const service_charge = 250;
@@ -166,6 +179,8 @@ import { useNavigate } from 'react-router-dom';
           document.body.appendChild(script);
         });
       };
+
+      //console.log("booking page user details", userDetails)
     
       const displayRazorpay = async (amount) => {
         const res = await loadScript(
@@ -181,7 +196,7 @@ import { useNavigate } from 'react-router-dom';
           key: "rzp_test_fInDysLRBFwbcb",
           currency: "INR",
           amount: amount * 100,
-          name: "Pay with akhilesh",
+          name:  userDetails.first_name,
           description: "Thanks for purchasing",
           image:
             "https://mern-blog-akky.herokuapp.com/static/media/logo.8c649bfa.png",
@@ -192,7 +207,7 @@ import { useNavigate } from 'react-router-dom';
             navigate("/")
           },
           prefill: {
-            name: "Akhilesh Javalagi",
+            name: userDetails.first_name,
           },
         };
     
@@ -312,7 +327,7 @@ import { useNavigate } from 'react-router-dom';
             </FormControl>
 
             <Stack spacing={6}>
-              <Button  onClick={()=>{ displayRazorpay(service_charge); submitDetails() }} colorScheme={'blue'} variant={'solid'}>
+              <Button  onClick={()=>{submitDetails() }} colorScheme={'blue'} variant={'solid'}>
                 SUBMIT
               </Button>
             </Stack>

@@ -15,7 +15,7 @@ const Feedback = () => {
 
     return (
         <Box h="800px">
-             {/* {
+             {
             loading == true  ? 
                 <Center mt="200px">
                 <Spinner
@@ -26,31 +26,16 @@ const Feedback = () => {
                 size='xl'
                 />
                 </Center>
-            : */}
-            <Heading textAlign={"center"}>FEEDBACK</Heading>
-            {/* <Box border ="1px solid red">
-                <Heading textAlign={"center"}>Give your valuable feedback, we can improve our service on your feedback</Heading>
-            </Box> */}
-            {/* <Stack spacing={15} direction='column' h="800px"> */}
+                :
+                <>
                 <Heading  textAlign={"center"}>Give your valuable feedback, we can improve our service on your feedback</Heading>
-                {/* <Center>
-                    <Box borderRadius="10" w="30%" h="300px" bg="white" border="1px solid red">
-                        <Input bg="white" placeholder='enter your email ID'></Input>
-                        <Textarea bg="white"  placeholder='Description' />
-                        <Center bg="white">
-                            <Button w="200px">SUBMIT</Button>
-                        </Center>
-                        
-                    </Box>
-                </Center> */}
+              
                 <br />
                   
-                        <FeedbackForm/>
-                   
-                    
-              
-            {/* </Stack> */}
-            {/* } */}
+                <FeedbackForm/>
+                </>
+            }
+    
         </Box>
     );
 }

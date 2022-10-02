@@ -50,8 +50,8 @@ export default function Footer() {
             <Box>
               <Logo color={useColorModeValue('gray.700', 'white')} />
             </Box>
-            <Text fontSize={'sm'}>
-              © 2022 Chakra Templates. All rights reserved
+            <Text>
+              HypeKar.com
             </Text>
           </Stack>
           <Stack align={'flex-start'}>

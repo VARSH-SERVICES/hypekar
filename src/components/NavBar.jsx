@@ -62,7 +62,7 @@ export default function NavBar() {
 
   return (
     <>
-      <Box bg='#FFFAF0' px={4}>
+      <Box bg='#212529' px={4}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <IconButton
             size={'md'}
@@ -77,7 +77,7 @@ export default function NavBar() {
                   <Image  borderRadius={10} w="100px" src= "https://stimg.cardekho.com/images/carexteriorimages/630x420/Tata/Nexon/7384/1614326304397/front-left-side-47.jpg?impolicy=resize&imwidth=480"></Image>
               </Box>
             </Link>
-            <Heading size="md">HypeKar</Heading>
+            <Heading size="md" color="white">HypeKar</Heading>
             <HStack
               as={'nav'}
               spacing={4}
@@ -86,22 +86,22 @@ export default function NavBar() {
                 <NavLink key={link}>{link}</NavLink>
               ))} */}
               <Link to="/">
-                <Button backgroundColor="#FFFAF0">HOME</Button>
+                <Button backgroundColor="#212529;" color="white">HOME</Button>
               </Link>
               <Link to="/services">
-                <Button backgroundColor="#FFFAF0">SERVICES</Button>
+                <Button backgroundColor="#212529;" color="white">SERVICES</Button>
               </Link>
               <Link to="/about"> 
-                <Button backgroundColor="#FFFAF0">ABOUT US</Button>
+                <Button backgroundColor="#212529;" color="white">ABOUT US</Button>
               </Link>
               <Link to="/contact">
-                <Button backgroundColor="#FFFAF0">CONTACT US</Button>
+                <Button backgroundColor="#212529;" color="white">CONTACT US</Button>
               </Link>
               
               {
                 email.length > 0 ?
                 <Link to="/myvehicle"> 
-                <Button backgroundColor="#FFFAF0">MY VEHICLE</Button>
+                <Button backgroundColor="#212529;" color="white">MY VEHICLE</Button>
                 </Link>
                 :
                 console.log(null)
@@ -109,7 +109,7 @@ export default function NavBar() {
 
               {/* {
                 userLogout.length > 0 ? */}
-                <Button  display="none"  backgroundColor="#FFFAF0">MY VEHICLE</Button>
+                <Button  display="none"  backgroundColor="#212529;" color="white">MY VEHICLE</Button>
                 {/* :
                 console.log(null)
               } */}
@@ -117,7 +117,7 @@ export default function NavBar() {
              {
                 email.length > 0 ?
                 <Link to="/feedback"> 
-                <Button backgroundColor="#FFFAF0">FEEDBACK</Button>
+                <Button backgroundColor="#212529;" color="white">FEEDBACK</Button>
                 </Link>
                 :
                 console.log(null)
@@ -126,34 +126,12 @@ export default function NavBar() {
             </HStack>
           </HStack>
           
-          {/* <Flex alignItems={'center'}>
-            <Menu>
-              <MenuButton
-                as={Button}
-                rounded={'full'}
-                variant={'link'}
-                cursor={'pointer'}
-                minW={0}>
-                <Avatar
-                  size={'sm'}
-                  src={
-                    'https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9'
-                  }
-                />
-              </MenuButton>
-              <MenuList>
-                <Link to="/login">
-                  <MenuItem>Login</MenuItem>
-                </Link>
-                  <MenuItem>Logout</MenuItem>
-              </MenuList>
-            </Menu>
-          </Flex> */}
+         
          
               {
                 email.length == 0 ?
                 <Link to="/login"> 
-                <Button backgroundColor="#FFFAF0">SIGNUP/SIGNIN</Button>
+                <Button backgroundColor="#212529;" color="white">SIGNUP/SIGNIN</Button>
                 </Link>
                 :
                 <Link to="/">
@@ -172,26 +150,37 @@ export default function NavBar() {
                 <NavLink key={link}>{link}</NavLink>
               ))} */}
               <Link to="/">
-              <Button >HOME</Button>
+              <Button backgroundColor="#212529;" color="white">HOME</Button>
               </Link>
               <Link to="/services">
-              <Button>SERVICES</Button>
+              <Button backgroundColor="#212529;" color="white">SERVICES</Button>
               </Link>
               <Link to="/about">
-              <Button>ABOUT US</Button>
+              <Button backgroundColor="#212529;" color="white">ABOUT US</Button>
               </Link>
               <Link to="/contact">
-              <Button>CONTACT US</Button>
+              <Button backgroundColor="#212529;" color="white">CONTACT US</Button>
               </Link>
             
-                <Link to="/myvehicle">
-                   <Button>MY VEHICLE</Button>
+              {
+                email.length > 0 ?
+                <Link to="/myvehicle"> 
+                <Button backgroundColor="#212529;" color="white">MY VEHICLE</Button>
                 </Link>
+                :
+                console.log(null)
+              }
                
              
-              <Link to="/feedback">
-              <Button>FEEDBACK</Button>
-              </Link>
+               {
+                email.length > 0 ?
+                <Link to="/feedback"> 
+                <Button backgroundColor="#212529;" color="white">FEEDBACK</Button>
+                </Link>
+                :
+                console.log(null)
+              }
+          
             </Stack>
           </Box>
         ) : null}

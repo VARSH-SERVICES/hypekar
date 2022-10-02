@@ -270,7 +270,7 @@ const Home = () => {
                         controls
                         autoPlay
                         alt="All the devices"
-                        src="/public/Videos/WhatsApp Video 2022-10-01 at 9.59.27 AM.mp4"
+                        src="https://cdn.kapwing.com/final_6339d1c5f81a340f1b84512f_525224.mp4"
                         ref={videoEl}
                          />
                     </Box>

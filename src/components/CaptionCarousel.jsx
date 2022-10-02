@@ -43,7 +43,7 @@ export default function CaptionCarousel() {
       
      
       image:
-        '/public/images/maruti-service.jpg',
+        'https://www.linkpicture.com/q/maruti-service.jpg',
     },
     {
       
@@ -55,13 +55,13 @@ export default function CaptionCarousel() {
       
      
       image:
-        '/public/images/car-service-concept.jpg',
+        'https://www.linkpicture.com/q/car.png',
     },
     {
-      image : '/public/images/car.png'
+      image : 'https://www.linkpicture.com/q/car-service-concept.jpg'
     },
     {
-    image : "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/arena-services/banner-image/ccp-banner.webp?rev=82d2d48ed5ee4c6fbbc27fa0030cee3a&extension=webp"
+    image : "https://www.linkpicture.com/q/WhatsApp-Image-2022-10-01-at-11.03.07-AM.jpeg"
     }
   ];
 

@@ -13,11 +13,8 @@ const App = () => {
   const [email, setEmail] = useState("")
   const [cityName, setCityName] = useState('');
   const [userLogout, setUserLogout] = useState('')
-  const [userDetails, setUserDetails] = useState({
-    user_first_name : "",
-    user_last_name : "",
-    user_email : "",
-  })
+  const [userDetails, setUserDetails] = useState({})
+  const [userCarDetails, setUserCarDetails] = useState([])
   return (
     <Box>
       {/* <MyVehicle/> */}
@@ -26,7 +23,7 @@ const App = () => {
       {/* <NavBar/> */}
       {/* <ContactUsForm/> */}
       <GameStateContext.Provider 
-       value={{email, setEmail, cityName, setCityName, userLogout, setUserLogout, userDetails, setUserDetails}}>
+       value={{email, setEmail,userCarDetails, setUserCarDetails, cityName, setCityName, userLogout, setUserLogout, userDetails, setUserDetails}}>
        <AllRoutes/>
       </GameStateContext.Provider> 
       {/* <Footer/> */}

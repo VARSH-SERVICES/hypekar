@@ -1,5 +1,14 @@
 import { Box, Grid, Select, Flex, Spacer, useColorModeValue,
-    GridItem, Heading, Center, Spinner, SimpleGrid ,  Image, Button, Text, VStack, StackDivider, Stack  } from '@chakra-ui/react';
+    GridItem, Heading, Center,
+    Table,
+  Thead,
+  Tbody,
+  Tfoot,
+  Tr,
+  Th,
+  Td,
+  TableCaption,
+  TableContainer, Spinner, SimpleGrid ,  Image, Button, Text, VStack, StackDivider, Stack  } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react';
 import CaptionCarousel from './CaptionCarousel';
 import Footer from './Footer';
@@ -14,7 +23,7 @@ const MyVehicle = () => {
 
     const [data, setData] = useState([])
 
-    const {email} = useContext(GameStateContext)
+    const {email, userDetails, userCarDetails, setUserCarDetails} = useContext(GameStateContext)
 
     useEffect(()=>{
         getData()
@@ -22,7 +31,8 @@ const MyVehicle = () => {
 
     const getData = async() => {
         const res = await axios.get(`https://apihypekar.herokuapp.com/mycardata?email=${email}`)
-        setData(res.data)
+        //setData(res.data)
+        setUserCarDetails(res.data)
     }
 
     const [loading, setLoading] = useState(false);
@@ -36,7 +46,7 @@ const MyVehicle = () => {
 
     
 
-    console.log("logged in data is", data)
+    console.log("logged in data is", userCarDetails)
     console.log("logged in email is", email)
     return (
         <Box>
@@ -69,37 +79,18 @@ const MyVehicle = () => {
                 templateColumns={{base:'repeat(1, 1fr)',
                 md:'repeat(2, 1fr)',
                 lg:'repeat(2, 1fr)'
-                }} gap={7}>
-                <Box borderRadius={10} w='100%' h='500'>
+                }}bg='RGBA(0, 0, 0, 0.06)' justifyContent="space-between">
+                <Box   borderRadius={10} w='90%' h='500'>
                     <UserDetails/>
                 </Box>
                
-                <Box display="flex"  borderRadius={10} w='100%' h='500'>
-                    {/* <Image h={[500, 500, 500]} src="https://thumbs.dreamstime.com/b/auto-car-repair-service-center-mechanic-examining-car-suspension-auto-car-repair-service-center-mechanic-examining-car-suspension-166202482.jpg"></Image> */}
-                    
-                    
-                    {
-                        
-                        data.length > 0 ?
+                {/* <Box display="flex"  borderRadius={10} w='100%' h='500'>
+                        {
+                        userCarDetails.length > 0 ?
                        
-                        data.map((e)=>(
+                        userCarDetails.map((e)=>(
                             <>
-                            {/* <Grid  templateColumns={{base:'repeat(1, 1fr)',
-                                md:'repeat(1, 1fr)',
-                                lg:'repeat(1, 1fr)'
-                                }} gap={6}>
-
-                    
-                                <GridItem w="100%" bg='RGBA(0, 0, 0, 0.06)'>
-                                <Heading size="md" textAlign={"center"} color="RGBA(0, 0, 0, 0.64)">{e.brand}</Heading>
-                                    <Flex  justifyContent={"space-around"}>
-                                    <Image 
-                                    mt="20px" w="35%"  src="https://cdn-icons-png.flaticon.com/512/4669/4669436.png"></Image>
-                                
-                                    </Flex>
-                                    
-                                </GridItem>
-                             </Grid> */}
+                           
                             
                              <Box bg='RGBA(0, 0, 0, 0.06)' w="100%">
                                 <Heading color="green" textAlign="center" size="md">Cars you have uploaded</Heading>
@@ -126,23 +117,55 @@ const MyVehicle = () => {
                         <Heading textAlign="right">Please add any vehicle</Heading>
                         
                     }
-                    
+                </Box> */}
+
+               
+                <Box w='90%' >
+                <TableContainer  >
+                <Table variant='simple'>
+                    <TableCaption>Your vehicles in the HypeKar</TableCaption>
+                    <Thead>
+                    <Tr>
+                        <Th fontWeight="black">Car Brand</Th>
+                        <Th>Car Model</Th>
+                        <Th>Fuel Type</Th>
+                        <Th>Vehicle Number</Th>
+                        <Th>Year Of</Th>
+                    </Tr>
+                    </Thead>
+                    <Tbody>
+                    {
+                    userCarDetails.map((e)=>(
+                    <Tr>
+                        <Td>{e.brand}</Td>
+                        <Td>{e.model_Name}</Td>
+                        <Td>{e.fuel_Type}</Td>
+                        <Td>{e.vehicle_number}</Td>
+                        <Td>{e.year_Of_Model}</Td>
+                    </Tr>
+                    ))
+                    }   
+                    </Tbody>
+                   
+                </Table>
+                </TableContainer>
+                </Box>        
+                
+                </Grid>
+
+                <br />
+                <Heading textAlign="center">ADD ANOTHER VEHICLE</Heading>
+                <br />
+                <MyVehicleForm/>
+
+                <Box w="100%" mt="50px">
+                    <CaptionCarousel/>
                 </Box>
-            </Grid>
-
-            <br />
-            <Heading textAlign="center">ADD ANOTHER VEHICLE</Heading>
-            <br />
-            <MyVehicleForm/>
-
-            <Box w="100%" mt="50px">
-                <CaptionCarousel/>
+            {/* <Footer/> */}
+                
             </Box>
-           {/* <Footer/> */}
-            
-        </Box>
-        }
-        </Box>
+            }
+            </Box>
     );
 }
 

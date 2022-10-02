@@ -35,7 +35,7 @@ import {
 
     
 
-    const {email, setEmail} = useContext(GameStateContext)
+    const {email, setEmail, userDetails, setUserDetails} = useContext(GameStateContext)
 
     const navigate = useNavigate()
 
@@ -63,23 +63,31 @@ import {
         else{
         await axios.post("https://apihypekar.herokuapp.com/login/",text)
         //.then(Response=>setToken(Response.data.token))
-        .then(Response=>setEmail(Response.data.email))
-        .then(setText({username : "", password : ""}))
-        
+        //.then(Response=>setEmail(Response.data.email))
+        // .then(Response=>setUserDetails(Response.data))
+        // .then(setText({username : "", password : ""}))
+        .then((Response)=> {
+          setUserDetails(Response.data)
+          alert(Response.data.massage)
+          setEmail(Response.data.email)
+         } )
         }
+
+        console.log("user details after login", userDetails)
         // if(!email){
         //   alert("wrong credentials")
         // }
-        if(email.length > 0){
-          alert("logged in succesfully")
-          navigate("/")
-        }
+        
     }
 
     // const redirect = () =>{
       
     // }
     
+    if(email.length > 0){
+      //alert("logged in succesfully")
+      navigate("/")
+    }
 
     console.log("email is", email)
 

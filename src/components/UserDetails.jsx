@@ -19,28 +19,37 @@ import {
   import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
   import { MdLocalShipping } from 'react-icons/md';
   import { GameStateContext } from "./context/Context";
-  import { useContext } from 'react'
+  import React,{ useContext, useState, useEffect } from 'react'
+  import { axios } from 'axios';
 
   export default function UserDetails() {
-    const {email, setEmail} = useContext(GameStateContext)
+    const {email, setEmail,userCarDetails, userDetails} = useContext(GameStateContext)
+
+    const [data, setData] = useState([])
+
+        // useEffect(()=>{
+        //   getData()
+        // },[])
+
+        // const getData = async() => {
+        //     const res = await axios.get(`https://apihypekar.herokuapp.com/mycardata?email=${email}`)
+        //     console.log(res)
+        // }
+
+
+    console.log("car data total", userCarDetails)
 
     return (
-      <Container overflow={"scroll"} h="500px">
-        <SimpleGrid>
+      <Container padding="5"overflow={"scroll"} h="500px">
+        <SimpleGrid >
           <Stack h="500px">
             <Box as={'header'}>
               <Heading
                 lineHeight={1.1}
                 fontWeight={600}
                 fontSize={{ base: '2xl', sm: '4xl', lg: '5xl' }}>
-                TATA
+                Welcome to HypeKar {userDetails.first_name} {userDetails.last_name}
               </Heading>
-              <Text
-                color={useColorModeValue('gray.900', 'gray.400')}
-                fontWeight={300}
-                fontSize={'2xl'}>
-                Nexon
-              </Text>
             </Box>
   
             <Stack
@@ -51,13 +60,12 @@ import {
                   borderColor={useColorModeValue('gray.200', 'gray.600')}
                 />
               }>
-              <VStack>
+              {/* <VStack>
                 <Text
                   color={useColorModeValue('gray.500', 'gray.400')}
                   fontSize={'2xl'}
                   fontWeight={'300'}>
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                  diam nonumy eirmod tempor invidunt ut labore
+                  {userDetails.last_name}
                 </Text>
                 <Text fontSize={'lg'}>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad
@@ -65,7 +73,9 @@ import {
                   maxime modi nam officiis porro, quae, quisquam quos
                   reprehenderit velit? Natus, totam.
                 </Text>
-              </VStack>
+              </VStack> */}
+              <br />
+              <br />  
               <Box>
                 <Text
                   fontSize={{ base: '16px', lg: '18px' }}
@@ -73,19 +83,19 @@ import {
                   fontWeight={'500'}
                   textTransform={'uppercase'}
                   mb={'4'}>
-                  Features
+                  More Details
                 </Text>
   
                 <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
                   <List spacing={2}>
-                    <ListItem>Chronograph</ListItem>
-                    <ListItem>Master Chronometer Certified</ListItem>{' '}
-                    <ListItem>Tachymeter</ListItem>
+                    <ListItem>Email</ListItem>
+                    <ListItem>UserName</ListItem>{' '}
+                    
                   </List>
                   <List spacing={2}>
-                    <ListItem>Anti‑magnetic</ListItem>
-                    <ListItem>Chronometer</ListItem>
-                    <ListItem>Small seconds</ListItem>
+                    <ListItem>{userDetails.username}</ListItem>
+                    <ListItem>{userDetails.email}</ListItem>
+                  
                   </List>
                 </SimpleGrid>
               </Box>
@@ -96,54 +106,30 @@ import {
                   fontWeight={'500'}
                   textTransform={'uppercase'}
                   mb={'4'}>
-                  Product Details
+                  Cars you have serviced in the HypeKar
                 </Text>
-  
-                <List spacing={2}>
+                
+              {
+                userCarDetails.length > 0 ?
+                
+                userCarDetails.map((e)=>(
+                  <>
+                  <List spacing={2}>
                   <ListItem>
-                    <Text as={'span'} fontWeight={'bold'}>
-                      Between lugs:
-                    </Text>{' '}
-                    20 mm
-                  </ListItem>
-                  <ListItem>
-                    <Text as={'span'} fontWeight={'bold'}>
-                      Bracelet:
-                    </Text>{' '}
-                    leather strap
-                  </ListItem>
-                  <ListItem>
-                    <Text as={'span'} fontWeight={'bold'}>
-                      Case:
-                    </Text>{' '}
-                    Steel
-                  </ListItem>
-                  <ListItem>
-                    <Text as={'span'} fontWeight={'bold'}>
-                      Case diameter:
-                    </Text>{' '}
-                    42 mm
-                  </ListItem>
-                  <ListItem>
-                    <Text as={'span'} fontWeight={'bold'}>
-                      Dial color:
-                    </Text>{' '}
-                    Black
-                  </ListItem>
-                  <ListItem>
-                    <Text as={'span'} fontWeight={'bold'}>
-                      Crystal:
-                    </Text>{' '}
-                    Domed, scratch‑resistant sapphire crystal with anti‑reflective
-                    treatment inside
-                  </ListItem>
-                  <ListItem>
-                    <Text as={'span'} fontWeight={'bold'}>
-                      Water resistance:
-                    </Text>{' '}
-                    5 bar (50 metres / 167 feet){' '}
+                    BRAND : {e.brand}
                   </ListItem>
                 </List>
+                 <List spacing={2}>
+                 <ListItem>
+                   MODEL {e.model_Name}
+                 </ListItem>
+               </List>
+               </>
+                ))
+                :
+                console.log(null)
+              }
+               
               </Box>
             </Stack>
   

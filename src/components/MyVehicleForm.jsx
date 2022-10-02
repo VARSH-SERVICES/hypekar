@@ -77,17 +77,13 @@ import { useEffect, useState } from 'react';
     }
 
     //console.log(text)
-
+    
     const submitDetails = async() =>{
       await axios.post("https://apihypekar.herokuapp.com/carform/", text)
       .then(alert("submitted successfully"))
       setText({brand : "", model_Name : "", fuel_Type : "", year_Of_Model : ""
       , vehicle_number : "", mobile_number : ""})
     }
-
-    
-    
-    
 
     return (
       <Stack minH={'100vh'} direction={{ base: 'column', md: 'row' }}>

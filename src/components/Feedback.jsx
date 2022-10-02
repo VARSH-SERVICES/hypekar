@@ -14,7 +14,7 @@ const Feedback = () => {
     },[])
 
     return (
-        <Box bg={useColorModeValue('gray.200', 'gray.800')} h="800px">
+        <Box h="800px">
              {/* {
             loading == true  ? 
                 <Center mt="200px">
@@ -43,7 +43,7 @@ const Feedback = () => {
                         
                     </Box>
                 </Center> */}
-              
+                <br />
                   
                         <FeedbackForm/>
                    

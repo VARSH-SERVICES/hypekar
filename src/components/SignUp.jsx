@@ -6,16 +6,18 @@ import {
     Text,
     Container,
     Input,
+    Center,
     Button,
     SimpleGrid,
     Avatar,
     AvatarGroup,
     useBreakpointValue,
-   
+    Spinner,
     Icon,
   } from '@chakra-ui/react';
 import axios from 'axios';
   import React, {useState, useEffect} from "react"
+  import { useNavigate } from 'react-router-dom';
   
   const avatars = [
     {
@@ -50,6 +52,17 @@ import axios from 'axios';
   }
   const [text, setText] = useState(initialState)
 
+  const navigate = useNavigate()
+
+  const [loading, setLoading] = useState(false);
+
+    useEffect(()=>{
+      setLoading(true) // After entering the application loading should be true
+          setTimeout(()=>{ 
+              setLoading(false) // After 4 seconds loading should be false
+      },1000) // Loading indicator will be appeared in UI for 4 seconds.
+    },[])
+
   let config = {
       headers: {
         "Content-Type": "application/json",
@@ -77,15 +90,17 @@ import axios from 'axios';
          await axios.post("https://apihypekar.herokuapp.com/reg/", text)
          .then(Response=>console.log("response is ",Response))
          .then(alert("Registered successfully"))
-         
          .then(setText({first_name : "", last_name : "", email : "", username : "", password: ""}))
-     }
+         .then(navigate("/login"))
+        }
     }
 
     console.log(text)
 
     return (
-      <Box position={'relative'}>
+      <>
+     
+        <Box position={'relative'}>
         <Container
           as={SimpleGrid}
           maxW={'7xl'}
@@ -178,6 +193,7 @@ import axios from 'axios';
             <Box as={'form'} mt={10}>
               <Stack spacing={4}>
                 <Input
+                  value = {text.first_name}
                   id= "first_name"
                   onChange={handleChange}
                   placeholder="First Name"
@@ -189,6 +205,7 @@ import axios from 'axios';
                   }}
                 />
                 <Input
+                  value = {text.last_name}
                   id="last_name"
                   onChange={handleChange}
                   placeholder="Last Name"
@@ -200,6 +217,7 @@ import axios from 'axios';
                   }}
                 />
                 <Input
+                  value = {text.email}
                   id = "email"
                   onChange={handleChange}
                   placeholder="Email"
@@ -211,6 +229,7 @@ import axios from 'axios';
                   }}
                 />
                 <Input
+                  value = {text.username}
                   id="username"
                   onChange={handleChange}
                   placeholder="Username"
@@ -222,11 +241,13 @@ import axios from 'axios';
                   }}
                 />
                 <Input
+                  value = {text.password}
                   id="password"
                   onChange={handleChange}
                   placeholder="Password"
                   bg={'gray.100'}
                   border={0}
+                  type = "password"
                   color={'gray.500'}
                   _placeholder={{
                     color: 'gray.500',
@@ -251,6 +272,10 @@ import axios from 'axios';
           </Stack>
         </Container>
       </Box>
+     
+                
+      </>
+
     );
   }
   

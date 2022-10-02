@@ -40,23 +40,29 @@ export default function CaptionCarousel() {
   // This can be static or loaded from a server
   const cards = [
     {
-      title: 'HypeKar, the best service in India',
+      
      
       image:
         '/public/images/maruti-service.jpg',
     },
     {
-      title: 'HypeKar, the best service in India',
+      
      
       image:
-        'https://ruiacare.com/wp-content/uploads/2021/02/banner1.jpg',
+        'https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/arena-services/banner-image/ms-service-web-banner_1366x500_02.png?rev=d11af2a8feb7433cb789c60731d70ffb&extension=webp',
     },
     {
-      title: 'HypeKar, the best service in India',
+      
      
       image:
-        'https://media.gettyimages.com/photos/car-lifting-picture-id1036063284?s=612x612',
+        '/public/images/car-service-concept.jpg',
     },
+    {
+      image : '/public/images/car.png'
+    },
+    {
+    image : "https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/arena-services/banner-image/ccp-banner.webp?rev=82d2d48ed5ee4c6fbbc27fa0030cee3a&extension=webp"
+    }
   ];
 
   return (

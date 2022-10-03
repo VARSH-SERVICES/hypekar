@@ -84,40 +84,7 @@ const MyVehicle = () => {
                     <UserDetails/>
                 </Box>
                
-                {/* <Box display="flex"  borderRadius={10} w='100%' h='500'>
-                        {
-                        userCarDetails.length > 0 ?
-                       
-                        userCarDetails.map((e)=>(
-                            <>
-                           
-                            
-                             <Box bg='RGBA(0, 0, 0, 0.06)' w="100%">
-                                <Heading color="green" textAlign="center" size="md">Cars you have uploaded</Heading>
-                                <br />
-                                <Heading color="tomato" textAlign="center" size="md">Car Brand</Heading>
-                                <Heading textAlign="center" size="md">{e.brand}</Heading>
-                                <br />
-                                <Heading color="tomato" textAlign="center" size="md">Car Model</Heading>
-                                <Heading textAlign="center" size="md" >{e.model_Name}</Heading>
-                                <br />
-                                <Heading color="tomato" textAlign="center" size="md">Fuel Type</Heading>
-                                <Heading textAlign="center" size="md">{e.fuel_Type}</Heading>
-                                <br />
-                                <Heading color="tomato" textAlign="center" size="md">Vehicle Number</Heading>
-                                <Heading textAlign="center" size="md">{e.vehicle_number}</Heading>
-                                <br />
-                                <Heading color="tomato" textAlign="center" size="md">Year of model</Heading>
-                                <Heading textAlign="center" size="md">{e.year_Of_Model}</Heading>
-                             </Box>
-                             
-                             </>
-                        ))
-                        :
-                        <Heading textAlign="right">Please add any vehicle</Heading>
-                        
-                    }
-                </Box> */}
+               
 
                
                 <Box w='90%' >
@@ -135,6 +102,7 @@ const MyVehicle = () => {
                     </Thead>
                     <Tbody>
                     {
+                    userCarDetails.length > 0 ?
                     userCarDetails.map((e)=>(
                     <Tr>
                         <Td>{e.brand}</Td>
@@ -144,6 +112,8 @@ const MyVehicle = () => {
                         <Td>{e.year_Of_Model}</Td>
                     </Tr>
                     ))
+                    :
+                    console.log(null)
                     }   
                     </Tbody>
                    
@@ -162,7 +132,7 @@ const MyVehicle = () => {
                     <CaptionCarousel/>
                 </Box>
             {/* <Footer/> */}
-                
+                <Footer/>
             </Box>
             }
             </Box>

@@ -1,10 +1,14 @@
-import { Heading, Text, Center, useColorModeValue, VStack, StackDivider , Flex, HStack, FormControl, FormLabel , Input, InputGroup , Spinner, Button, Box, Grid, Image, Stack } from '@chakra-ui/react';
-import React, {useState, useEffect} from 'react';
+import { Heading, Text, Center, useColorModeValue, VStack, StackDivider , Flex, HStack, FormControl, FormLabel , Input, InputGroup , Spinner, Button, Box, Grid, Image, Stack, GridItem } from '@chakra-ui/react';
+import React, {useState, useContext, useEffect} from 'react';
 import ContactUsForm from './ContactUsForm';
+import { GameStateContext } from "./context/Context";
+import Footer from './Footer';
 
 
 const ContactUs = () => {
     const [loading, setLoading] = useState(false);
+
+    const {cityName} = useContext(GameStateContext)
 
     useEffect(()=>{
       setLoading(true) // After entering the application loading should be true
@@ -12,6 +16,7 @@ const ContactUs = () => {
               setLoading(false) // After 4 seconds loading should be false
       },1000) // Loading indicator will be appeared in UI for 4 seconds.
     },[])
+    
     return (
         <Box>
             {
@@ -26,129 +31,116 @@ const ContactUs = () => {
                 />
                 </Center>
             :
+          
             <Box>
-           
-               
-                    <Heading padding={3} fontFamily="mono" textAlign={"center"}>GET A CALL FROM US</Heading>
+                <Heading padding={3} fontFamily="mono" textAlign={"center"}>GET A CALL FROM US</Heading>
+                <Heading size="md" fontFamily="mono" textAlign={"center"}>Lorem ipsum dolor sit amet
+                    consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</Heading>
                 
-               
-                    <Heading size="md" fontFamily="mono" textAlign={"center"}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</Heading>
-                
-                {/* <Flex
-                    minH={'100vh'}
-                    align={'center'}
-                    justify={'center'}
-                    bg={useColorModeValue('gray.200', 'gray.800')}>
-                    <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
-                    <Box
-                        rounded={'lg'}
-                        bg={useColorModeValue('#B2F5EA')}
-                        boxShadow={'lg'}
-                        p={8}>
-                        <Stack spacing={4}>
-                        <HStack>
-                            <Box>
-                            <FormControl id="firstName" isRequired>
-                                <FormLabel>First Name</FormLabel>
-                                <Input bg="white" id="firstName"  type="text" />
-                            </FormControl>
-                            </Box>
-                            <Box>
-                            <FormControl id="lastName">
-                                <FormLabel>Last Name</FormLabel>
-                                <Input bg="white" id="lastName"  type="text" />
-                            </FormControl>
-                            </Box>
-                        </HStack>
-                        <FormControl id="email" isRequired>
-                            <FormLabel>Mobile Number</FormLabel>
-                            <Input bg="white" id="mobileNumber"  type="number" max="10" />
-                        </FormControl>
-                        <FormControl id="password" isRequired>
-                            <FormLabel>Type</FormLabel>
-                        <InputGroup>
-                            <Input bg="white" id="type" />
-                            </InputGroup> 
-                        </FormControl>
-                        <Stack spacing={10} pt={2}>
-                            <Button
-                            loadingText="Submitting"
-                            size="lg"
-                            bg={'blue.400'}
-                            color={'white'}
-                            _hover={{
-                                bg: 'blue.500',
-                            }}>
-                            SUBMIT
-                            </Button>
-                        </Stack>
-                        </Stack>
-                    </Box>
-                    </Stack>
-                </Flex> */}
                 <ContactUsForm/>
-              
-            
 
-            {/* <VStack
-            divider={<StackDivider borderColor='gray.200' />}
-            spacing={4}
-            align='stretch'
-            >
-            <Box h='40px' bg='yellow.200'>
-            <Heading padding={3} fontFamily="mono" textAlign={"center"}>GET A CALL FROM US</Heading>
-            
-            </Box>
-            <Box h='40px' bg='tomato'>
-            <Heading size="md" fontFamily="mono" textAlign={"center"}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</Heading>
+                {/* <Grid templateColumns={{base : 'repeat(1, 1fr)', 
+                md : 'repeate(3,1fr)', lg : 'repeate(3,1fr  )'
+                }} border="1px solid red">
+                    <GridItem backgroundColor="black" >
+                        <Image w="200px" src='https://angfuzsoft.com/wordpress/mechon/wp-content/themes/mechon/assets/img/icon/contact_1_1.svg'></Image>
+                        <Heading size="md" color="white" padding="5">WE ARE OPEN MONDAY-FRIDAY
+                        <br />
+                        7:00 am - 9:00 pm</Heading>
+                    </GridItem>
 
-            </Box>
-            <Box h='30px' bg='pink.100'>
-            <ContactUsForm/>
-            </Box>
-            </VStack> */}
-        
-            <Grid mt="30px" 
+                    <GridItem backgroundColor="#e81c2e" >
+                        <Image w="200px" src='https://angfuzsoft.com/wordpress/mechon/wp-content/themes/mechon/assets/img/icon/contact_1_1.svg'></Image>
+                        <Heading size="md" color="white" padding="5">WE ARE OPEN MONDAY-FRIDAY
+                        <br />
+                        7:00 am - 9:00 pm</Heading>
+                    </GridItem>
+                </Grid> */}
+
+            <Grid  mt="30px" 
+            h="330"
             templateColumns={{base:'repeat(1, 1fr)',
             md:'repeat(2, 1fr)',
             lg:'repeat(2, 1fr)'
             }} gap={7}>
-                <Box borderRadius={10} w='100%' h='200'>
 
-                    {/* <Text textAlign="center">
-                        ─────────────────────────────────────────────────
-                    </Text> */}
-                    {/* <Image w="100%" h={[500, 500, 500]} src="https://thumbs.dreamstime.com/b/worker-uniform-disassembles-vehicle-engine-car-service-station-automobile-checking-inspection-professional-diagnostics-173424972.jpg"></Image> */}
-                        {/* <Select mt="50px" bg="blue" w={[390, 400, 600]} placeholder='Select option'>
-                            <option value='option1'>Option 1</option>
-                            <option value='option2'>Option 2</option>
-                            <option value='option3'>Option 3</option>
-                        </Select> */}
-                       <Heading padding="5">
+                <Box backgroundColor="#212529" padding="8" border="1px solid red" borderRadius={10} w='100%' h='200'>
+                    {/* <Heading padding="5">
                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                       </Heading>
-                </Box>
-               
-                
-                <Box display="flex"  borderRadius={10} w='100%' h='200' border="1px solid red">
-                    <Image h={[500, 500, 500]} src="https://thumbs.dreamstime.com/b/auto-car-repair-service-center-mechanic-examining-car-suspension-auto-car-repair-service-center-mechanic-examining-car-suspension-166202482.jpg"></Image>
-                    <Box w="50%">
-                        <Image src="https://imgd.aeplcdn.com/600x337/n/cw/ec/124027/urban-cruiser-hyryder-exterior-right-front-three-quarter-3.jpeg?isig=0&q=75"></Image>
-                        <Heading padding={2} size="lg">
-                            Barand : Maruti Suzuki
-                            <br />
-                            Model : Swift Dezire
-                        </Heading>
-                    </Box>
-                    <Box w="50%" ></Box>
-                    <Center gap="10" padding="5">
-                        <Button >abcd</Button>
-                        <Button>dhfkds</Button>
+                    </Heading> */}
+                    
+                    <Center>
+                    <Flex padding="5" gap="5">
+                          <Image src="https://angfuzsoft.com/wordpress/mechon/wp-content/themes/mechon/assets/img/icon/contact_1_1.svg"></Image>
+                            <Heading size="md" color="white">WE ARE OPEN MONDAY-FRIDAY
+<                   br /> 7:00 am - 9:00 pm</Heading>
+                          
+                    </Flex>
                     </Center>
                 </Box>
+               
+                <Box backgroundColor="tomato" padding="8" border="1px solid red" borderRadius={10} w='100%' h='200'>
+                    {/* <Heading padding="5">
+                       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    </Heading> */}
+                    
+                    <Center>
+                    <Flex padding="5"  gap="5" >
+                          <Image src="https://angfuzsoft.com/wordpress/mechon/wp-content/themes/mechon/assets/img/icon/contact_1_3.svg"></Image>
+                            <Heading size="md" color="white">NEED A REPAIR? OUR ADDRESS
+
+<                   br />{cityName}</Heading>
+                          
+                    </Flex>
+                    </Center>
+                </Box>
+
+              
+
+                {/* <Box border="1px solid red"   display="flex"  borderRadius={10} h='200'>
+                    <Image padding="5" w='100%' h={[500, 500, 500]} src="https://angfuzsoft.com/wordpress/mechon/wp-content/themes/mechon/assets/img/normal/about_1.jpg"></Image>
+                </Box> */}
             </Grid>
+            
+            <Grid backgroundColor="#212529" mt="30px" 
+            h="500"
+            templateColumns={{base:'repeat(1, 1fr)',
+            md:'repeat(2, 1fr)',
+            lg:'repeat(2, 1fr)'
+            }} gap={7}>
+
+                <Box borderRadius={10} w='100%' h='500'>
+                    {/* <Heading padding="5">
+                       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    </Heading> */}
+                    <Text padding="5" color="white" textAlign="center">MORE THAN 25+ YEARS EXPERIENCE</Text>
+                    <Heading padding="5" color="white" textAlign="center">MAKE YOUR CAR FEEL LIKE A BRAND NEW ONE</Heading>
+                    <Text padding="5" textAlign="center" color="white">Globally maintain high payoff collaboration and idea sharing after viral solution leading are edge
+                         mindshare rather than premier testing pursue professional customer service 
+                         revolutinary services...
+                    </Text>
+                    <Center>
+                    <Flex gap="5" padding="5">
+                          <Image src="https://angfuzsoft.com/wordpress/mechon/wp-content/themes/mechon/assets/img/icon/feature_1_1.svg"></Image>
+                            <Heading size="md" color="white">PROVIDE SKILLS <br /> SERICES</Heading>
+                          <Image src="https://angfuzsoft.com/wordpress/mechon/wp-content/themes/mechon/assets/img/icon/feature_1_2.svg"></Image>
+                            <Heading size="md" color="white">URGENT SUPPORT FOR CLIENTS</Heading>
+                    </Flex>
+                    </Center>
+                </Box>
+               
+                <Box   display="flex"  borderRadius={10} h='500'>
+                    <Image padding="5" w='100%' h={[500, 500, 500]} src="https://angfuzsoft.com/wordpress/mechon/wp-content/themes/mechon/assets/img/normal/about_1.jpg"></Image>
+                </Box>
+                
+            </Grid>
+            <br />
+            <Footer/>
             </Box>
+          
+            
         }
+        
         </Box> 
     );
 }

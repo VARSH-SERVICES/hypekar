@@ -79,11 +79,16 @@ import { useEffect, useState } from 'react';
     //console.log(text)
     
     const submitDetails = async() =>{
+      if(text.brand.length == 0 || text.fuel_Type == 0 || text.mobile_number.length == 0 || text.model_Name.length == 0 || text.year_Of_Model.length == 0){
+        alert("please enter the data")
+      }
+      else{
       await axios.post("https://apihypekar.herokuapp.com/carform/", text)
       .then(alert("submitted successfully"))
       setText({brand : "", model_Name : "", fuel_Type : "", year_Of_Model : ""
       , vehicle_number : "", mobile_number : ""})
     }
+  }
 
     return (
       <Stack minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
@@ -138,7 +143,7 @@ import { useEffect, useState } from 'react';
               <Button onClick={submitDetails} colorScheme={'blue'} variant={'solid'}>
                 SUBMIT
               </Button>
-              <Button>show</Button>
+              
             </Stack>
           </Stack>
         </Flex>

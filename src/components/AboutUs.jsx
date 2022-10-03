@@ -1,5 +1,6 @@
 import { Heading, Center, Spinner, Box, useColorModeValue, Text, Flex, Image, GridItem, Button, Grid } from '@chakra-ui/react';
 import React, {useState, useEffect} from 'react';
+import Footer from './Footer';
 
 const AboutUs = () => {
 
@@ -149,7 +150,10 @@ const AboutUs = () => {
                     </GridItem>
                     </Grid>
                     </Center>
+                    <br />
+                    <Footer/>
             </Box>
+           
             }
         </Box>
     );

@@ -1,6 +1,7 @@
 import { Heading, Center, Spinner, Flex, Box, useColorModeValue, Stack, Button, Input, Textarea  } from '@chakra-ui/react';
 import React, {useState, useEffect} from 'react';
 import FeedbackForm from './FeedbackForm';
+import Footer from './Footer';
 
 const Feedback = () => {
 
@@ -33,6 +34,10 @@ const Feedback = () => {
                 <br />
                   
                 <FeedbackForm/>
+
+                <br />
+               
+                <Footer/>
                 </>
             }
     

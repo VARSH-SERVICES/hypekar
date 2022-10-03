@@ -20,6 +20,7 @@ import { GameStateContext } from "./context/Context";
 import { useContext } from 'react'
 import useGeoLocation from './UserLocation';
 import axios from 'axios';
+import Footer from './Footer';
 
 const Services = () => {
 
@@ -287,10 +288,11 @@ const Services = () => {
                         </Center>   
                     </GridItem>
                 </Grid>
-               
+                <br />
+                <Footer/>
                  </Box>
 
-
+                
              }
         </Box>
      

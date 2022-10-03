@@ -40,7 +40,8 @@ const ListHeader = ({ children }) => {
 export default function Footer() {
   return (
     <Box
-      bg={useColorModeValue('gray.50', 'gray.900')}
+      backgroundColor="#212529"
+      
       color={useColorModeValue('gray.700', 'gray.200')}>
       <Container as={Stack} maxW={'6xl'} py={10}>
         <SimpleGrid
@@ -48,43 +49,43 @@ export default function Footer() {
           spacing={8}>
           <Stack spacing={6}>
             <Box>
-              <Logo color={useColorModeValue('gray.700', 'white')} />
+              <Logo color="white" />
             </Box>
-            <Text>
+            <Text color="white">
               HypeKar.com
             </Text>
           </Stack>
           <Stack align={'flex-start'}>
-            <ListHeader>Product</ListHeader>
-            <Link href={'#'}>Overview</Link>
-            <Link href={'#'}>Features</Link>
-            <Link href={'#'}>Tutorials</Link>
-            <Link href={'#'}>Pricing</Link>
-            <Link href={'#'}>Releases</Link>
+            <Text color="white">Product</Text>
+            <Link color="white" href={'#'}>Overview</Link>
+            <Link color="white"  href={'#'}>Features</Link>
+            <Link color="white"  href={'#'}>Tutorials</Link>
+            <Link color="white"  href={'#'}>Pricing</Link>
+            <Link color="white"  href={'#'}>Releases</Link>
           </Stack>
           <Stack align={'flex-start'}>
-            <ListHeader>Company</ListHeader>
-            <Link href={'#'}>About</Link>
-            <Link href={'#'}>Press</Link>
-            <Link href={'#'}>Careers</Link>
-            <Link href={'#'}>Contact</Link>
-            <Link href={'#'}>Partners</Link>
+            <Text color="white">Company</Text>
+            <Link color="white"  href={'#'}>About</Link>
+            <Link color="white"  href={'#'}>Press</Link>
+            <Link color="white"  href={'#'}>Careers</Link>
+            <Link color="white"  href={'#'}>Contact</Link>
+            <Link color="white"  href={'#'}>Partners</Link>
           </Stack>
           <Stack align={'flex-start'}>
-            <ListHeader>Support</ListHeader>
-            <Link href={'#'}>Help Center</Link>
-            <Link href={'#'}>Terms of Service</Link>
-            <Link href={'#'}>Legal</Link>
-            <Link href={'#'}>Privacy Policy</Link>
-            <Link href={'#'}>Status</Link>
+            <Text color="white">Support</Text>
+            <Link color="white"  href={'#'}>Help Center</Link>
+            <Link color="white"  href={'#'}>Terms of Service</Link>
+            <Link color="white"  href={'#'}>Legal</Link>
+            <Link color="white"  href={'#'}>Privacy Policy</Link>
+            <Link color="white"  href={'#'}>Status</Link>
           </Stack>
           <Stack align={'flex-start'}>
-            <ListHeader>Follow Us</ListHeader>
-            <Link href={'#'}>Facebook</Link>
-            <Link href={'#'}>Twitter</Link>
-            <Link href={'#'}>Dribbble</Link>
-            <Link href={'#'}>Instagram</Link>
-            <Link href={'#'}>LinkedIn</Link>
+            <Text color="white" >Follow Us</Text>
+            <Link color="white"  href={'#'}>Facebook</Link>
+            <Link color="white"  href={'#'}>Twitter</Link>
+            <Link color="white"  href={'#'}>Dribbble</Link>
+            <Link color="white"  href={'#'}>Instagram</Link>
+            <Link color="white"  href={'#'}>LinkedIn</Link>
           </Stack>
         </SimpleGrid>
       </Container>

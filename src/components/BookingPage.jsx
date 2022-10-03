@@ -144,8 +144,8 @@ import { useNavigate } from 'react-router-dom';
       else{
       await axios.post("https://apihypekar.herokuapp.com/book/", text)
       .then(alert("Booked successfully"))
-      setText({brand : "", model_Name : "", fuel_Type : "", year_Of_Model : ""
-      , vehicle_number : "", mobile_number : ""})
+      .then(setText({brand : "", model_Name : "", fuel_Type : "", customer_address : "", customer_name : "", year_Of_Model : ""
+      , vehicle_number : "", mobile_number : "", time_slot : ""}))
       displayRazorpay(service_charge)
     }
   }

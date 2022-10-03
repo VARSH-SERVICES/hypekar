@@ -478,7 +478,11 @@ const Home = () => {
                 </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                Every month, or every few petrol fill-ups and especially before any 
+                long road trips, it’s a good idea to get under the hood of your car 
+                and inspect both the oil and coolant levels while the engine is cool. 
+                Low levels of either can lead to engine problems if left unchecked. 
+                Refer to your owner’s manual to locate both on your specific vehicle.
                 </AccordionPanel>
             </AccordionItem>
 
@@ -492,10 +496,8 @@ const Home = () => {
                 </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                commodo consequat.
+                To maximise the life and performance of your vehicle, here i
+                s a list of items you should check depending on the time and season.
                 </AccordionPanel>
             </AccordionItem>
             <AccordionItem>
@@ -508,10 +510,9 @@ const Home = () => {
                 </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                commodo consequat.
+                Caring for your car and keeping it in proper running order 
+                takes a little bit of effort, but you definitely don’t have 
+                to be a mechanical whiz to keep your vehicle running well.
                 </AccordionPanel>
             </AccordionItem>
             <AccordionItem>
@@ -540,10 +541,10 @@ const Home = () => {
                 </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                commodo consequat.
+                The biggest hurdle is being aware of what needs to be done—and 
+                how often—for optimal vehicle upkeep. By knowing the basics about
+                what your car needs, and when you should perform routine car
+                maintenance, you’ll ensure that your car is in top-running condition.
                 </AccordionPanel>
             </AccordionItem>
             <AccordionItem>
@@ -556,10 +557,9 @@ const Home = () => {
                 </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                commodo consequat.
+                To make it easy to keep track of your car maintenance schedule, we’ve 
+                created a simple, downloadable car maintenance checklist to help you 
+                keep on top of your automotive maintenance.
                 </AccordionPanel>
             </AccordionItem>
             </Accordion>
@@ -592,6 +592,7 @@ const Home = () => {
               
             </Box>
             </Grid>
+            <br />
             <Footer/>
             </> 
             }

@@ -5,6 +5,7 @@ import {
   useBreakpointValue,
   Stack,
   Heading,
+  Button,
   Text,
   Container,
 } from '@chakra-ui/react';
@@ -12,7 +13,7 @@ import {
 import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi';
 // And react-slick as our Carousel Lib
 import Slider from 'react-slick';
-
+import maruti from "../file/images/maruti-service.jpg"
 // Settings for the slider
 const settings = {
   dots: true,
@@ -43,7 +44,7 @@ export default function HomeSlider() {
       title: 'PERIODIC SERVICES',
      
       image:
-        '/public/images/maruti-service.jpg',
+        maruti,
     },
     {
       title: 'AC SERVICES',
@@ -65,6 +66,7 @@ export default function HomeSlider() {
       },
       {
         title: 'BATTERY SERVICES',
+        
         
         image:
           'https://car-o-man.com/wp-content/uploads/2018/04/battery-service-car-o-man-hyderabad.jpg',
@@ -153,6 +155,7 @@ export default function HomeSlider() {
                 <Text fontSize={{ base: 'lg', lg: 'lg' }} color="#38A169">
                   {card.text}
                 </Text>
+                
               </Stack>
             </Container>
           </Box>

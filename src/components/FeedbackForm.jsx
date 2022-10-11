@@ -50,7 +50,7 @@ export default function Feedback() {
         alert("please enter the data")
       }
       else{
-        await axios.post("https://apihypekar.herokuapp.com/feedback/", text)
+        await axios.post("https://hypekarapi.herokuapp.com/feedback/", text)
         .then(alert("submitted successfully"))
         .then(setText({description : "", rating : ""}))
     }
@@ -58,16 +58,16 @@ export default function Feedback() {
 
     console.log("text is", text)
   return (
-    <Stack minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
+    <Stack  minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
       <Flex p={8} flex={1} align={'center'} justify={'center'}>
-        <Stack spacing={4} w={'full'} maxW={'md'}>
-          <Heading fontSize={'2xl'}>Give your Feedback</Heading>
+        <Stack  spacing={4} w={'full'} maxW={'md'}>
+          <Heading fontFamily={"AUDIOWIDE"} fontSize={'2xl'}>Give your Feedback</Heading>
           <FormControl id="email">
-            <FormLabel>Feedback</FormLabel>
+            <FormLabel fontFamily={"AUDIOWIDE"}>Feedback</FormLabel>
             <Textarea value={text.description} id="description" onChange={handleChange} type="email" />
           </FormControl>
           <FormControl>
-            <FormLabel>Rating</FormLabel>
+            <FormLabel fontFamily={"AUDIOWIDE"}>Rating</FormLabel>
             <Select id="rating" value={text.rating} onChange={handleChange}>
               <option value="1">Choose your Rating</option>
               <option value="1">1</option>
@@ -85,15 +85,7 @@ export default function Feedback() {
           </Stack>
         </Stack>
       </Flex>
-      <Flex flex={1}>
-        <Image
-          alt={'Login Image'}
-          objectFit={'cover'}
-          src={
-            'https://thumbs.dreamstime.com/b/feedback-topic-mobile-tablet-many-light-bulbs-69117421.jpg'
-          }
-        />
-      </Flex>
+
     </Stack>
   );
 }

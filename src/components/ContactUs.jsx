@@ -33,8 +33,8 @@ const ContactUs = () => {
             :
           
             <Box>
-                <Heading padding={3} fontFamily="mono" textAlign={"center"}>GET A CALL FROM US</Heading>
-                <Heading size="md" fontFamily="mono" textAlign={"center"}>Lorem ipsum dolor sit amet
+                <Heading padding={3} fontFamily="AUDIOWIDE" textAlign={"center"}>GET A CALL FROM US</Heading>
+                <Heading size="md" fontFamily={"AUDIOWIDE"} textAlign={"center"}>Lorem ipsum dolor sit amet
                     consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</Heading>
                 
                 <ContactUsForm/>
@@ -57,17 +57,15 @@ const ContactUs = () => {
                     </GridItem>
                 </Grid> */}
 
-            <Grid  mt="30px" 
+            {/* <Grid  mt="30px" 
             h="330"
             templateColumns={{base:'repeat(1, 1fr)',
             md:'repeat(2, 1fr)',
             lg:'repeat(2, 1fr)'
             }} gap={7}>
 
-                <Box backgroundColor="#212529" padding="8" border="1px solid red" borderRadius={10} w='100%' h='200'>
-                    {/* <Heading padding="5">
-                       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    </Heading> */}
+                <Box backgroundColor="#212529" padding="8"  borderRadius={10} w='100%' h='200'>
+                
                     
                     <Center>
                     <Flex padding="5" gap="5">
@@ -79,10 +77,7 @@ const ContactUs = () => {
                     </Center>
                 </Box>
                
-                <Box backgroundColor="tomato" padding="8" border="1px solid red" borderRadius={10} w='100%' h='200'>
-                    {/* <Heading padding="5">
-                       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    </Heading> */}
+                <Box backgroundColor="tomato" padding="8" borderRadius={10} w='100%' h='200'>
                     
                     <Center>
                     <Flex padding="5"  gap="5" >
@@ -94,15 +89,33 @@ const ContactUs = () => {
                     </Flex>
                     </Center>
                 </Box>
+            </Grid> */}
 
-              
+            <Center>
+            <Grid w="90%" templateColumns={{base:'repeat(1, 1fr)',
+                    md:'repeat(, 1fr)',
+                    lg:'repeat(2, 1fr)'
+                    }} gap={6} >
+                   
+                    <GridItem boxShadow='2xl' p='6' rounded='md' bg='white' w='100%' padding="5" h='340'  >
+                   
+                   <Text padding="5" color="black" textAlign="center">MORE THAN 25+ YEARS EXPERIENCE</Text>
+                   <Heading  fontFamily="AUDIOWIDE" padding="5" color="black " textAlign="center">MAKE YOUR CAR FEEL LIKE A BRAND NEW ONE</Heading>
+                    <Text fontFamily={"AUDIOWIDE"} padding="5" textAlign="center" color="black ">Globally maintain high payoff collaboration and idea sharing after viral solution leading are edge
+                         mindshare rather than premier testing pursue professional customer service 
+                         revolutinary services...
+                    </Text>
+                    </GridItem>
+                    
+                    <GridItem boxShadow='2xl' p='6' rounded='md' bg='white'  w='100%' h='340'  >
+                       
+                        <Image padding="5"  src="https://automechanica.com/uploads/home_page/feature_section_image/1/Highlight_Image.png"></Image>
+                        
+                    </GridItem>
+                    </Grid>
+                    </Center>
 
-                {/* <Box border="1px solid red"   display="flex"  borderRadius={10} h='200'>
-                    <Image padding="5" w='100%' h={[500, 500, 500]} src="https://angfuzsoft.com/wordpress/mechon/wp-content/themes/mechon/assets/img/normal/about_1.jpg"></Image>
-                </Box> */}
-            </Grid>
-            
-            <Grid backgroundColor="#212529" mt="30px" 
+            {/* <Grid backgroundColor="#212529" mt="30px" 
             h="500"
             templateColumns={{base:'repeat(1, 1fr)',
             md:'repeat(2, 1fr)',
@@ -110,9 +123,6 @@ const ContactUs = () => {
             }} gap={7}>
 
                 <Box borderRadius={10} w='100%' h='500'>
-                    {/* <Heading padding="5">
-                       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    </Heading> */}
                     <Text padding="5" color="white" textAlign="center">MORE THAN 25+ YEARS EXPERIENCE</Text>
                     <Heading padding="5" color="white" textAlign="center">MAKE YOUR CAR FEEL LIKE A BRAND NEW ONE</Heading>
                     <Text padding="5" textAlign="center" color="white">Globally maintain high payoff collaboration and idea sharing after viral solution leading are edge
@@ -133,14 +143,11 @@ const ContactUs = () => {
                     <Image padding="5" w='100%' h={[500, 500, 500]} src="https://angfuzsoft.com/wordpress/mechon/wp-content/themes/mechon/assets/img/normal/about_1.jpg"></Image>
                 </Box>
                 
-            </Grid>
+            </Grid> */}
             <br />
             <Footer/>
             </Box>
-          
-            
         }
-        
         </Box> 
     );
 }

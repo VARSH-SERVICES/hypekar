@@ -38,14 +38,14 @@ import { useEffect, useState } from 'react';
     },[])
 
     const getBrand = async(e) => {
-      const res = await axios.get("https://apihypekar.herokuapp.com/carbrand/")
+      const res = await axios.get("https://hypekarapi.herokuapp.com/carbrand/")
       setBrand(res.data)
       const {id, value} = e.target
       setText({...text, [id] : value})
     }
 
     //console.log("my car brand is",brand)
-    const [model, setModel] = useState("a")
+    const [model, setModel] = useState("")
 
     const [totalModel, setTotalModel] = useState([])
 
@@ -60,7 +60,7 @@ import { useEffect, useState } from 'react';
     },[model])
 
     const getData = async() => {
-      const res = await axios.get(`https://apihypekar.herokuapp.com/carmodel?brand=${model}`)
+      const res = await axios.get(`https://hypekarapi.herokuapp.com/carmodel?brand=${model}`)
       setTotalModel(res.data)
     } 
     
@@ -76,14 +76,14 @@ import { useEffect, useState } from 'react';
       }
     }
 
-    //console.log(text)
+    console.log(text)
     
     const submitDetails = async() =>{
       if(text.brand.length == 0 || text.fuel_Type == 0 || text.mobile_number.length == 0 || text.model_Name.length == 0 || text.year_Of_Model.length == 0){
         alert("please enter the data")
       }
       else{
-      await axios.post("https://apihypekar.herokuapp.com/carform/", text)
+      await axios.post("https://hypekarapi.herokuapp.com/carform/", text)
       .then(alert("submitted successfully"))
       setText({brand : "", model_Name : "", fuel_Type : "", year_Of_Model : ""
       , vehicle_number : "", mobile_number : ""})
@@ -94,9 +94,9 @@ import { useEffect, useState } from 'react';
       <Stack minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
         <Flex p={8} flex={1} align={'center'} justify={'center'}>
           <Stack spacing={4} w={'full'} maxW={'md'}>
-            <Heading fontSize={'2xl'}>Upload Your Vehicle Details</Heading>
+            <Heading fontSize={'2xl'} fontFamily={"AUDIOWIDE"}>Upload Your Vehicle Details</Heading>
             <FormControl id="email">
-              <FormLabel>Select Brand</FormLabel>
+              <FormLabel fontFamily={"AUDIOWIDE"}>Select Brand</FormLabel>
               <Select value={text.brand} id="brand" onChange={handlChange}>
                 {
                   brand.length > 0 ?
@@ -110,17 +110,20 @@ import { useEffect, useState } from 'react';
               </Select>
             </FormControl>
             <FormControl>
-              <FormLabel>Select Model</FormLabel>
-              <Select value={text.model_Name} id="model_Name" onChange={handlChange} >
+              <FormLabel fontFamily={"AUDIOWIDE"}>Select Model</FormLabel>
+              <Select  value={text.model_Name} id="model_Name" onChange={handlChange} >
                 {
+                  totalModel.length > 0 ?
                   totalModel.map((e)=>(
-                    <option>{e.model_name}</option>
+                    <option color="green" value={e.model_name}>{e.model_name}</option>
                   ))
+                  :
+                  console.log(null)
                 }
               </Select>
             </FormControl>
             <FormControl>
-              <FormLabel>Select Fuel Type</FormLabel>
+              <FormLabel fontFamily={"AUDIOWIDE"}>Select Fuel Type</FormLabel>
               <Select value={text.fuel_Type} id="fuel_Type" onChange={handlChange2} >
                 <option value='Fuel'>Fuel Type</option>
                 <option value='Desiel'>Desiel</option>
@@ -128,15 +131,15 @@ import { useEffect, useState } from 'react';
               </Select>
             </FormControl>
             <FormControl id="password">
-              <FormLabel>Year Of Model</FormLabel>
+              <FormLabel fontFamily={"AUDIOWIDE"}>Year Of Model</FormLabel>
               <Input value={text.year_Of_Model} onChange={handlChange2} id="year_Of_Model"></Input>
             </FormControl>
             <FormControl id="password">
-              <FormLabel>Vehicle Number</FormLabel>
+              <FormLabel fontFamily={"AUDIOWIDE"}>Vehicle Number</FormLabel>
               <Input value={text.vehicle_number} onChange={handlChange2} id="vehicle_number"></Input>
             </FormControl>
             <FormControl id="password">
-              <FormLabel>Mobile Number</FormLabel>
+              <FormLabel fontFamily={"AUDIOWIDE"}>Mobile Number</FormLabel>
               <Input value={text.mobile_number} type="number" onChange={handlChange2} id="mobile_number"></Input>
             </FormControl>
             <Stack spacing={6}>

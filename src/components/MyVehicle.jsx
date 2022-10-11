@@ -30,7 +30,7 @@ const MyVehicle = () => {
     },[])
 
     const getData = async() => {
-        const res = await axios.get(`https://apihypekar.herokuapp.com/mycardata?email=${email}`)
+        const res = await axios.get(`https://hypekarapi.herokuapp.com/mycardata?email=${email}`)
         //setData(res.data)
         setUserCarDetails(res.data)
     }
@@ -65,16 +65,10 @@ const MyVehicle = () => {
         <Box  >
             <Box w="100%"  >
                 <br />
-                <Heading fontFamily='Montserrat' textAlign="center">MY VEHICLE</Heading>
+                <Heading fontFamily={"AUDIOWIDE"} textAlign="center">MY VEHICLE</Heading>
             </Box>
-            {/* <Box w="100%" border="1px solid blue">
-                <Flex h="600px" justifyContent="space-around">
-                    <Box  w="500px" border="1px solid red"></Box>
-                    <Box w="500px" border="1px solid red"></Box>
-                </Flex>
-            </Box> */}
+            
             <Grid mt="30px"
-                
                 overflow={"scroll"}
                 templateColumns={{base:'repeat(1, 1fr)',
                 md:'repeat(2, 1fr)',
@@ -83,10 +77,7 @@ const MyVehicle = () => {
                 <Box   borderRadius={10} w='90%' h='500'>
                     <UserDetails/>
                 </Box>
-               
-               
-
-               
+            
                 <Box w='90%' >
                 <TableContainer  >
                 <Table variant='simple'>
@@ -97,14 +88,14 @@ const MyVehicle = () => {
                         <Th>Car Model</Th>
                         <Th>Fuel Type</Th>
                         <Th>Vehicle Number</Th>
-                        <Th>Year Of</Th>
+                        <Th>Year Of Model</Th>
                     </Tr>
                     </Thead>
                     <Tbody>
                     {
                     userCarDetails.length > 0 ?
                     userCarDetails.map((e)=>(
-                    <Tr>
+                    <Tr fontFamily={"AUDIOWIDE"}>
                         <Td>{e.brand}</Td>
                         <Td>{e.model_Name}</Td>
                         <Td>{e.fuel_Type}</Td>
@@ -113,7 +104,7 @@ const MyVehicle = () => {
                     </Tr>
                     ))
                     :
-                    console.log(null)
+                    <Text fontWeight="large" textAlign="center">Please Add your vehicles</Text>
                     }   
                     </Tbody>
                    
@@ -124,7 +115,7 @@ const MyVehicle = () => {
                 </Grid>
 
                 <br />
-                <Heading textAlign="center">ADD ANOTHER VEHICLE</Heading>
+                <Heading textAlign="center" fontFamily={"AUDIOWIDE"}>ADD ANOTHER VEHICLE</Heading>
                 <br />
                 <MyVehicleForm/>
 
@@ -132,6 +123,7 @@ const MyVehicle = () => {
                     <CaptionCarousel/>
                 </Box>
             {/* <Footer/> */}
+            <br />
                 <Footer/>
             </Box>
             }

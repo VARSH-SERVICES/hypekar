@@ -26,17 +26,7 @@ import {
     const {email, setEmail,userCarDetails, userDetails} = useContext(GameStateContext)
 
     const [data, setData] = useState([])
-
-        // useEffect(()=>{
-        //   getData()
-        // },[])
-
-        // const getData = async() => {
-        //     const res = await axios.get(`https://apihypekar.herokuapp.com/mycardata?email=${email}`)
-        //     console.log(res)
-        // }
-
-
+    
     console.log("car data total", userCarDetails)
 
     return (
@@ -47,6 +37,7 @@ import {
               <Heading
                 lineHeight={1.1}
                 fontWeight={600}
+                fontFamily={"AUDIOWIDE"}
                 fontSize={{ base: '2xl', sm: '4xl', lg: '5xl' }}>
                 Welcome to HypeKar {userDetails.first_name} {userDetails.last_name}
               </Heading>
@@ -82,17 +73,17 @@ import {
                   color={useColorModeValue('yellow.500', 'yellow.300')}
                   fontWeight={'500'}
                   textTransform={'uppercase'}
-                  mb={'4'}>
+                  mb={'4'} fontFamily={"Euphemia UCAS"}>
                   More Details
                 </Text>
   
                 <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
-                  <List spacing={2}>
-                    <ListItem>Email</ListItem>
-                    <ListItem>UserName</ListItem>{' '}
+                  <List fontFamily={"Euphemia UCAS"} spacing={2}>
+                    <ListItem >UserName</ListItem>
+                    <ListItem>Email</ListItem>{' '}
                     
                   </List>
-                  <List spacing={2}>
+                  <List fontFamily={"Euphemia UCAS"} spacing={2}>
                     <ListItem>{userDetails.username}</ListItem>
                     <ListItem>{userDetails.email}</ListItem>
                   
@@ -105,7 +96,7 @@ import {
                   color={useColorModeValue('yellow.500', 'yellow.300')}
                   fontWeight={'500'}
                   textTransform={'uppercase'}
-                  mb={'4'}>
+                  mb={'4'} fontFamily={"AUDIOWIDE"}>
                   Cars you have serviced in the HypeKar
                 </Text>
                 
@@ -114,12 +105,12 @@ import {
                 
                 userCarDetails.map((e)=>(
                   <>
-                  <List spacing={2}>
+                  <List fontFamily={"Euphemia UCAS"} spacing={2}>
                   <ListItem>
                     BRAND : {e.brand}
                   </ListItem>
                 </List>
-                 <List spacing={2}>
+                 <List fontFamily={"Euphemia UCAS"} spacing={2}>
                  <ListItem>
                    MODEL {e.model_Name}
                  </ListItem>
@@ -127,7 +118,7 @@ import {
                </>
                 ))
                 :
-                console.log(null)
+              <Text>Please add  your vehicles</Text>
               }
                
               </Box>

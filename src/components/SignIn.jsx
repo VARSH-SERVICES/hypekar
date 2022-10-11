@@ -61,7 +61,7 @@ import {
             alert("please enter the username and password")
         }
         else{
-        await axios.post("https://apihypekar.herokuapp.com/login/",text)
+        await axios.post("https://hypekarapi.herokuapp.com/login/",text)
         //.then(Response=>setToken(Response.data.token))
         //.then(Response=>setEmail(Response.data.email))
         // .then(Response=>setUserDetails(Response.data))
@@ -143,7 +143,7 @@ import {
           my={12}>
           
           <FormControl id="userName">
-            <FormLabel>User Icon</FormLabel>
+            <FormLabel fontFamily={"AUDIOWIDE"}>User Icon</FormLabel>
             <Stack direction={['column', 'row']} spacing={6}>
               <Center>
                 <Avatar size="xl" src="https://cdn.iconscout.com/icon/free/png-256/laptop-user-1-1179329.png">
@@ -154,17 +154,16 @@ import {
                     top="-10px"
                     colorScheme="red"
                     aria-label="remove Image"
-                    
                   />
                 </Avatar>
               </Center>
               <Center w="full">
-                <Heading w="full">User Login</Heading>
+                <Heading w="full" fontFamily={"AUDIOWIDE"}>User Login</Heading>
               </Center>
             </Stack>
           </FormControl>
           <FormControl id="username" isRequired>
-            <FormLabel>User name</FormLabel>
+            <FormLabel fontFamily={"Euphemia UCAS"}>User name</FormLabel>
             <Input
               onChange={handleSubmit}
               placeholder="UserName"
@@ -173,7 +172,7 @@ import {
             />
           </FormControl>
           <FormControl id="password" isRequired>
-            <FormLabel>Password</FormLabel>
+            <FormLabel fontFamily={"Euphemia UCAS"}>Password</FormLabel>
             <Input
             onChange={handleSubmit}
               placeholder="password"
@@ -190,14 +189,14 @@ import {
               w="full"
               _hover={{
                 bg: 'blue.500',
-              }}>
+              }} fontFamily={"Euphemia UCAS"}>
               Submit
             </Button>
           </Stack>
-            <Text>new user?</Text>
+            <Text fontFamily={"Euphemia UCAS"}>new user?</Text>
             <Link to="/signup">
               <Text _hover={{ fontWeight: 'semibold',  color: 'blue' }}
-             >click here to register</Text>
+             fontFamily={"Euphemia UCAS"}>click here to register</Text>
             </Link>
         </Stack>
       </Flex>

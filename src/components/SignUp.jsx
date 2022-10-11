@@ -87,7 +87,7 @@ import axios from 'axios';
         alert("please enter the data")
       }
       else{
-         await axios.post("https://apihypekar.herokuapp.com/reg/", text)
+         await axios.post("https://hypekarapi.herokuapp.com/reg/", text)
          .then(Response=>console.log("response is ",Response))
          .then(alert("Registered successfully"))
          .then(setText({first_name : "", last_name : "", email : "", username : "", password: ""}))
@@ -110,6 +110,7 @@ import axios from 'axios';
           <Stack spacing={{ base: 10, md: 20 }}>
             <Heading
               lineHeight={1.1}
+              fontFamily={"AUDIOWIDE"}
               fontSize={{ base: '3xl', sm: '4xl', md: '5xl', lg: '6xl' }}>
               Please SignUp to our HypKar website to experience our service.
             </Heading>
@@ -177,6 +178,7 @@ import axios from 'axios';
               <Heading
                 color={'gray.800'}
                 lineHeight={1.1}
+                fontFamily={"AUDIOWIDE"}
                 fontSize={{ base: '2xl', sm: '3xl', md: '4xl' }}>
                 Join our Website
                 <Text

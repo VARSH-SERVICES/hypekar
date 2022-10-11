@@ -6,12 +6,14 @@ import {
   Stack,
   Heading,
   Text,
+  Button,
   Container,
 } from '@chakra-ui/react';
 // Here we have used react-icons package for the icons
 import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi';
 // And react-slick as our Carousel Lib
 import Slider from 'react-slick';
+//import animation from "../file/images/car-service-concept.jpeg" 
 
 // Settings for the slider
 const settings = {
@@ -40,25 +42,19 @@ export default function CaptionCarousel() {
   // This can be static or loaded from a server
   const cards = [
     {
-      
-     
       image:
-        'https://www.linkpicture.com/q/maruti-service.jpg',
+        'https://www.shutterstock.com/image-illustration/various-car-parts-accessories-isolated-600w-673268602.jpg',
     },
     {
-      
-     
       image:
         'https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/arena-services/banner-image/ms-service-web-banner_1366x500_02.png?rev=d11af2a8feb7433cb789c60731d70ffb&extension=webp',
     },
     {
-      
-     
       image:
-        'https://www.linkpicture.com/q/car.png',
+        'https://i.postimg.cc/fWrFfPmz/maruti-service.jpg',
     },
     {
-      image : 'https://www.linkpicture.com/q/car-service-concept.jpg'
+      image : 'https://i.postimg.cc/vmSY7zvp/car-service-concept.jpg'
     },
     {
     image : "https://www.linkpicture.com/q/WhatsApp-Image-2022-10-01-at-11.03.07-AM.jpeg"
@@ -134,8 +130,11 @@ export default function CaptionCarousel() {
                 <Text fontSize={{ base: 'lg', lg: 'lg' }} color="#38A169">
                   {card.text}
                 </Text>
+                
               </Stack>
+             
             </Container>
+        
           </Box>
         ))}
       </Slider>

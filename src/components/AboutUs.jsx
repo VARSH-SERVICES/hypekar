@@ -1,7 +1,8 @@
 import { Heading, Center, Spinner, Box, useColorModeValue, Text, Flex, Image, GridItem, Button, Grid } from '@chakra-ui/react';
 import React, {useState, useEffect} from 'react';
 import Footer from './Footer';
-
+import amogh from "../file/images/amogh.png"
+import raashi from "../file/images/raashi.jpeg"
 const AboutUs = () => {
 
     const [loading, setLoading] = useState(false);
@@ -28,72 +29,61 @@ const AboutUs = () => {
                 </Center>
             :
             <Box>
-
-                <Heading fontFamily={"sans-serif"} textAlign={"center"}>ABOUT US</Heading>
+                <br />
+                <Heading fontFamily={"AUDIOWIDE"} textAlign={"center"}>ABOUT US</Heading>
                 <br />
                 <Center>
                     <Box w="70%">
-                        <Text  fontSize={"larger"}>A motor vehicle service or tune-up is a series of maintenance procedures 
-                        carried out at a set time interval or after the vehicle has traveled a certain distance. 
-                        The service intervals are specified by the vehicle manufacturer in a service schedule and 
-                        some modern cars display the due date for the next service electronically on the instrument 
-                        panel. A tune-up should not be confused with engine tuning, which is the modifying of an 
-                        engine to perform better than the original specification, rather than using maintenance to 
-                        keep the engine running as it should.</Text>
+                        <Text fontFamily={"Euphemia UCAS"} fontSize={"larger"}>Hypekar is an initiative taken to organise
+                        the automobile industry and provide a
+                        unique vehicle ownership experience.
+                        Hypekar aims at providing one stop
+                        solution to all issues relating automobile at your door-step.</Text>
                     </Box>
                 </Center>
                 <br />
                 <Center>
-                <Grid w="90%" templateColumns={{base:'repeat(1, 1fr)',
+                <Grid w="80%" templateColumns={{base:'repeat(1, 1fr)',
                 md:'repeat(2, 1fr)',
                 lg:'repeat(2, 1fr)'
                 }} gap={7} justifyContent={"space-around"}>
+
+                    <Box  w="100%" padding="5">
+                    <Image borderRadius={"10"} h="390" src={amogh}></Image>
+                    </Box>
+
                     <Box padding="5">
-                    <Text fontSize={"larger"}>
-                        <Heading fontFamily={"sans-serif"}>AMOGH VINIYAL</Heading>
-                        <Text fontSize={"2xl"}>CEO, HypeKar</Text>
+                        <Heading fontFamily={"AUDIOWIDE"}>AMOGH UNIYAL</Heading>
+                        <Text fontFamily={"AUDIOWIDE"} fontSize={"2xl"}>CEO & FOUNDER</Text>
+                        <Text  fontFamily={"Euphemia UCAS"}  fontSize={"larger"} >A motor vehicle service or tune-up is a series of maintenance procedures 
+                        carried out at a set time interval or after the vehicle has traveled a certain distance. 
+                        The service intervals are specified by the vehicle manufacturer in a service schedule and 
+                        some modern cars display the due date for the next service electronically on the instrument 
+                        panel.
+                        </Text> 
+                    </Box>
+
+                    <Box w="100%" padding="5">
+                        <Image borderRadius={"10"}  h="390"  src={raashi}></Image>
+                    </Box>
+
+                    <Box padding="5">
+                        <Heading fontFamily={"AUDIOWIDE"}>RAASHI TANEJA</Heading>
+                        <Text fontFamily={"AUDIOWIDE"} fontSize={"2xl"}>Director, CMO</Text>
+                        <Text fontFamily={"Euphemia UCAS"}  fontSize={"larger"}>
                         A motor vehicle service or tune-up is a series of maintenance procedures 
                         carried out at a set time interval or after the vehicle has traveled a certain distance. 
                         The service intervals are specified by the vehicle manufacturer in a service schedule and 
                         some modern cars display the due date for the next service electronically on the instrument 
                         panel.
-                    </Text>
+                        </Text>
                     </Box>
-                    <Box w="100%" padding="5">
-                    <Image w="100%" h="390"  src="https://bit.ly/dan-abramov"></Image>
-                    </Box>
-                    <Box padding="5">
-                    <Text fontSize={"larger"}>
-                        <Heading fontFamily={"sans-serif"}>RAASHI TANEJA</Heading>
-                        <Text fontSize={"2xl"}>CTO, HypeKar</Text>
-                        A motor vehicle service or tune-up is a series of maintenance procedures 
-                        carried out at a set time interval or after the vehicle has traveled a certain distance. 
-                        The service intervals are specified by the vehicle manufacturer in a service schedule and 
-                        some modern cars display the due date for the next service electronically on the instrument 
-                        panel.
-                    </Text>
-                    </Box>
-                    <Box w="100%" padding="5">
-                    <Image w="100%" h="390"  src="https://bit.ly/dan-abramov"></Image>
-                    </Box>
-                    <Box padding="5">
-                    <Text fontSize={"larger"}>
-                        <Heading fontFamily={"sans-serif"}>OUR HONORABLE MANAGER</Heading>
-                        <Text fontSize={"2xl"}>DIRECTOR, HypeKar</Text>
-                        A motor vehicle service or tune-up is a series of maintenance procedures 
-                        carried out at a set time interval or after the vehicle has traveled a certain distance. 
-                        The service intervals are specified by the vehicle manufacturer in a service schedule and 
-                        some modern cars display the due date for the next service electronically on the instrument 
-                        panel.
-                    </Text>
-                    </Box>
-                    <Box w="100%" padding="5">
-                    <Image w="100%" h="390"  src="https://bit.ly/dan-abramov"></Image>
-                    </Box>
+                    
+                  
                 </Grid>
                 </Center>
                 <br />
-                <Heading textAlign={"center"} fontFamily={"sans-serif"}>MEET OUR EMPLOYEES</Heading>
+                <Heading textAlign={"center"} fontFamily={"AUDIOWIDE"}>MEET OUR EMPLOYEES</Heading>
                 <br />
                 <Center>
                 <Grid w="90%" templateColumns={{base:'repeat(1, 1fr)',
@@ -110,14 +100,11 @@ const AboutUs = () => {
 
                         </Flex>
                         <br />
-                        <Heading size="md" textAlign={"center"} color="RGBA(0, 0, 0, 0.64)">VEDANT</Heading>
-                        <Text textAlign={"center"}  fontSize="-moz-initial">Manager, HypeKar
+                        <Heading fontFamily={"AUDIOWIDE"} size="md" textAlign={"center"} color="RGBA(0, 0, 0, 0.64)">VEDANT</Heading>
+                        <Text fontFamily={"Euphemia UCAS"} textAlign={"center"}  fontSize="-moz-initial">Manager, HypeKar
                         <br />
                         UTTARAPRADESH, INDIA
                         </Text>
-                        <Center>
-                        
-                        </Center>
                     </GridItem>
                     <GridItem boxShadow='2xl' p='6' rounded='md' bg='white' _hover={{
                     transform: 'scale(1.2)',
@@ -128,8 +115,8 @@ const AboutUs = () => {
 
                         <br />
 
-                        <Heading size="md" textAlign={"center"} color="RGBA(0, 0, 0, 0.64)">ARUSH</Heading>
-                        <Text textAlign={"center"} fontSize="-moz-initial">Visiting Officer, HypeKar
+                        <Heading size="md" textAlign={"center"} color="RGBA(0, 0, 0, 0.64)" fontFamily={"AUDIOWIDE"}>ARUSH</Heading>
+                        <Text fontFamily={"Euphemia UCAS"} textAlign={"center"} fontSize="-moz-initial">Visiting Officer, HypeKar
                         <br />
                         DELHI, INDIA
                         </Text>
@@ -142,10 +129,10 @@ const AboutUs = () => {
                         <Image mt="20px" w="35%"  src="https://bit.ly/dan-abramov"></Image>
                         </Flex>
                         <br />
-                        <Heading size="md" textAlign={"center"} color="RGBA(0, 0, 0, 0.64)">DARSH</Heading>
-                        <Text textAlign={"center"} fontSize="-moz-initial">Customer Support, HypeKar
+                        <Heading size="md" textAlign={"center"} color="RGBA(0, 0, 0, 0.64)" fontFamily={"AUDIOWIDE"}>DARSH</Heading>
+                        <Text fontFamily={"Euphemia UCAS"} textAlign={"center"} fontSize="-moz-initial">Customer Support, HypeKar
                         <br />
-                        BIHAR, INDIA
+                        <Text fontFamily={"AUDIOWIDE"}>BIHAR, INDIA</Text> 
                         </Text>
                     </GridItem>
                     </Grid>

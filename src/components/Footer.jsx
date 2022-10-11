@@ -1,13 +1,18 @@
 import { ReactNode } from 'react';
-
+import facebook from "../file/images/facebook.png"
+import twitter from "../file/images/twitter.jpg"
+import instagram from "../file/images/instagram.png"
+import linkedin from "../file/images/linkedin.webp"
 import {
   Box,
   Container,
   Link,
+  Image,
   SimpleGrid,
   Stack,
   Text,
   useColorModeValue,
+  Flex,
 } from '@chakra-ui/react';
 
 const Logo = (props) => {
@@ -40,52 +45,53 @@ const ListHeader = ({ children }) => {
 export default function Footer() {
   return (
     <Box
+  
       backgroundColor="#212529"
-      
+      fontFamily={"AUDIOWIDE"}
       color={useColorModeValue('gray.700', 'gray.200')}>
       <Container as={Stack} maxW={'6xl'} py={10}>
         <SimpleGrid
-          templateColumns={{ sm: '1fr 1fr', md: '2fr 1fr 1fr 1fr 1fr' }}
+          templateColumns={{ sm: '1fr 1fr', md: '1fr 1fr 1fr 1fr 1fr' }}
           spacing={8}>
-          <Stack spacing={6}>
-            <Box>
-              <Logo color="white" />
-            </Box>
-            <Text color="white">
-              HypeKar.com
-            </Text>
-          </Stack>
+        
           <Stack align={'flex-start'}>
             <Text color="white">Product</Text>
             <Link color="white" href={'#'}>Overview</Link>
             <Link color="white"  href={'#'}>Features</Link>
-            <Link color="white"  href={'#'}>Tutorials</Link>
-            <Link color="white"  href={'#'}>Pricing</Link>
-            <Link color="white"  href={'#'}>Releases</Link>
           </Stack>
           <Stack align={'flex-start'}>
             <Text color="white">Company</Text>
             <Link color="white"  href={'#'}>About</Link>
-            <Link color="white"  href={'#'}>Press</Link>
-            <Link color="white"  href={'#'}>Careers</Link>
             <Link color="white"  href={'#'}>Contact</Link>
-            <Link color="white"  href={'#'}>Partners</Link>
           </Stack>
           <Stack align={'flex-start'}>
             <Text color="white">Support</Text>
-            <Link color="white"  href={'#'}>Help Center</Link>
             <Link color="white"  href={'#'}>Terms of Service</Link>
-            <Link color="white"  href={'#'}>Legal</Link>
             <Link color="white"  href={'#'}>Privacy Policy</Link>
-            <Link color="white"  href={'#'}>Status</Link>
           </Stack>
           <Stack align={'flex-start'}>
             <Text color="white" >Follow Us</Text>
-            <Link color="white"  href={'#'}>Facebook</Link>
-            <Link color="white"  href={'#'}>Twitter</Link>
-            <Link color="white"  href={'#'}>Dribbble</Link>
-            <Link color="white"  href={'#'}>Instagram</Link>
-            <Link color="white"  href={'#'}>LinkedIn</Link>
+            <Flex gap="5">
+              <Image w="15%" src={facebook}></Image>
+              <Link color="white"  href={'#'}>Facebook</Link>
+            </Flex>
+
+            <Flex gap="5">
+              <Image w="15%" src={twitter}></Image>
+              <Link color="white"  href={'#'}>Twitter</Link>
+            </Flex>
+
+            <Flex gap="5">
+              <Image w="15%" src={instagram}></Image>
+              <Link color="white"  href={'#'}>Instagram</Link>
+            </Flex>
+
+            <Flex gap="5">
+              <Image w="15%" src={linkedin}></Image>
+              <Link color="white"  href={'#'}>LinkedIn</Link>
+            </Flex>
+           
+            
           </Stack>
         </SimpleGrid>
       </Container>

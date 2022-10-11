@@ -90,7 +90,7 @@ import { useNavigate } from 'react-router-dom';
     },[])
 
     const getBrand = async(e) => {
-      const res = await axios.get("https://apihypekar.herokuapp.com/carbrand")
+      const res = await axios.get("https://hypekarapi.herokuapp.com/carbrand")
       setBrand(res.data)
       const {id, value} = e.target
       setText({...text, [id] : value})
@@ -111,7 +111,7 @@ import { useNavigate } from 'react-router-dom';
     },[model])
 
     const getData = async() => {
-      const res = await axios.get(`https://apihypekar.herokuapp.com/carmodel?brand=${model}`)
+      const res = await axios.get(`https://hypekarapi.herokuapp.com/carmodel?brand=${model}`)
       setTotalModel(res.data)
       //console.log("res",res.data)
     } 
@@ -142,11 +142,12 @@ import { useNavigate } from 'react-router-dom';
         alert("please enter the data")
       }
       else{
-      await axios.post("https://apihypekar.herokuapp.com/book/", text)
+      displayRazorpay(service_charge)
+      await axios.post("https://hypekarapi.herokuapp.com/book/", text)
       .then(alert("Booked successfully"))
       .then(setText({brand : "", model_Name : "", fuel_Type : "", customer_address : "", customer_name : "", year_Of_Model : ""
       , vehicle_number : "", mobile_number : "", time_slot : ""}))
-      displayRazorpay(service_charge)
+     
     }
   }
     //console.log(text)
@@ -191,7 +192,7 @@ import { useNavigate } from 'react-router-dom';
           alert("You are offline... Failed to load Razorpay SDK");
           return;
         }
-    
+       
         const options = {
           key: "rzp_test_fInDysLRBFwbcb",
           currency: "INR",
@@ -200,8 +201,7 @@ import { useNavigate } from 'react-router-dom';
           description: "Thanks for purchasing",
           image:
             "https://mern-blog-akky.herokuapp.com/static/media/logo.8c649bfa.png",
-    
-          handler: function (response) {
+            handler: function (response) {
             alert(response.razorpay_payment_id);
             alert("Payment Successfully");
             navigate("/")
@@ -244,15 +244,10 @@ import { useNavigate } from 'react-router-dom';
               <Input value={text.customer_address} onChange={handlChange2} id="customer_address"></Input>
             </FormControl>
 
-            {/* <Checkbox
-            onChange={checking}
-            >Same address as customer address</Checkbox> */}
-            
             <FormControl>
               <FormLabel>Service Address</FormLabel>
               <Input value={text.service_address} onChange={handlChange2} id="service_address"
               >
-               
               </Input>
             </FormControl>
 
@@ -296,9 +291,7 @@ import { useNavigate } from 'react-router-dom';
            
                 <Heading size="md">Booking charge is : 250/-</Heading>
                 
-
             <Calendar onChange={changeDate}/>
-
             {
                 (newDate.length == 0) ?   
                 console.log(null)
@@ -309,10 +302,7 @@ import { useNavigate } from 'react-router-dom';
                 </Input>
               </FormControl>
             }
-           
-                        
-            {/* <TimeBooking/> */}
-
+          
             <FormControl>
               <FormLabel>Time Slot</FormLabel>
               <Select value={text.time_slot} id="time_slot" onChange={handlChange2} >
@@ -334,13 +324,6 @@ import { useNavigate } from 'react-router-dom';
           </Stack>
         </Flex>
         <Flex flex={1} padding="5" w={[385,600,150]} >
-          {/* <Image
-            alt={'Login Image'}
-            objectFit={'fill'}
-            src={
-              'https://i.pinimg.com/550x/42/64/14/426414c97264657bebb33d11a0205c04.jpg'
-            }
-          /> */}
           <CaptionCarousel/>
         </Flex>
       </Stack>

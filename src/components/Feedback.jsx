@@ -29,10 +29,7 @@ const Feedback = () => {
                 </Center>
                 :
                 <>
-                <Heading  textAlign={"center"}>Give your valuable feedback, we can improve our service on your feedback</Heading>
-              
-                <br />
-                  
+                <Heading  textAlign={"center"} fontFamily={"AUDIOWIDE"}>Give your valuable feedback, we can improve our service on your feedback</Heading>
                 <FeedbackForm/>
 
                 <br />

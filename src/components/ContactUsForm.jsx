@@ -58,7 +58,7 @@ import {
           alert("please enter the data")
         }
         else{
-           await axios.post("https://apihypekar.herokuapp.com/contact/", text)
+           await axios.post("https://hypekarapi.herokuapp.com/contact/", text)
           .then(alert("Registered succesfully"))
           .then(setText({firstName : "", name : "", lastName : "", mobileNumber : "", type : ""}))
          
@@ -79,29 +79,29 @@ import {
           
             boxShadow={'lg'}
             p={8}>
-            <Stack spacing={4}>
+            <Stack fontFamily={"Euphemia UCAS"} spacing={4}>
               <HStack>
-                <Box>
+                <Box >
                   <FormControl id="firstName" isRequired>
                     <FormLabel>First Name</FormLabel>
-                    <Input bg="white" id="firstName" onChange={handleChange} type="text" />
+                    <Input value={text.firstName} bg="white" id="firstName" onChange={handleChange} type="text" />
                   </FormControl>
                 </Box>
                 <Box>
                   <FormControl id="lastName">
                     <FormLabel>Last Name</FormLabel>
-                    <Input bg="white" id="lastName" onChange={handleChange} type="text" />
+                    <Input value={text.lastName}  bg="white" id="lastName" onChange={handleChange} type="text" />
                   </FormControl>
                 </Box>
               </HStack>
               <FormControl id="email" isRequired>
                 <FormLabel>Mobile Number</FormLabel>
-                <Input bg="white" id="mobileNumber" onChange={handleChange} type="number" max="10" />
+                <Input value={text.mobileNumber} bg="white" id="mobileNumber" onChange={handleChange} type="number" max="10" />
               </FormControl>
               <FormControl id="password" isRequired>
                 <FormLabel>Type</FormLabel>
                <InputGroup>
-                  <Input bg="white" id="type" onChange={handleChange}/>
+                  <Input value={text.type} bg="white" id="type" onChange={handleChange}/>
                 </InputGroup> 
               </FormControl>
               <Stack spacing={10} pt={2}>

@@ -43,6 +43,8 @@ import axios from 'axios';
   ];
   
   export default function SignUp() {
+    
+    // This is the object of the fields.
     const initialState = {
       first_name : "",
       last_name : "",
@@ -63,13 +65,6 @@ import axios from 'axios';
       },1000) // Loading indicator will be appeared in UI for 4 seconds.
     },[])
 
-  let config = {
-      headers: {
-        "Content-Type": "application/json",
-        'Access-Control-Allow-Origin': '*',
-        }
-      }
-
   const handleChange = (e) =>{
       const {id, value} = e.target;
       setText({...text, [id] : value})
@@ -82,6 +77,8 @@ import axios from 'axios';
       return false;
     });
 
+
+    // Below function is for sending the data to the database. 
     const submitDetails = async() =>{
       if(isNullish==true){
         alert("please enter the data")

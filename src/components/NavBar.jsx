@@ -46,21 +46,25 @@ const NavLink = ({ children }) => (
 export default function NavBar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   
-  const {email, setEmail, userLogout} = useContext(GameStateContext);
+  // In below line I imported the state from gamestatecontext.
+  const {email, setEmail} = useContext(GameStateContext);
 
-  console.log("navbar email is", email)
+  // console.log("navbar email is", email)
 
-  console.log("navbar userlogout", userLogout.length)
+  
 
+  // This is the logout function 
   const getLogout = async() => {
     await axios.get("https://hypekarapi.herokuapp.com/logout/")
     .then(Response=>alert(Response.data.massage))
     setEmail("")
    }
-   console.log("email after login", email)
+
+  //  console.log("email after login", email)
 
   return (
     <>
+    {/* This is the designing code */}
       <Box bg='#808080' px={4}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <IconButton

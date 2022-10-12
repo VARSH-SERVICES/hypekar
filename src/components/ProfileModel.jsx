@@ -26,7 +26,7 @@ export function ProfileModel() {
 
   
  
-    console.log("logout message is", userLogout)
+  //console.log("logout message is", userLogout)
   return (
     <>
       <Button onClick={onOpen}>PROFILE</Button>

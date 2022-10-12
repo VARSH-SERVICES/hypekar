@@ -1,11 +1,11 @@
 import { Heading, Center, Spinner, Box, useColorModeValue, Text, Flex, Image, GridItem, Button, Grid } from '@chakra-ui/react';
 import React, {useState, useEffect} from 'react';
-import Footer from './Footer';
-import amogh from "../file/images/amogh.png"
+import Footer from './Footer'; //I imported footer component here
+import amogh from "../file/images/amogh.png" //I imported the images from the file folder
 import raashi from "../file/images/raashi.jpeg"
 const AboutUs = () => {
 
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(false); // this is the loading part.
 
     useEffect(()=>{
       setLoading(true) // After entering the application loading should be true
@@ -16,9 +16,11 @@ const AboutUs = () => {
 
     return (
         <Box >
+            {/* below I am doing conditional rendering, if loading is true or false. on this basis 
+            I am showing the component. */}
              {
             loading == true  ? 
-                <Center mt="200px">
+                <Center mt="200px"> 
                 <Spinner
                 thickness='4px'
                 speed='0.65s'
@@ -28,6 +30,7 @@ const AboutUs = () => {
                 />
                 </Center>
             :
+            // Below whole code is designing and about us page data
             <Box>
                 <br />
                 <Heading fontFamily={"AUDIOWIDE"} textAlign={"center"}>ABOUT US</Heading>

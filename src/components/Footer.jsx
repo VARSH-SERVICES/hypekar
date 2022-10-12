@@ -1,3 +1,6 @@
+
+//THIS IS FOOTER COMPONENT
+
 import { ReactNode } from 'react';
 import facebook from "../file/images/facebook.png"
 import twitter from "../file/images/twitter.jpg"

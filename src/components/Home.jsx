@@ -40,23 +40,22 @@ const Home = () => {
 
     const {email, setEmail, cityName} = useContext(GameStateContext)
 
+    // Below line is the location of the user. 
     const location = useGeoLocation() 
 
+    // Below I declared initialState as an object
     const initialState = {
         firstName : "",
         lastName : "",
         mobileNumber : "",
         type : ""
     }
+
+    // I declared initialState to this text state
     const [text, setText] = useState(initialState)
 
-    let config = {
-        headers: {
-          "Content-Type": "application/json",
-          'Access-Control-Allow-Origin': '*',
-          }
-        }
-
+   
+    // Below function is for storing all the fileds for the input.
     const handleChange = (e) =>{
         const {id, value} = e.target;
         if(e.target == mobileNumber) {
@@ -74,6 +73,7 @@ const Home = () => {
         return false;
       });
 
+      // Below function is for posting data to the backend using API.
       const submitDetails = async() =>{
         if(isNullish==true){
           alert("please enter the data")
@@ -86,27 +86,19 @@ const Home = () => {
        }
       }
 
-      console.log("text is", text)
+      //console.log("text is", text)
 
-    console.log("home email is", email)
-    useEffect(()=>{
-      setLoading(true) // After entering the application loading should be true
-          setTimeout(()=>{ 
-              setLoading(false) // After 4 seconds loading should be false
-      },1000) // Loading indicator will be appeared in UI for 4 seconds.
-    },[])
-
-    // useEffect(()=>{
+       // console.log("home email is", email)
         
-    //         getCar()
-        
-    // },[])
-    
-    //     const getCar = async() =>{
-    //         const res = await axios.get(`https://2bbe-103-148-62-156.in.ngrok.io/mycardata?email=${email}`)
-    //          console.log("res is", res)
-    //     }
+       useEffect(()=>{
+          setLoading(true) // After entering the application loading should be true
+              setTimeout(()=>{ 
+                  setLoading(false) // After 4 seconds loading should be false
+          },1000) // Loading indicator will be appeared in UI for 4 seconds.
+        },[])
 
+
+    // Below code is for video autoplay
     const videoEl = useRef(null);
         const attemptPlay = () => {
             videoEl &&
@@ -136,7 +128,10 @@ const Home = () => {
             :
             <>
             <Box>
+                {/* Below line is, I imported from CaptionCarousel component. */}
                 <CaptionCarousel/>
+
+                {/* whole below code is designing */}
                 <br />
                 
                   <Center>

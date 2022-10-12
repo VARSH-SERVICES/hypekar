@@ -28,6 +28,7 @@ import {
   
   export default function SignIn() {
 
+    // This object is for username and password
     const initialState = {
         username : "",
         password : ""
@@ -56,48 +57,28 @@ import {
     // console.log(text)
      const [token, setToken] = useState("")
 
+    // this function I posted all the data from the signin fileds.
     const loginUser = async() =>{
         if(isNullish==true){
             alert("please enter the username and password")
         }
         else{
         await axios.post("https://hypekarapi.herokuapp.com/login/",text)
-        //.then(Response=>setToken(Response.data.token))
-        //.then(Response=>setEmail(Response.data.email))
-        // .then(Response=>setUserDetails(Response.data))
-        // .then(setText({username : "", password : ""}))
         .then((Response)=> {
           setUserDetails(Response.data)
           alert(Response.data.massage)
-          setEmail(Response.data.email)
+          setEmail(Response.data.email) // here I getting the email from the database and set that in the email
          } )
         }
-
-        console.log("user details after login", userDetails)
-        // if(!email){
-        //   alert("wrong credentials")
-        // }
-        
     }
 
-    // const redirect = () =>{
-      
-    // }
-    
+    // If user logged in then, I will get email of that user.
+    // If email is there, then it will be redirect to the homepage. 
     if(email.length > 0){
-      //alert("logged in succesfully")
-      navigate("/")
+      navigate("/") //here I navigated the homepage
     }
 
-    console.log("email is", email)
-
-  //   if(token.length!=0){
-  //     alert("logged in successully")
-  //     //navigate("/homepage")
-  //     //console.log("hurrye")
-  //  }
-
-   //console.log(token)
+    // console.log("email is", email)
 
     const [loading, setLoading] = useState(false);
 

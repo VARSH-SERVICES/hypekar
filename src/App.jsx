@@ -9,6 +9,7 @@ import Footer from './components/Footer';
 import AllRoutes from './components/AllRoutes';
 import ContactUsForm from './components/ContactUsForm';
 import { GameStateContext } from "./components/context/Context";
+// import { Animation } from './components/Animation';
 const App = () => {
   const [email, setEmail] = useState("")
   const [cityName, setCityName] = useState('');
@@ -27,6 +28,7 @@ const App = () => {
        <AllRoutes/>
       </GameStateContext.Provider> 
       {/* <Footer/> */}
+      {/* <Animation/> */}
     </Box>
   );
 }

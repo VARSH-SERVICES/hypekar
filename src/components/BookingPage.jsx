@@ -28,40 +28,44 @@ import {
 import axios from 'axios';
 import moment from 'moment'
 import { useEffect, useState } from 'react';
-import CaptionCarousel from './CaptionCarousel';
+import CaptionCarousel from './CaptionCarousel'; // I imported caption carousel here
 import {Calendar} from 'react-calendar'
 import  {TimeBooking}  from './TimeBooking';
-import { GameStateContext } from "./context/Context";
-import { useContext } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { GameStateContext } from "./context/Context"; // I imported context here
+import { useContext } from 'react' // I i,ported useContext from react
+import { useNavigate } from 'react-router-dom'; // I imported useNavigate from react router dom. this is 
+//used for navigate from one component to another component.
 
   export default function BookingPage() {
 
+    // Below I imported email, userdetails from gamestatecontext. these are states which
+    //I declared in the app.js
     const {email, setEmail, userDetails} = useContext(GameStateContext)
 
+    // I have taken a state as a brand. and I initialized with the empty array.
     const [brand, setBrand] = useState([])
 
+    // I declared navigate for useNavigate
     const navigate = useNavigate()
 
+    // I dclared one state for data and declared as a empty.
     const [dateState, setDateState] = useState("")
     
+    // below I written function for date.
     const changeDate = (e) => {
         setDateState(e)
       }
 
+    // I written below line for format of date.
     const newDate = moment(dateState).format('MMMM Do YYYY')
 
-    const [check, setCheck] = useState("")
 
-    const checking = e => {
-        if (e.target.checked) {
-          setCheck(text.customer_address)
-         
-        } 
-      };
-
+    // Below I declared one state and declared it as a object containing all the fields. 
+    // you can all the fields for the booking page. 
     const [text, setText] = useState({
-      email : email,
+      email : email, //Here I am sending email dynamically which is coming from the gamestatecontext.
+      // this email is logged in user's. By posting this email along with all the fields, the data is storing 
+      // in his particular database
       customer_name : "",
       customer_address : "",
       service_address : "",
@@ -85,10 +89,13 @@ import { useNavigate } from 'react-router-dom';
     },[])
    
 
+    // Below I invoked getBrand funcition in the useEffect 
     useEffect(()=>{
       getBrand()
     },[])
 
+    // Below funciton is for fetching all the data from the api which is containing all the brands
+    // of the car
     const getBrand = async(e) => {
       const res = await axios.get("https://hypekarapi.herokuapp.com/carbrand")
       setBrand(res.data)
@@ -96,65 +103,61 @@ import { useNavigate } from 'react-router-dom';
       setText({...text, [id] : value})
     }
 
+    // Below I declared one state for model of the car. 
     const [model, setModel] = useState("")
 
+    // Below I delcared one state for total model of the car
     const [totalModel, setTotalModel] = useState([])
 
+    // Below function is to store the input data to the state
     const handlChange = async(e) =>{
       setModel(e.target.value)
       const {id, value} = e.target
       setText({...text, [id] : value})
     }
 
+    // Below I invoked the getData function in the useEffect
     useEffect(()=>{
       getData()
     },[model])
 
+    // Below getData function is for getting all the models of the selected brand.
     const getData = async() => {
-      const res = await axios.get(`https://hypekarapi.herokuapp.com/carmodel?brand=${model}`)
-      setTotalModel(res.data)
-      //console.log("res",res.data)
+      const res = await axios.get(`https://hypekarapi.herokuapp.com/carmodel?brand=${model}`) // Here i am passing the model dynamically in the API
+      setTotalModel(res.data) // I stored all the models to the totalModel state
     } 
 
     
     //console.log("brand")
     
-    console.log("booking page email is", email)
-    console.log("total is",totalModel)
+    // console.log("booking page email is", email)
+    // console.log("total is",totalModel)
 
+    // Below I written another function for storing the model and brands of the car
     const handlChange2 = (e) => {
         const {id, value} = e.target
         setText({...text, [id] : value})
     }
 
     //console.log(text)
-
-    const isNullish = Object.values(text).every(value => {
-      if (value === "") {
-        return true;
-      }
-      return false;
-    });
-
    
+    // Below I written the function for submitting all the data to the API
     const submitDetails = async() =>{
       if(text.customer_name.length == 0 && text.customer_address.length == 0 && text.service_address.length == 0 && text.time_slot.length == 0 && text.model.length == 0 && text.brand.length == 0){
         alert("please enter the data")
       }
       else{
-      displayRazorpay(service_charge)
-      await axios.post("https://hypekarapi.herokuapp.com/book/", text)
+      displayRazorpay(service_charge) // This is the payment function
+      await axios.post("https://hypekarapi.herokuapp.com/book/", text) // Here I am posting all the data to the API
       .then(alert("Booked successfully"))
       .then(setText({brand : "", model_Name : "", fuel_Type : "", customer_address : "", customer_name : "", year_Of_Model : ""
-      , vehicle_number : "", mobile_number : "", time_slot : ""}))
+      , vehicle_number : "", mobile_number : "", time_slot : ""})) // here I am making input boxes empty.
      
     }
   }
-    //console.log(text)
-    //const [check, setChecked] = useState("")
-    
-    const service_charge = 250;
+    const service_charge = 250; // Here I declared service charge for 250/- 
 
+    // this is the razorpay function logic.
     var formatter = new Intl.NumberFormat("en-US", {
         style: "currency",
         currency: "INR",
@@ -230,6 +233,7 @@ import { useNavigate } from 'react-router-dom';
        </Center>
         :
       
+      // Below whole code is for designing
       <Stack minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
         <Flex p={8} flex={1} align={'center'} justify={'center'}>
           <Stack spacing={4} w={'full'} maxW={'md'}>

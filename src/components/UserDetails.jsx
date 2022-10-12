@@ -20,14 +20,15 @@ import {
   import { MdLocalShipping } from 'react-icons/md';
   import { GameStateContext } from "./context/Context";
   import React,{ useContext, useState, useEffect } from 'react'
-  import { axios } from 'axios';
 
   export default function UserDetails() {
+
+    // Here I am getting userDetails from the gamestatecontext
     const {email, setEmail,userCarDetails, userDetails} = useContext(GameStateContext)
 
     const [data, setData] = useState([])
     
-    console.log("car data total", userCarDetails)
+    // console.log("car data total", userCarDetails)
 
     return (
       <Container padding="5"overflow={"scroll"} h="500px">
@@ -51,20 +52,7 @@ import {
                   borderColor={useColorModeValue('gray.200', 'gray.600')}
                 />
               }>
-              {/* <VStack>
-                <Text
-                  color={useColorModeValue('gray.500', 'gray.400')}
-                  fontSize={'2xl'}
-                  fontWeight={'300'}>
-                  {userDetails.last_name}
-                </Text>
-                <Text fontSize={'lg'}>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad
-                  aliquid amet at delectus doloribus dolorum expedita hic, ipsum
-                  maxime modi nam officiis porro, quae, quisquam quos
-                  reprehenderit velit? Natus, totam.
-                </Text>
-              </VStack> */}
+             
               <br />
               <br />  
               <Box>

@@ -23,12 +23,15 @@ const MyVehicle = () => {
 
     const [data, setData] = useState([])
 
+    // I imported all these from gamestatecontext
     const {email, userDetails, userCarDetails, setUserCarDetails} = useContext(GameStateContext)
 
+    // I invoked the getDat function in the useEffect
     useEffect(()=>{
         getData()
     },[])
 
+    //Below function is for getting the whole car data which user uploaded in our website.
     const getData = async() => {
         const res = await axios.get(`https://hypekarapi.herokuapp.com/mycardata?email=${email}`)
         //setData(res.data)
@@ -46,8 +49,9 @@ const MyVehicle = () => {
 
     
 
-    console.log("logged in data is", userCarDetails)
-    console.log("logged in email is", email)
+    // console.log("logged in data is", userCarDetails)
+    // console.log("logged in email is", email)
+
     return (
         <Box>
          {
@@ -63,6 +67,8 @@ const MyVehicle = () => {
                 </Center>
             :
         <Box  >
+
+            {/* Below whole code is for designing */}
             <Box w="100%"  >
                 <br />
                 <Heading fontFamily={"AUDIOWIDE"} textAlign="center">MY VEHICLE</Heading>

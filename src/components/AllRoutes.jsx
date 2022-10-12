@@ -1,3 +1,5 @@
+//I imported all the routes here
+
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import AboutUs from './AboutUs';
@@ -15,7 +17,10 @@ import SignUp from './SignUp';
 const AllRoutes = () => {
     return (
         <div>
+            {/* Here I am showing navbar as default */}
             <NavBar/>
+
+            {/* Below I declared all routes and given routes for each component */}
             <Routes>
                 <Route path="/" element={<Home/>}></Route>
                 <Route path="/services" element={<Services/>}></Route>

@@ -1,3 +1,6 @@
+
+//THIS IS THE SLIDER TO SHOW IN THE HOMEPAGE
+
 import React from 'react';
 import {
   Box,

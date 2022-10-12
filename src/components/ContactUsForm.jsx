@@ -19,23 +19,20 @@ import {
   import axios from 'axios';
 
   export default function ContactUsForm() {
-    const [showPassword, setShowPassword] = useState(false);
 
+    // Below is the object that contains all the fields.
     const initialState = {
         firstName : "",
         lastName : "",
         mobileNumber : "",
         type : ""
     }
+
+    // Below I have taken one state and I initialized to initialState.
     const [text, setText] = useState(initialState)
 
-    let config = {
-        headers: {
-          "Content-Type": "application/json",
-          'Access-Control-Allow-Origin': '*',
-          }
-        }
-
+    
+    // Below function is for storing all the fileds for the input.
     const handleChange = (e) =>{
         const {id, value} = e.target;
         if(e.target == mobileNumber) {
@@ -46,6 +43,7 @@ import {
         }
       }
 
+      // Below code is for checking, object is empty or not.
       const isNullish = Object.values(text).every(value => {
         if (value === "") {
           return true;
@@ -53,6 +51,7 @@ import {
         return false;
       });
 
+      // Below function is for posting the data to the API.
       const submitDetails = async() =>{
         if(isNullish==true){
           alert("please enter the data")
@@ -65,9 +64,10 @@ import {
        }
       }
 
-      console.log("text is", text)
+      // console.log("text is", text)
   
     return (
+      // Below code is for designing
       <Flex
         minH={'30vh'}
         align={'center'}

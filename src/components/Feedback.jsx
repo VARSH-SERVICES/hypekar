@@ -30,7 +30,9 @@ const Feedback = () => {
                 :
                 <>
                 <Heading  textAlign={"center"} fontFamily={"AUDIOWIDE"}>Give your valuable feedback, we can improve our service on your feedback</Heading>
-                <FeedbackForm/>
+                
+                {/* below line I imported feedback form here. */}
+                <FeedbackForm/> 
 
                 <br />
                

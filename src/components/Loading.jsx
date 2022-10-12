@@ -8,10 +8,10 @@ import {
   import React from 'react'
   //import { useSelector } from "react-redux"
   
+  //This function is for declaring the loading state 
+
   function Loading() {
     const OverlayOne = () => (
-  
-  
   
       <ModalOverlay
         bg='blackAlpha.300'

@@ -42,6 +42,8 @@ const Services = () => {
    // console.log("location is", location.coordinates.lat)
     
     //console.log("items", items)
+
+    // this city function is for getting city of the user.
     const city = async() =>{
         const res = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${location.coordinates.lat}&lon=${location.coordinates.lng}&appid=953d0a41d973f5ef36e25750b927381f`)
         setCityName(res.data.name)
@@ -49,7 +51,7 @@ const Services = () => {
     } 
     city ()
     
-    console.log("city name", cityName)
+    //console.log("city name", cityName)
 
     return (
         <Box >

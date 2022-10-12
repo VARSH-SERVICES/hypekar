@@ -23,6 +23,7 @@ import { useEffect, useState } from 'react';
 
     const {email, setEmail} = useContext(GameStateContext)
 
+    // this state object is for declaring the key
     const [text, setText] = useState({
       email : email,
       brand : "",
@@ -33,10 +34,12 @@ import { useEffect, useState } from 'react';
       mobile_number : ""
     })
 
+    // I invoked getBrand in the useEffect
     useEffect(()=>{
       getBrand()
     },[])
 
+    // In the below function I am getting all the car brands.
     const getBrand = async(e) => {
       const res = await axios.get("https://hypekarapi.herokuapp.com/carbrand/")
       setBrand(res.data)
@@ -45,10 +48,14 @@ import { useEffect, useState } from 'react';
     }
 
     //console.log("my car brand is",brand)
+
+    //Below state is for the model
     const [model, setModel] = useState("")
 
+    //Below state is for total model, and I have taken it as an empty array
     const [totalModel, setTotalModel] = useState([])
 
+    // Below function is for storing all the fileds for the input.
     const handlChange = async(e) =>{
       setModel(e.target.value)
       const {id, value} = e.target
@@ -59,6 +66,7 @@ import { useEffect, useState } from 'react';
       getData()
     },[model])
 
+    // Below function is getting the models of the brand.
     const getData = async() => {
       const res = await axios.get(`https://hypekarapi.herokuapp.com/carmodel?brand=${model}`)
       setTotalModel(res.data)
@@ -66,6 +74,7 @@ import { useEffect, useState } from 'react';
     
     // console.log("model is", model)
     // console.log("total is",totalModel)
+
     const handlChange2 = (e) => {
       const {id, value} = e.target
       if(e.target == mobile_number || e.target == year_Of_Model){
@@ -76,8 +85,9 @@ import { useEffect, useState } from 'react';
       }
     }
 
-    console.log(text)
+    //console.log(text)
     
+    // In the below funciton I am posting whole the data to the backend.
     const submitDetails = async() =>{
       if(text.brand.length == 0 || text.fuel_Type == 0 || text.mobile_number.length == 0 || text.model_Name.length == 0 || text.year_Of_Model.length == 0){
         alert("please enter the data")
@@ -91,6 +101,7 @@ import { useEffect, useState } from 'react';
   }
 
     return (
+      // below is for designing
       <Stack minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
         <Flex p={8} flex={1} align={'center'} justify={'center'}>
           <Stack spacing={4} w={'full'} maxW={'md'}>

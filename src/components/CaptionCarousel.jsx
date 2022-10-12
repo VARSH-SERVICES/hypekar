@@ -1,3 +1,6 @@
+
+// THIS IS THE SLIDING LOGIC
+
 import React from 'react';
 import {
   Box,
@@ -40,6 +43,9 @@ export default function CaptionCarousel() {
 
   // This list contains all the data for carousels
   // This can be static or loaded from a server
+
+
+  
   const cards = [
     {
       image:

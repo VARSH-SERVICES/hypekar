@@ -19,15 +19,18 @@ import React, {useState, useEffect, useContext} from "react"
 
 export default function Feedback() {
 
+  // Below line is email from the gamestate context
   const {email, setEmail} = useContext(GameStateContext)
 
+    // I declared the state and initialized to the fields.  
     const [text, setText] = useState({
-        email : email,
+        email : email, //here I declared the email dynamically
         description : "",
         rating : ""
     })
-    console.log("feedback email", email)
+    // console.log("feedback email", email)
 
+     // Below function is for storing all the fileds for the input.
     const handleChange = (e) => {
         const {id, value} = e.target;
         if(e.target == rating){
@@ -38,13 +41,8 @@ export default function Feedback() {
         }
     }
 
-    const isNullish = Object.values(text).every(value => {
-      if (value === "") {
-        return true;
-      }
-      return false;
-    });
-
+  
+    // Below function is for posting the feeback to the API
     const feedbackSubmit = async() => {
       if(text.description.length == 0 || text.rating.length == 0){
         alert("please enter the data")
@@ -56,8 +54,11 @@ export default function Feedback() {
     }
   }
 
-    console.log("text is", text)
+    // console.log("text is", text)
   return (
+
+    // Below whole code is for designing. 
+    
     <Stack  minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
       <Flex p={8} flex={1} align={'center'} justify={'center'}>
         <Stack  spacing={4} w={'full'} maxW={'md'}>

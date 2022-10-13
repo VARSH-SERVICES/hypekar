@@ -99,7 +99,7 @@ import {
                 <Input value={text.mobileNumber} bg="white" id="mobileNumber" onChange={handleChange} type="number" max="10" />
               </FormControl>
               <FormControl id="password" isRequired>
-                <FormLabel>Type</FormLabel>
+                <FormLabel>Enter your query</FormLabel>
                <InputGroup>
                   <Input value={text.type} bg="white" id="type" onChange={handleChange}/>
                 </InputGroup> 

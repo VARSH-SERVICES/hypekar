@@ -36,14 +36,13 @@ const ContactUs = () => {
             // below code is designing part. I adding the data statically. hope you can understand
             <Box>
                 <Heading padding={3} fontFamily="AUDIOWIDE" textAlign={"center"}>GET A CALL FROM US</Heading>
-                <Heading size="md" fontFamily={"AUDIOWIDE"} textAlign={"center"}>Lorem ipsum dolor sit amet
-                    consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</Heading>
+                <Heading size="m" fontFamily={"Euphemia UCAS"} textAlign={"center"}>Please fill the form to get your queries solved. We'll contact you soon!!</Heading>
                 
                 {/* this is the contactusForm component I declared here. this is for  */}
                 <ContactUsForm/> 
 
             <Center>
-            <Grid w="90%" templateColumns={{base:'repeat(1, 1fr)',
+            {/* <Grid w="90%" templateColumns={{base:'repeat(1, 1fr)',
                     md:'repeat(, 1fr)',
                     lg:'repeat(2, 1fr)'
                     }} gap={6} >
@@ -63,9 +62,10 @@ const ContactUs = () => {
                         <Image padding="5"  src="https://automechanica.com/uploads/home_page/feature_section_image/1/Highlight_Image.png"></Image>
                         
                     </GridItem>
-                    </Grid>
+                    </Grid> */}
                     </Center>
             <br />
+            
             <Footer/>
             </Box>
         }

@@ -49,22 +49,22 @@ export default function CaptionCarousel() {
   const cards = [
     {
       image:
-        'https://www.shutterstock.com/image-illustration/various-car-parts-accessories-isolated-600w-673268602.jpg',
+        'https://images.pexels.com/photos/4488665/pexels-photo-4488665.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     },
     {
       image:
-        'https://marutisuzukiarenaprodcdn.azureedge.net/-/media/images/maruti/marutisuzuki/arena-services/banner-image/ms-service-web-banner_1366x500_02.png?rev=d11af2a8feb7433cb789c60731d70ffb&extension=webp',
+        'https://images.pexels.com/photos/4488654/pexels-photo-4488654.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     },
     {
       image:
-        'https://i.postimg.cc/fWrFfPmz/maruti-service.jpg',
+        'https://images.pexels.com/photos/279949/pexels-photo-279949.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     },
     {
-      image : 'https://i.postimg.cc/vmSY7zvp/car-service-concept.jpg'
+      image : 'https://images.pexels.com/photos/8804891/pexels-photo-8804891.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
     },
-    {
-    image : "https://www.linkpicture.com/q/WhatsApp-Image-2022-10-01-at-11.03.07-AM.jpeg"
-    }
+    // {
+    // image : ""
+    // }
   ];
 
   return (

@@ -165,7 +165,7 @@ const Home = () => {
             boxShadow={'lg'}
             p={8}>
             <Stack spacing={4}>
-              <Heading  size="md" fontFamily={"AUDIOWIDE"}>EXPERIENCE THE BEST CAR SERVICES AT YOUR DOORSTEP</Heading>
+              <Heading  size="md" fontFamily={"AUDIOWIDE"}>Experience the best car services at your doorstep at fastest speed.</Heading>
               <HStack>
                 <Box>
                   <FormControl id="firstName" isRequired>
@@ -182,7 +182,7 @@ const Home = () => {
                 </Box>
               </HStack>
               <FormControl id="lastName">
-                    <FormLabel fontFamily="Euphemia UCAS">Type</FormLabel>
+                    <FormLabel fontFamily="Euphemia UCAS">Enter your query</FormLabel>
                     <Input value={text.type} onChange={handleChange} bg="white" id="type"  type="text" />
                   </FormControl>
               <FormControl id="email" isRequired>
@@ -519,18 +519,19 @@ const Home = () => {
 
               <GridItem  borderRadius="10" w='100%' h="300px">
               <br />
-                <Heading fontFamily={"AUDIOWIDE"}    size="lg" textAlign={"center"}>Vision of HypeKar</Heading>
+                {/* <Heading fontFamily={"AUDIOWIDE"}    size="lg" textAlign={"center"}>Vision of HypeKar</Heading> */}
                 <Image ml="50px" h="80%" w="80%" src={vision}></Image>
               </GridItem>
 
               <GridItem bgColor={"#E2E8F0"} overflow="scroll"  borderRadius="10" w='100%' h="300px">
               <br />
-              <Heading fontFamily={"AUDIOWIDE"} textAlign="center">How HypeKar Works ?</Heading>
+              <Heading fontFamily={"AUDIOWIDE"} textAlign="center"> Vision of HypeKar!</Heading>
                 <Text fontFamily="Euphemia UCAS" fontSize={"large"} padding="5">
-                  Righteous vehicle ownership experience.
-                  Mission:
-                  To create a transparent and trustable ecosystem of automobile
-                  after-sales market.
+                <strong>Vision:</strong> <br />
+                Righteous vehicle ownership experience. <br />
+                <strong>Mission:</strong> <br />
+                To create a transparent and trustable ecosystem of automobile
+                after-sales market.
                 </Text>
               </GridItem>
             </Grid>

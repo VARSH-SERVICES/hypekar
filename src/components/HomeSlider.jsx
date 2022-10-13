@@ -47,45 +47,45 @@ export default function HomeSlider() {
       title: 'PERIODIC SERVICES',
      
       image:
-        maruti,
+      'https://images.pexels.com/photos/4489731/pexels-photo-4489731.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     },
     {
       title: 'AC SERVICES',
       
       image:
-        'https://carfixo.in/wp-content/uploads/2021/01/ac-service-5645.jpg',
+        'https://images.pexels.com/photos/5534767/pexels-photo-5534767.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     },
     {
       title: 'WHEEL CARE',
      
       image:
-        'https://i0.wp.com/blog.getpitstop.com/wp-content/uploads/2021/04/Wheel-Care-Services-At-Pitstop.jpg?resize=1152%2C600&ssl=1',
+        'https://images.pexels.com/photos/9381003/pexels-photo-9381003.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     },
     {
         title: 'REPAIRS',
       
         image:
-          'https://www.onedios.com/blog/wp-content/uploads/2021/04/muscular-car-service-worker-repairing-vehicle_146671-19605.jpg',
+          'https://images.pexels.com/photos/4489794/pexels-photo-4489794.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       },
       {
         title: 'BATTERY SERVICES',
         
         
         image:
-          'https://car-o-man.com/wp-content/uploads/2018/04/battery-service-car-o-man-hyderabad.jpg',
+          'https://images.pexels.com/photos/8985464/pexels-photo-8985464.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       },
       {
         title: 'ACCESERIES AND SPARES',
        
         image:
-          'https://e7.pngegg.com/pngimages/206/235/png-clipart-assorted-vehicle-part-illustration-car-honda-legend-sport-utility-vehicle-spare-part-automotive-engine-parts-automotive-accessories.png',
+          'https://images.pexels.com/photos/8985518/pexels-photo-8985518.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       },
       {
         title: 'PREMIUM SERVICES',
         text:
-          "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
+          "",
         image:
-          'https://media.gettyimages.com/photos/car-lifting-picture-id1036063284?s=612x612',
+          'https://images.pexels.com/photos/7019602/pexels-photo-7019602.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       },
   ];
 

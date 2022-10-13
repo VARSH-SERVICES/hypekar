@@ -18,7 +18,7 @@ const Feedback = () => {
         <Box h="800px">
              {
             loading == true  ? 
-                <Center mt="200px">
+                <Center mt="300px">
                 <Spinner
                 thickness='4px'
                 speed='0.65s'
@@ -29,7 +29,7 @@ const Feedback = () => {
                 </Center>
                 :
                 <>
-                <Heading  textAlign={"center"} fontFamily={"AUDIOWIDE"}>Give your valuable feedback, we can improve our service on your feedback</Heading>
+                <Heading size="md" textAlign={"center"} fontFamily={"AUDIOWIDE"}>Give your valuable feedback, we can improve our service on your feedback</Heading>
                 
                 {/* below line I imported feedback form here. */}
                 <FeedbackForm/> 

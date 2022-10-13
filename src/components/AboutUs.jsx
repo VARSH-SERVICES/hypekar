@@ -58,11 +58,8 @@ const AboutUs = () => {
                     <Box padding="5">
                         <Heading fontFamily={"AUDIOWIDE"}>AMOGH UNIYAL</Heading>
                         <Text fontFamily={"AUDIOWIDE"} fontSize={"2xl"}>CEO & FOUNDER</Text>
-                        <Text  fontFamily={"Euphemia UCAS"}  fontSize={"larger"} >A motor vehicle service or tune-up is a series of maintenance procedures 
-                        carried out at a set time interval or after the vehicle has traveled a certain distance. 
-                        The service intervals are specified by the vehicle manufacturer in a service schedule and 
-                        some modern cars display the due date for the next service electronically on the instrument 
-                        panel.
+                        <Text  fontFamily={"Euphemia UCAS"}  fontSize={"larger"} >
+                            {/* bio of founder here */}
                         </Text> 
                     </Box>
 
@@ -74,11 +71,7 @@ const AboutUs = () => {
                         <Heading fontFamily={"AUDIOWIDE"}>RAASHI TANEJA</Heading>
                         <Text fontFamily={"AUDIOWIDE"} fontSize={"2xl"}>Director, CMO</Text>
                         <Text fontFamily={"Euphemia UCAS"}  fontSize={"larger"}>
-                        A motor vehicle service or tune-up is a series of maintenance procedures 
-                        carried out at a set time interval or after the vehicle has traveled a certain distance. 
-                        The service intervals are specified by the vehicle manufacturer in a service schedule and 
-                        some modern cars display the due date for the next service electronically on the instrument 
-                        panel.
+                        {/* bio of founder here */}
                         </Text>
                     </Box>
                     
@@ -86,10 +79,10 @@ const AboutUs = () => {
                 </Grid>
                 </Center>
                 <br />
-                <Heading textAlign={"center"} fontFamily={"AUDIOWIDE"}>MEET OUR EMPLOYEES</Heading>
+                {/* <Heading textAlign={"center"} fontFamily={"AUDIOWIDE"}>MEET OUR EMPLOYEES</Heading> */}
                 <br />
                 <Center>
-                <Grid w="90%" templateColumns={{base:'repeat(1, 1fr)',
+                {/* <Grid w="90%" templateColumns={{base:'repeat(1, 1fr)',
                     md:'repeat(2, 1fr)',
                     lg:'repeat(3, 1fr)'
                     }} gap={6} >
@@ -138,7 +131,7 @@ const AboutUs = () => {
                         <Text fontFamily={"AUDIOWIDE"}>BIHAR, INDIA</Text> 
                         </Text>
                     </GridItem>
-                    </Grid>
+                    </Grid> */}
                     </Center>
                     <br />
                     <Footer/>

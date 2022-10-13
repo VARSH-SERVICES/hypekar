@@ -70,9 +70,9 @@ const Services = () => {
                  <Box>                
                  <Heading textAlign={"center"} fontFamily={"AUDIOWIDE"}>OUR SERVICES</Heading>
                  <br />
-                 <Heading size="lg" padding="5" textAlign={"left"} fontFamily={"AUDIOWIDE"}>car services in {cityName}
+                 <Heading size="lg" padding="5" textAlign={"left"} fontFamily={"AUDIOWIDE"}>Car Services In - {cityName}
                  <br />
-                 <span><Heading size="sm" color="RGBA(0, 0, 0, 0.64)"> Get discounted periodic periodic car service and repair, wheel care, cashless insurance.</Heading></span> 
+                 <span><Heading size="sm" color="RGBA(0, 0, 0, 0.64)"> Get discounted periodic car service and repair, wheel care, cashless insurance.</Heading></span> 
                  </Heading>
                 
                 <Grid fontFamily={"AUDIOWIDE"} templateColumns={{base:'repeat(1, 1fr)',
@@ -82,7 +82,7 @@ const Services = () => {
                     <GridItem _hover={{
                     transform: 'scale(1.2)',
                   }} transform="scale(1.0)" transition="0.2s ease-in-out"  w='100%' padding="5" h='340' bg='RGBA(0, 0, 0, 0.06)' >
-                    <Heading size="md" textAlign={"center"} color="RGBA(0, 0, 0, 0.64)" >BASIC SERVICE</Heading>
+                    <Heading size="md" textAlign={"center"} color="RGBA(0, 0, 0, 0.64)" >BASIC SERVICES</Heading>
                         <Flex  justifyContent={"space-around"}>
                         <Image 
                    mt="20px" w="35%"  src="https://cdn-icons-png.flaticon.com/512/4669/4669436.png"></Image>
@@ -211,10 +211,10 @@ const Services = () => {
                         <Flex  justifyContent={"space-around"}>
                         <Image mt="20px" w="35%" src="https://cdn-icons-png.flaticon.com/512/2084/2084219.png"></Image>   
                         <UnorderedList mt="15px" padding="5" w="100%">
-                            <ListItem>Lorem ipsum dolor sit amet</ListItem>
-                            <ListItem>Consectetur adipiscing elit</ListItem>
-                            <ListItem>Integer molestie lorem at massa</ListItem>
-                            <ListItem>Facilisis in pretium nisl aliquet</ListItem>
+                            <ListItem>Battery Jmp Start</ListItem>
+                            <ListItem>Battery Water Topup</ListItem>
+                            <ListItem>Battery Replacement</ListItem>
+                            {/* <ListItem>Facilisis in pretium nisl aliquet</ListItem> */}
                         </UnorderedList>
                         </Flex>
                         <Center>
@@ -240,10 +240,10 @@ const Services = () => {
                         <Flex  justifyContent={"space-around"}>                       
                         <Image mt="20px" w="35%" src="https://cdn-icons-png.flaticon.com/512/3825/3825672.png"></Image>   
                         <UnorderedList mt="15px" padding="5" w="100%">
-                            <ListItem>Lorem ipsum dolor sit amet</ListItem>
-                            <ListItem>Consectetur adipiscing elit</ListItem>
-                            <ListItem>Integer molestie lorem at massa</ListItem>
-                            <ListItem>Facilisis in pretium nisl aliquet</ListItem>
+                            <ListItem>OEM Manufacturer Spares & Accesories</ListItem>
+                            <ListItem>Doorstep Delivery And Installation</ListItem>
+                            {/* <ListItem>Integer molestie lorem at massa</ListItem> */}
+                            {/* <ListItem>Facilisis in pretium nisl aliquet</ListItem> */}
                         </UnorderedList>
                         </Flex>
                         <Center>
@@ -260,7 +260,7 @@ const Services = () => {
                         </Center>
                     </GridItem>
 
-                    <GridItem
+                    {/* <GridItem
                      _hover={{
                         transform: 'scale(1.2)',
                       }} transform="scale(1.0)" transition="0.2s ease-in-out"
@@ -288,9 +288,9 @@ const Services = () => {
                         }
                         
                         </Center>   
-                    </GridItem>
+                    </GridItem> */}
 
-                    <GridItem
+                    {/* <GridItem
                     overflow={"scroll"}
                      _hover={{
                         transform: 'scale(1.2)',
@@ -320,7 +320,7 @@ const Services = () => {
                         }
                         
                         </Center>   
-                    </GridItem>
+                    </GridItem> */}
                 </Grid>
                 <br />
                 <Footer/>

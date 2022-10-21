@@ -68,7 +68,7 @@ import { useEffect, useState } from 'react';
 
     // Below function is getting the models of the brand.
     const getData = async() => {
-      const res = await axios.get(`https://hypekarapi.herokuapp.com/carmodel?brand=${model}`)
+      const res = await axios.get(`https://hypekar-backend.herokuapp.com/carmodel?brand=${model}`)
       setTotalModel(res.data)
     } 
     
@@ -93,7 +93,7 @@ import { useEffect, useState } from 'react';
         alert("please enter the data")
       }
       else{
-      await axios.post("https://hypekarapi.herokuapp.com/carform/", text)
+      await axios.post("https://hypekar-backend.herokuapp.com/carform/", text)
       .then(alert("submitted successfully"))
       setText({brand : "", model_Name : "", fuel_Type : "", year_Of_Model : ""
       , vehicle_number : "", mobile_number : ""})
@@ -161,7 +161,7 @@ import { useEffect, useState } from 'react';
             </Stack>
           </Stack>
         </Flex>
-        <Flex flex={1}>
+        {/* <Flex flex={1}>
           <Image
             alt={'Login Image'}
             objectFit={'fill'}
@@ -169,7 +169,7 @@ import { useEffect, useState } from 'react';
               'https://i.pinimg.com/550x/42/64/14/426414c97264657bebb33d11a0205c04.jpg'
             }
           />
-        </Flex>
+        </Flex> */}
       </Stack>
     );
   }

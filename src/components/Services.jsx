@@ -54,34 +54,35 @@ const Services = () => {
     //console.log("city name", cityName)
 
     return (
-        <Box >
+        <Box  >
             {
                 loading == true  ? 
-                <Center mt="200px">
+                <Center>
                     <Spinner
                     thickness='4px'
-                    speed='0.65s'
-                    emptyColor='gray.200'
-                    color='blue.500'
+                    speed='0.35s'
+                    emptyColor='#E2E8F0'
+                    // color='blue.500'
                     size='xl'
                     />
                 </Center>
                  :
-                 <Box>                
-                 <Heading textAlign={"center"} fontFamily={"AUDIOWIDE"}>OUR SERVICES</Heading>
+                 <Box mt={"0"}>                
+                 <Heading textAlign={"center"} fontFamily={"AUDIOWIDE"} mt={"3"} color={"orange"}>OUR SERVICES</Heading>
                  <br />
-                 <Heading size="lg" padding="5" textAlign={"left"} fontFamily={"AUDIOWIDE"}>Car Services In - {cityName}
+                 <Heading size="lg"  padding="5" textAlign={"center"} fontFamily={"AUDIOWIDE"} >Car Services In - {cityName}
                  <br />
-                 <span><Heading size="sm" color="RGBA(0, 0, 0, 0.64)"> Get discounted periodic car service and repair, wheel care, cashless insurance.</Heading></span> 
+                 <span><Heading size="sm" color="RGBA(0, 0, 0, 0.64)" mt={"5"}> Get discounted periodic car service and repair, wheel care, cashless insurance.</Heading></span> 
                  </Heading>
                 
                 <Grid fontFamily={"AUDIOWIDE"} templateColumns={{base:'repeat(1, 1fr)',
                 md:'repeat(2, 1fr)',
-                lg:'repeat(3, 1fr)'
+                lg:'repeat(3, 2fr)'
                 }} gap={6}>
                     <GridItem _hover={{
                     transform: 'scale(1.2)',
-                  }} transform="scale(1.0)" transition="0.2s ease-in-out"  w='100%' padding="5" h='340' bg='RGBA(0, 0, 0, 0.06)' >
+                    bg:'orange'
+                  }} transform="scale(1.0)" transition="0.2s ease-in-out"  w='100%' padding="5" h='340' bg='#E2E8F0' >
                     <Heading size="md" textAlign={"center"} color="RGBA(0, 0, 0, 0.64)" >BASIC SERVICES</Heading>
                         <Flex  justifyContent={"space-around"}>
                         <Image 
@@ -111,9 +112,9 @@ const Services = () => {
                     
                     <GridItem
                      _hover={{
-                        transform: 'scale(1.2)',
+                        transform: 'scale(1.2)',bg:'orange'
                       }} transform="scale(1.0)" transition="0.2s ease-in-out"
-                    w='100%' padding="5" h='340' bg='RGBA(0, 0, 0, 0.06)'>
+                    w='100%' padding="5" h='340' bg='#E2E8F0'>
                     <Heading size="md" textAlign={"center"} color="RGBA(0, 0, 0, 0.64)">REGULAR AIR CONDITION SERVICE</Heading>
                         <Flex  justifyContent={"space-around"} >
                          <Image mt="15px" w="35%" src="https://cdn-icons-png.flaticon.com/512/803/803913.png"></Image>   
@@ -142,8 +143,9 @@ const Services = () => {
                     <GridItem
                      _hover={{
                         transform: 'scale(1.2)',
+                        bg:'orange'
                       }} transform="scale(1.0)" transition="0.2s ease-in-out"
-                    w='100%' padding="5" h='340' bg='RGBA(0, 0, 0, 0.06)'>
+                    w='90%' padding="5" h='340'bg='#E2E8F0'>
                     <Heading size="md" textAlign={"center"} color="RGBA(0, 0, 0, 0.64)">COMPREHENSIVE SERVICE</Heading>
                         <Flex  justifyContent={"space-around"} >
                         <Image  mt="15px" w="35%" src="https://cdn-icons-png.flaticon.com/512/3233/3233875.png"></Image>   
@@ -172,9 +174,9 @@ const Services = () => {
 
                     <GridItem
                      _hover={{
-                        transform: 'scale(1.2)',
+                        transform: 'scale(1.2)', bg:'orange'
                       }} transform="scale(1.0)" transition="0.2s ease-in-out"
-                    w='100%' padding="5" h='340' bg='RGBA(0, 0, 0, 0.06)'>
+                    w='100%' padding="5" h='340' bg='#E2E8F0'>
                     <Heading size="md" textAlign={"center"} color="RGBA(0, 0, 0, 0.64)">STANDARD SERVICE</Heading>
                         <Flex  justifyContent={"space-around"}>
                         <Image mt="15px" w="35%" src="https://cdn-icons-png.flaticon.com/512/1743/1743705.png"></Image>   
@@ -204,9 +206,9 @@ const Services = () => {
 
                     <GridItem
                      _hover={{
-                        transform: 'scale(1.2)',
+                        transform: 'scale(1.2)', bg:'orange'
                       }} transform="scale(1.0)" transition="0.2s ease-in-out"
-                    w='100%' padding="5" h='340' bg='RGBA(0, 0, 0, 0.06)'>
+                    w='100%' padding="5" h='340' bg='#E2E8F0'>
                     <Heading size="md" textAlign={"center"} color="RGBA(0, 0, 0, 0.64)">BATTERY SERVICES</Heading>
                         <Flex  justifyContent={"space-around"}>
                         <Image mt="20px" w="35%" src="https://cdn-icons-png.flaticon.com/512/2084/2084219.png"></Image>   
@@ -233,9 +235,9 @@ const Services = () => {
 
                     <GridItem
                      _hover={{
-                        transform: 'scale(1.2)',
+                        transform: 'scale(1.2)', bg:'orange'
                       }} transform="scale(1.0)" transition="0.2s ease-in-out"
-                    w='100%' padding="5" h='340' bg='RGBA(0, 0, 0, 0.06)'>
+                    w='90%' padding="5" h='340' bg='#E2E8F0'>
                     <Heading size="md" textAlign={"center"} color="RGBA(0, 0, 0, 0.64)">ACCESSORIES AND SPARES</Heading>
                         <Flex  justifyContent={"space-around"}>                       
                         <Image mt="20px" w="35%" src="https://cdn-icons-png.flaticon.com/512/3825/3825672.png"></Image>   
@@ -250,7 +252,7 @@ const Services = () => {
                         {
                             email.length == 0 ? 
                             <Link to="/login">
-                                <Button bg="#CBD5E0" mt="20px">Book Now</Button>
+                                <Button bg="#CBD5E0" mt="20px" >Book Now</Button>
                             </Link>
                             :
                             <Link to="/booking">

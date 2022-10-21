@@ -92,8 +92,9 @@ export default function HomeSlider() {
   return (
     <Box
       position={'relative'}
-      height={'600px'}
-      width={'full'}
+      height={'259x'}
+      width={'920px'}
+      ms={200}
       overflow={'hidden'}>
       {/* CSS files for react-slick */}
       <link
@@ -152,10 +153,10 @@ export default function HomeSlider() {
                 position="absolute"
                 top="50%"
                 transform="translate(0, -50%)">
-                <Heading color="#3182CE" textAlign="center" fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}>
+                <Heading color="#FFFFFF" textAlign="center" fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}>
                   {card.title}
                 </Heading>
-                <Text fontSize={{ base: 'lg', lg: 'lg' }} color="#38A169">
+                <Text fontSize={{ base: 'lg', lg: 'lg' }} color="#FFFFFF">
                   {card.text}
                 </Text>
                 

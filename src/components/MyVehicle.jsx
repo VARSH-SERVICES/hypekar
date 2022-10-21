@@ -33,7 +33,7 @@ const MyVehicle = () => {
 
     //Below function is for getting the whole car data which user uploaded in our website.
     const getData = async() => {
-        const res = await axios.get(`https://hypekarapi.herokuapp.com/mycardata?email=${email}`)
+        const res = await axios.get(`https://hypekar-backend.herokuapp.com/mycardata?email=${email}`)
         //setData(res.data)
         setUserCarDetails(res.data)
     }
@@ -125,9 +125,9 @@ const MyVehicle = () => {
                 <br />
                 <MyVehicleForm/>
 
-                <Box w="100%" mt="50px">
+                {/* <Box w="100%" mt="50px">
                     <CaptionCarousel/>
-                </Box>
+                </Box> */}
             {/* <Footer/> */}
             <br />
                 <Footer/>

@@ -35,13 +35,13 @@ const ContactUs = () => {
             
             // below code is designing part. I adding the data statically. hope you can understand
             <Box>
-                <Heading padding={3} fontFamily="AUDIOWIDE" textAlign={"center"}>GET A CALL FROM US</Heading>
+                <Heading padding={3} fontFamily="AUDIOWIDE" textAlign={"center"} mt={5}>GET A CALL FROM US</Heading>
                 <Heading size="m" fontFamily={"Euphemia UCAS"} textAlign={"center"}>Please fill the form to get your queries solved. We'll contact you soon!!</Heading>
                 
                 {/* this is the contactusForm component I declared here. this is for  */}
-                <ContactUsForm/> 
+                <ContactUsForm  /> 
 
-            <Center>
+            {/* <Center> */}
             {/* <Grid w="90%" templateColumns={{base:'repeat(1, 1fr)',
                     md:'repeat(, 1fr)',
                     lg:'repeat(2, 1fr)'
@@ -63,7 +63,7 @@ const ContactUs = () => {
                         
                     </GridItem>
                     </Grid> */}
-                    </Center>
+                    {/* </Center> */}
             <br />
             
             <Footer/>

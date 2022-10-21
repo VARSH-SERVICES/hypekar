@@ -2,6 +2,7 @@
 // THIS IS THE SLIDING LOGIC
 
 import React from 'react';
+import homeimg from '../../public/images/8227.jpg'
 import {
   Box,
   IconButton,
@@ -48,8 +49,8 @@ export default function CaptionCarousel() {
   
   const cards = [
     {
-      image:
-        'https://images.pexels.com/photos/4488665/pexels-photo-4488665.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      image:homeimg
+       
     },
     {
       image:
@@ -70,8 +71,10 @@ export default function CaptionCarousel() {
   return (
     <Box
       position={'relative'}
-      height={'600px'}
-      width={'full'}
+      height={'259x'}
+      width={'920px'}
+      ms={200}
+      mt={1}
       overflow={'hidden'}>
       {/* CSS files for react-slick */}
       <link
@@ -130,10 +133,10 @@ export default function CaptionCarousel() {
                 position="absolute"
                 top="20%"
                 transform="translate(0, -50%)">
-                <Heading color="#38A169" textAlign="center" fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}>
+                <Heading color="#FFFFFF" textAlign="center" fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}>
                   {card.title}
                 </Heading>
-                <Text fontSize={{ base: 'lg', lg: 'lg' }} color="#38A169">
+                <Text fontSize={{ base: 'lg', lg: 'lg' }} color="#FFFFFF">
                   {card.text}
                 </Text>
                 

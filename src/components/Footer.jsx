@@ -6,6 +6,8 @@ import facebook from "../file/images/facebook.png"
 import twitter from "../file/images/twitter.jpg"
 import instagram from "../file/images/instagram.png"
 import linkedin from "../file/images/linkedin.webp"
+import email from "../file/images/email.jpg"
+import phone from "../file/images/phone.png"
 import {
   Box,
   Container,
@@ -16,6 +18,8 @@ import {
   Text,
   useColorModeValue,
   Flex,
+  Grid,
+  GridItem,
 } from '@chakra-ui/react';
 
 const Logo = (props) => {
@@ -52,49 +56,56 @@ export default function Footer() {
       backgroundColor="#212529"
       fontFamily={"AUDIOWIDE"}
       color={useColorModeValue('gray.700', 'gray.200')}>
-      <Container as={Stack} maxW={'6xl'} py={10}>
+
+      <Container as={Stack} maxW={'5xl'} py={8}>
         <SimpleGrid
           templateColumns={{ sm: '1fr 1fr', md: '1fr 1fr 1fr 1fr 1fr' }}
-          spacing={8}>
+          spacing={5} >
         
           <Stack align={'flex-start'}>
-            <Text color="white">Product</Text>
-            <Link color="white" href={'#'}>Overview</Link>
-            <Link color="white"  href={'#'}>Features</Link>
+            <Text color="white"><Flex gap="3">
+              <Image w="15%" src={email}></Image>
+              <Link color="white">info.hypekar@gmail.com</Link>
+            </Flex> 
+            </Text>
+            <Flex gap="5" >
+              <Image w="15%" src={phone}></Image>
+              <Link color="white"  href={'#'}>+91 8299347908</Link>
+            </Flex> 
+            
+            {/* <Link color="white"  href={'#'}>Features</Link> */}
           </Stack>
-          <Stack align={'flex-start'}>
+          {/* <Stack align={'flex-start'}>
             <Text color="white">Company</Text>
             <Link color="white"  href={'#'}>About</Link>
             <Link color="white"  href={'#'}>Contact</Link>
           </Stack>
+          */}
           <Stack align={'flex-start'}>
-            <Text color="white">Support</Text>
+            {/* <Text color="white" >Follow Us</Text> */}
+            <Flex gap="3">
+              <Image w="15%" src={facebook}></Image>
+              <Link color="white"  href={'https://www.facebook.com/hypekar'}>Facebook</Link>
+            </Flex>
+            </Stack>
+           
+            <Stack>
+            <Flex gap="3">
+              <Image w="15%" src={instagram}></Image>
+              <Link color="white"  href={'https://www.instagram.com/hypekar/?igshid=YmMyMTA2M2Y%3D'}>Instagram</Link>
+            </Flex>
+            </Stack>
+      <Stack>
+            <Flex gap="3">
+              <Image w="15%" src={linkedin}></Image>
+              <Link color="white"  href={'https://www.linkedin.com/company/hypekar-private-limited/'}>LinkedIn</Link>
+            </Flex>
+            </Stack>
+            
+          
+          <Stack align={'flex-end'} >
             <Link color="white"  href={'#'}>Terms of Service</Link>
             <Link color="white"  href={'#'}>Privacy Policy</Link>
-          </Stack>
-          <Stack align={'flex-start'}>
-            <Text color="white" >Follow Us</Text>
-            <Flex gap="5">
-              <Image w="15%" src={facebook}></Image>
-              <Link color="white"  href={'#'}>Facebook</Link>
-            </Flex>
-
-            <Flex gap="5">
-              <Image w="15%" src={twitter}></Image>
-              <Link color="white"  href={'#'}>Twitter</Link>
-            </Flex>
-
-            <Flex gap="5">
-              <Image w="15%" src={instagram}></Image>
-              <Link color="white"  href={'#'}>Instagram</Link>
-            </Flex>
-
-            <Flex gap="5">
-              <Image w="15%" src={linkedin}></Image>
-              <Link color="white"  href={'#'}>LinkedIn</Link>
-            </Flex>
-           
-            
           </Stack>
         </SimpleGrid>
       </Container>

@@ -17,7 +17,8 @@ import { Heading, Center, Spinner, useColorModeValue, Box, Grid, GridItem, Image
   ListIcon,
   OrderedList,
   UnorderedList,
-    Select, } from '@chakra-ui/react';
+    Select,
+    SimpleGrid, } from '@chakra-ui/react';
 import vdo from "../file/Videos/car-wash.mp4"
 import "./Testimonals"
 import React, {useState, useEffect, useRef} from 'react';
@@ -36,6 +37,22 @@ import HomeSlider from './HomeSlider';
 import ContactUs from './ContactUs';
 import vision from "../file/images/vision.jpg"
 import Testimonals from './Testimonals';
+
+import { extendTheme } from '@chakra-ui/react'
+import { MdSettings } from 'react-icons/md';
+
+// 2. Update the breakpoints as key-value pairs
+const breakpoints = {
+  sm: '320px',
+  md: '768px',
+  lg: '960px',
+  xl: '1200px',
+  '2xl': '1536px',
+}
+
+// 3. Extend the theme
+const theme = extendTheme({ breakpoints })
+
 
 const Home = () => {
     const [loading, setLoading] = useState(false);
@@ -115,7 +132,7 @@ const Home = () => {
             }, []);
     
         return (
-        <Box >
+        <Box width={"100%"}>
             {
             loading == true  ? 
                 <Center mt="200px">
@@ -241,198 +258,169 @@ const Home = () => {
                 </Grid>
                 <br />
                 <br />
-                <Heading textAlign="center" fontFamily={"AUDIOWIDE"}>Our Serivces in {cityName}</Heading>
+                <br />
                 <br />
                 </div> 
-                <HomeSlider/>
+                <Heading textAlign="center" fontFamily={"AUDIOWIDE"}>Our Serivces in {cityName}</Heading>
+              <Box>
+              <HomeSlider/>
+              </Box>
             </Box>
             <br />
             <br />
-            <div className='background-image'>
-       <Grid padding="5" templateColumns={{base : 'repeat (1,1fr)',
-              md : 'repeat(1, 1fr)',
-              lg : 'repeat(2, 1fr)'
-              }} gap={6}>
-
-<GridItem    borderRadius="10" w='100%' h="300px">
+            
+            <Grid padding="5" templateColumns={{base : 'repeat (1,1fr)',
+            md : 'repeat(1, 1fr)',
+            lg : 'repeat(2, 1fr)'
+            }} gap={6}>
+              <GridItem bgColor={"#FFB94A"}   borderRadius="10" w='100%' h="300px" color={"white"}>
+            <br />
+            <Heading fontFamily={"AUDIOWIDE"} textAlign="center">About HypeKar</Heading>
               <br />
-              <Heading fontFamily={"AUDIOWIDE"} textAlign="center">About HypeKar</Heading>
-                <br />
-                <Text padding="5" fontSize={"large"} fontFamily="Euphemia UCAS">
-                  Hypekar is an initiative taken to organise
-                  the automobile industry and provide a
-                  unique vehicle ownership experience.
-                  Hypekar aims at providing one stop
-                  solution to all issues relating automobile at your door-step
-                </Text>
-              </GridItem>
-             
-              <GridItem  borderRadius="10"  w='100%' h="300px">
-              <br />
-              <Heading fontFamily={"AUDIOWIDE"} textAlign="center">Why HypeKar ?</Heading>
-                {/* <OrderedList padding="5" fontSize={"large"}> */}
-                <Grid templateColumns='repeat(2, 1fr)' gap={6} p={5}   align={'center'}
-        justify={'center'}>
-  <GridItem w='300px' h='40px' bg='orange'><h3  style={{marginTop:"6px"}}>0% compromise in service quality</h3></GridItem>
-  <GridItem w='300px' h='40px' bg='orange' ><h3 style={{marginTop:"6px"}}> 0% compromise in product quality </h3></GridItem>
- </Grid>
- <Grid templateColumns='repeat(2, 1fr)' gap={6} p={5}   align={'center'}
-        justify={'center'}>
-  <GridItem w='300px' h='40px' bg='orange'  ><h3  style={{marginTop:"6px"}}>0% compromise in service quality</h3></GridItem>
-  <GridItem w='300px' h='40px' bg='orange' ><h3 style={{marginTop:"6px"}}> 0% compromise in product quality </h3></GridItem>
- </Grid>
-<Grid templateRows='repeat(1, 1fr)'  p={5}>
-<GridItem w='100%' h='40px' bg='orange' >Integer molestie lorem at massa</GridItem>
-  {/* <GridItem w='100%' h='100%' bg='orange' > 100% transparency</GridItem> */}
-</Grid>
-                {/* <ListItem  fontFamily="Euphemia UCAS">0% compromise in service quality</ListItem>
-                <ListItem fontFamily="Euphemia UCAS"> 0% compromise in product quality</ListItem>
-                <ListItem fontFamily="Euphemia UCAS">Integer molestie lorem at massa</ListItem>
-                <ListItem fontFamily="Euphemia UCAS">100% transparency</ListItem>
-                <ListItem fontFamily="Euphemia UCAS">30 days service gurantee</ListItem> */}
-                {/* </OrderedList> */}
-              </GridItem>
-             
+              <Text padding="5" fontSize={"large"} fontFamily="Euphemia UCAS">
+                Hypekar is an initiative taken to organise
+                the automobile industry and provide a
+                unique vehicle ownership experience.
+                Hypekar aims at providing one stop
+                solution to all issues relating automobile at your door-step
+              </Text>
+            </GridItem>
 
-              <GridItem   borderRadius="10" w='100%' h="300px">
+           
+            <GridItem bgColor={"#FFB94A"} borderRadius="10"  w='100%' h="300px" color={"white"}>
+            <br />
+            <Heading fontFamily={"AUDIOWIDE"} textAlign="center" >Why HypeKar ?</Heading>
+              <OrderedList padding="5" fontSize={"large"}>
+              <ListItem  fontFamily="Euphemia UCAS" > 0% compromise in service quality</ListItem>
+              <ListItem fontFamily="Euphemia UCAS"> 0% compromise in product quality</ListItem>
+              <ListItem fontFamily="Euphemia UCAS">Integer molestie lorem at massa</ListItem>
+              <ListItem fontFamily="Euphemia UCAS">100% transparency</ListItem>
+              <ListItem fontFamily="Euphemia UCAS">30 days service gurantee</ListItem>
+              </OrderedList>
+            </GridItem>
+            
+            <GridItem bgColor={"#FFB94A"}  borderRadius="10" w='100%' h="300px" color={"white"}>
+            <br />
+            <Heading fontFamily={"AUDIOWIDE"} textAlign="center">How HypeKar Works ?</Heading>
+              <OrderedList fontFamily="Euphemia UCAS" padding="5" fontSize={"large"}>
+                <ListItem > Book your service</ListItem>
+                <ListItem >Hypekar will diagnose your vehicle</ListItem>
+                <ListItem > A brief quote and report of issues will be discussed with you</ListItem>
+                <ListItem >Vehicle service begins with regular updates and videos</ListItem>
+                <ListItem >your keys will be handed to you for final inspection</ListItem>
+                <ListItem>Payment will be collected with your valuable feedback</ListItem>
+              </OrderedList>
+            </GridItem>
+            <GridItem bgColor={"#FFB94A"} overflow="scroll" borderRadius="10" w='100%' h="300px" color={"white"}>
+            <Accordion allowToggle>
               <br />
-              <Heading fontFamily={"AUDIOWIDE"} textAlign="center">How HypeKar Works ?</Heading>
-                <OrderedList fontFamily="Euphemia UCAS" >
-                <Grid templateColumns='repeat(2, 1fr)' gap={6} p={5}   align={'center'}
-        justify={'center'}>
-  <GridItem w='300px' h='40px' bg='orange'><h3  style={{marginTop:"6px"}}>Book your service</h3></GridItem>
-  <GridItem w='300px' h='40px' bg='orange' ><h3 style={{marginTop:"6px"}}>Hypekar will diagnose your vehicle</h3></GridItem>
- </Grid>
-   <Grid templateColumns='repeat(2, 1fr)' gap={6} p={5}   align={'center'}
-        justify={'center'}>
-  <GridItem w='300px' h='55px' bg='orange' ><h3 style={{marginTop:"6px"}}> A brief quote and report of issues will be discussed with you</h3></GridItem>
-  <GridItem w='300px' h='55px' bg='orange'><h3  style={{marginTop:"6px"}}>Vehicle service begins with regular updates and videos</h3></GridItem>
- </Grid>
-   <Grid templateColumns='repeat(2, 1fr)' gap={6} p={3}   align={'center'}
-        justify={'center'}>
-  <GridItem w='300px' h='55px' bg='orange' ><h3 style={{marginTop:"6px"}}>your keys will be handed to you for final inspection</h3></GridItem>
-  <GridItem w='300px' h='55px' bg='orange'><h3  style={{marginTop:"6px"}}>Payment will be collected with your valuable feedback</h3></GridItem>
- </Grid>
+          <Heading textAlign={"center"} fontFamily={"AUDIOWIDE"} >FAQ’S</Heading>
+          <br />
+         
+          <AccordionItem>
+              <h2>
+              <AccordionButton>
+                  <Box flex='1' textAlign='left'>
+                    Why should we choose HypeKar ? 
+                  </Box>
+                  <AccordionIcon />
+              </AccordionButton>
+              </h2>
+              <AccordionPanel pb={4} fontFamily="Euphemia UCAS">
+                Every month, or every few petrol fill-ups and especially before any 
+                long road trips, it’s a good idea to get under the hood of your car 
+                and inspect both the oil and coolant levels while the engine is cool. 
+                Low levels of either can lead to engine problems if left unchecked. 
+                Refer to your owner’s manual to locate both on your specific vehicle.
+              </AccordionPanel>
+          </AccordionItem>
 
- 
-                  {/* <ListItem > Book your service</ListItem>
-                  <ListItem >Hypekar will diagnose your vehicle</ListItem>
-                  <ListItem > A brief quote and report of issues will be discussed with you</ListItem>
-                  <ListItem >Vehicle service begins with regular updates and videos</ListItem>
-                  <ListItem >your keys will be handed to you for final inspection</ListItem>
-                  <ListItem>Payment will be collected with your valuable feedback</ListItem> */}
-                </OrderedList>
-              </GridItem>
-              <GridItem  overflow="scroll" borderRadius="10" w='100%' h="300px">
-              <Accordion allowToggle>
-                <br />
-            <Heading textAlign={"center"} fontFamily={"AUDIOWIDE"} >FAQ’S</Heading>
+          <AccordionItem>
+              <h2>
+              <AccordionButton>
+                  <Box flex='1' textAlign='left' fontFamily="Euphemia UCAS">
+                  What are the features of the HypeKar ?
+                  </Box>
+                  <AccordionIcon />
+              </AccordionButton>
+              </h2>
+              <AccordionPanel pb={4} fontFamily="Euphemia UCAS">
+              To maximise the life and performance of your vehicle, here i
+              s a list of items you should check depending on the time and season.
+              </AccordionPanel>
+          </AccordionItem>
+          <AccordionItem>
+              <h2>
+              <AccordionButton>
+                  <Box flex='1' textAlign='left' fontFamily="Euphemia UCAS">
+                  What are the discount of Multiple services ?
+                  </Box>
+                  <AccordionIcon />
+              </AccordionButton>
+              </h2>
+              <AccordionPanel pb={4} fontFamily="Euphemia UCAS">
+              Caring for your car and keeping it in proper running order 
+              takes a little bit of effort, but you definitely don’t have 
+              to be a mechanical whiz to keep your vehicle running well.
+              </AccordionPanel>
+          </AccordionItem>
+          <AccordionItem>
+              <h2>
+              <AccordionButton>
+                  <Box flex='1' textAlign='left' fontFamily="Euphemia UCAS">
+                  Why HypeKar is need for us ?
+                  </Box>
+                  <AccordionIcon />
+              </AccordionButton>
+              </h2>
+              <AccordionPanel pb={4} fontFamily="Euphemia UCAS">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+              veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+              commodo consequat.
+              </AccordionPanel>
+          </AccordionItem>
+          <AccordionItem>
+              <h2>
+              <AccordionButton>
+                  <Box flex='1' textAlign='left' fontFamily="Euphemia UCAS">
+                    What extra features HypeKar has ?
+                  </Box>
+                  <AccordionIcon />
+              </AccordionButton>
+              </h2>
+              <AccordionPanel pb={4} fontFamily="Euphemia UCAS">
+              The biggest hurdle is being aware of what needs to be done—and 
+              how often—for optimal vehicle upkeep. By knowing the basics about
+              what your car needs, and when you should perform routine car
+              maintenance, you’ll ensure that your car is in top-running condition.
+              </AccordionPanel>
+          </AccordionItem>
+          <AccordionItem>
+              <h2>
+              <AccordionButton>
+                  <Box flex='1' textAlign='left' fontFamily="Euphemia UCAS">
+                  Who is the Director of the HypeKar ?
+                  </Box>
+                  <AccordionIcon />
+              </AccordionButton>
+              </h2>
+              <AccordionPanel pb={4} fontFamily="Euphemia UCAS">
+              To make it easy to keep track of your car maintenance schedule, we’ve 
+              created a simple, downloadable car maintenance checklist to help you 
+              keep on top of your automotive maintenance.
+              </AccordionPanel>
+          </AccordionItem>
+          </Accordion>
+            </GridItem>
+           
+          </Grid>
+           
+           
+            <Heading textAlign={"center"} fontFamily={"AUDIOWIDE"} >Our valueable feedback from PUNE</Heading>
             <br />
            
-            <AccordionItem>
-                <h2>
-                <AccordionButton>
-                    <Box flex='1' textAlign='left'>
-                      Why should we choose HypeKar ? 
-                    </Box>
-                    <AccordionIcon />
-                </AccordionButton>
-                </h2>
-                <AccordionPanel pb={4} fontFamily="Euphemia UCAS">
-                  Every month, or every few petrol fill-ups and especially before any 
-                  long road trips, it’s a good idea to get under the hood of your car 
-                  and inspect both the oil and coolant levels while the engine is cool. 
-                  Low levels of either can lead to engine problems if left unchecked. 
-                  Refer to your owner’s manual to locate both on your specific vehicle.
-                </AccordionPanel>
-            </AccordionItem>
-
-            <AccordionItem>
-                <h2>
-                <AccordionButton>
-                    <Box flex='1' textAlign='left' fontFamily="Euphemia UCAS">
-                    What are the features of the HypeKar ?
-                    </Box>
-                    <AccordionIcon />
-                </AccordionButton>
-                </h2>
-                <AccordionPanel pb={4} fontFamily="Euphemia UCAS">
-                To maximise the life and performance of your vehicle, here i
-                s a list of items you should check depending on the time and season.
-                </AccordionPanel>
-            </AccordionItem>
-            <AccordionItem>
-                <h2>
-                <AccordionButton>
-                    <Box flex='1' textAlign='left' fontFamily="Euphemia UCAS">
-                    What are the discount of Multiple services ?
-                    </Box>
-                    <AccordionIcon />
-                </AccordionButton>
-                </h2>
-                <AccordionPanel pb={4} fontFamily="Euphemia UCAS">
-                Caring for your car and keeping it in proper running order 
-                takes a little bit of effort, but you definitely don’t have 
-                to be a mechanical whiz to keep your vehicle running well.
-                </AccordionPanel>
-            </AccordionItem>
-            <AccordionItem>
-                <h2>
-                <AccordionButton>
-                    <Box flex='1' textAlign='left' fontFamily="Euphemia UCAS">
-                    Why HypeKar is need for us ?
-                    </Box>
-                    <AccordionIcon />
-                </AccordionButton>
-                </h2>
-                <AccordionPanel pb={4} fontFamily="Euphemia UCAS">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                commodo consequat.
-                </AccordionPanel>
-            </AccordionItem>
-            <AccordionItem>
-                <h2>
-                <AccordionButton>
-                    <Box flex='1' textAlign='left' fontFamily="Euphemia UCAS">
-                      What extra features HypeKar has ?
-                    </Box>
-                    <AccordionIcon />
-                </AccordionButton>
-                </h2>
-                <AccordionPanel pb={4} fontFamily="Euphemia UCAS">
-                The biggest hurdle is being aware of what needs to be done—and 
-                how often—for optimal vehicle upkeep. By knowing the basics about
-                what your car needs, and when you should perform routine car
-                maintenance, you’ll ensure that your car is in top-running condition.
-                </AccordionPanel>
-            </AccordionItem>
-            <AccordionItem>
-                <h2>
-                <AccordionButton>
-                    <Box flex='1' textAlign='left' fontFamily="Euphemia UCAS">
-                    Who is the Director of the HypeKar ?
-                    </Box>
-                    <AccordionIcon />
-                </AccordionButton>
-                </h2>
-                <AccordionPanel pb={4} fontFamily="Euphemia UCAS">
-                To make it easy to keep track of your car maintenance schedule, we’ve 
-                created a simple, downloadable car maintenance checklist to help you 
-                keep on top of your automotive maintenance.
-                </AccordionPanel>
-            </AccordionItem>
-            </Accordion>
-              </GridItem>
-              
-            </Grid>
-            </div>
-           
-            {/* <Heading textAlign={"center"} fontFamily={"AUDIOWIDE"} >Our valueable feedback from PUNE</Heading> */}
-            <br />
-           
-            {/* <Testimonals /> */}
+            <Testimonals />
             <br />
             <br />
             <br />

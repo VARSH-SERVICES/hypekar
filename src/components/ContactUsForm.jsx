@@ -57,7 +57,7 @@ import {
           alert("please enter the data")
         }
         else{
-           await axios.post("https://hypekarapi.herokuapp.com/contact/", text)
+           await axios.post("https://hypekar-backend.herokuapp.com/contact/", text)
           .then(alert("Registered succesfully"))
           .then(setText({firstName : "", name : "", lastName : "", mobileNumber : "", type : ""}))
          
@@ -70,10 +70,61 @@ import {
       // Below code is for designing
       <Flex
         minH={'30vh'}
-        align={'center'}
-        justify={'center'}
+        align={'left'}
+        justify={'left'}
       >
-        <Stack spacing={8} mx={'auto'} maxW={'lg'} py={10} px={6}>
+         <Stack  ms={230} mt={5}>
+          <Box rounded={'lg'}
+           bg={"orange"}
+          boxShadow={'lg'}
+          h={380}
+          p={8}>
+            <Heading  textAlign={"center"} color={"white"} fontSize={20}>GET IN TOUCH</Heading>
+               
+                <HStack mt={6}>
+                <Box >
+                <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/contact/icon1.png" />
+                </Box>
+                <Box color={"white"}>
+              <h6 >Motor Vehicle Manufacturing</h6>
+                          <p > Dehradun, Uttarakhand</p> 
+                  
+                </Box>
+                </HStack>
+                <HStack mt={6}>
+                  <Box>
+                <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/contact/icon2.png" />
+                </Box> 
+                <Box color={"white"}>  
+                       <h6>Phone</h6>
+                       <p>251 546 9442
+                         <br/> 630 446 8851</p>
+                         </Box>
+                </HStack>
+                      
+                 <HStack mt={6}> 
+                  <Box>
+                    
+                  <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/contact/icon3.png" />
+                        
+                  </Box>
+                  <Box color={"white"}>
+                  <h6>Email</h6>
+                          <p>
+                          hypekar@gmail.com
+                            {/* <br /> 123@wrappixel.com */}
+                          </p>
+                  </Box>
+                  </HStack>       
+                     
+                  
+                        
+                        
+                    
+
+          </Box>
+        </Stack>
+        <Stack mt={5}>
           <Box
             rounded={'lg'}
           
@@ -109,10 +160,10 @@ import {
                   onClick={submitDetails}
                   loadingText="Submitting"
                   size="lg"
-                  bg={'blue.400'}
+                  bg={'orange'}
                   color={'white'}
                   _hover={{
-                    bg: 'blue.500',
+                    bg: 'orange',
                   }}>
                   SUBMIT
                 </Button>
@@ -120,6 +171,7 @@ import {
             </Stack>
           </Box>
         </Stack>
+       
       </Flex>
     );
   }

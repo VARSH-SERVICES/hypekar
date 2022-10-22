@@ -37,8 +37,8 @@ export default function HomeSlider() {
 
   // These are the breakpoints which changes the position of the
   // buttons as the screen size changes
-  const top = useBreakpointValue({ base: '90%', md: '50%' });
-  const side = useBreakpointValue({ base: '30%', md: '40px' });
+  const top = useBreakpointValue({ base: '90%', md: '50%' ,sm:"40%"});
+  const side = useBreakpointValue({ base: '30%', md: '40px' ,sm:"0%"});
 
   // This list contains all the data for carousels
   // This can be static or loaded from a server
@@ -92,8 +92,10 @@ export default function HomeSlider() {
   return (
     <Box
       position={'relative'}
-      height={'600px'}
-      width={'full'}
+     
+      height={'100%'}
+      width={'100%'}
+      // ms={200}
       overflow={'hidden'}>
       {/* CSS files for react-slick */}
       <link
@@ -152,10 +154,10 @@ export default function HomeSlider() {
                 position="absolute"
                 top="50%"
                 transform="translate(0, -50%)">
-                <Heading color="#3182CE" textAlign="center" fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}>
+                <Heading color="#FFFFFF" textAlign="center" fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}>
                   {card.title}
                 </Heading>
-                <Text fontSize={{ base: 'lg', lg: 'lg' }} color="#38A169">
+                <Text fontSize={{ base: 'lg', lg: 'lg' }} color="#FFFFFF">
                   {card.text}
                 </Text>
                 

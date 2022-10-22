@@ -63,7 +63,7 @@ import {
             alert("please enter the username and password")
         }
         else{
-        await axios.post("https://hypekarapi.herokuapp.com/login/",text)
+        await axios.post("https://hypekar-backend.herokuapp.com/login/",text)
         .then((Response)=> {
           setUserDetails(Response.data)
           alert(Response.data.massage)

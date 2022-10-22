@@ -25,7 +25,7 @@ import { GameStateContext } from './context/Context';
 import { useContext } from 'react';
 import { ProfileModel } from './ProfileModel';
 import { MdRadioButtonUnchecked } from 'react-icons/md';
-import logo from "../file/images/logo.jpeg"
+import logo from "../file/images/logo.svg"
 import axios from 'axios';
 const Links = ['Dashboard', 'Projects', 'Team'];
 
@@ -65,7 +65,7 @@ export default function NavBar() {
   return (
     <>
     {/* This is the designing code */}
-      <Box bg='#808080' px={4}>
+      <Box bg='#212529' px={4}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <IconButton
             size={'md'}
@@ -80,29 +80,66 @@ export default function NavBar() {
                   <Image borderRadius={10} w="80px" src= {logo}></Image>
               </Box>
             </Link>
-            <Heading size="md" color="white">HypeKar</Heading>
+            {/* <Heading size="md" color="white">HypeKar</Heading> */}
             <HStack
               as={'nav'}
               spacing={4}
-              display={{ base: 'none', md: 'flex' }}>
-              <Link to="/">
-                <Button backgroundColor="#808080;" color="white">HOME</Button>
+              display={{ base: 'none', md: 'flex' }}
+              >
+                <Box
+                 _hover={{
+                  transform: 'scale(1.2)', bg:'orange'
+                }} 
+                >
+              <Link to="/" style={{color:"white"}}
+            
+          >
+                {/* <Butto backgroundColor="#212529;" color="white">HOME</Butto> */}
+                HOME
               </Link>
-              <Link to="/services">
-                <Button backgroundColor="#808080;" color="white">SERVICES</Button>
+              </Box>
+              <Box
+                 _hover={{
+                  transform: 'scale(1.2)', bg:'orange'
+                }} 
+                >
+              <Link to="/services"  style={{color:"white"}}>
+              SERVICES
+                {/* <Button backgroundColor="#808080;" color="white">SERVICES</Button> */}
               </Link>
-              <Link to="/about"> 
-                <Button backgroundColor="#808080;" color="white">ABOUT US</Button>
+              </Box>
+              <Box
+                 _hover={{
+                  transform: 'scale(1.2)', bg:'orange'
+                }} 
+                >
+              <Link to="/about"  style={{color:"white"}}> 
+              ABOUT US
+                {/* <Button backgroundColor="#808080;" color="white">ABOUT US</Button> */}
               </Link>
-              <Link to="/contact">
-                <Button backgroundColor="#808080;" color="white">CONTACT US</Button>
+              </Box>
+              <Box
+                 _hover={{
+                  transform: 'scale(1.2)', bg:'orange'
+                }} 
+                >
+              <Link to="/contact"  style={{color:"white"}}>
+              CONTACT US
+                {/* <Button backgroundColor="#808080;" color="white">CONTACT US</Button> */}
               </Link>
-              
+              </Box>
               {
                 email.length > 0 ?
-                <Link to="/myvehicle"> 
-                <Button backgroundColor="#808080;" color="white">MY VEHICLE</Button>
+                <Box
+                _hover={{
+                 transform: 'scale(1.2)', bg:'orange'
+               }} 
+               >
+                <Link to="/myvehicle"  style={{color:"white"}}>  
+                MY VEHICLE
+                {/* <Button backgroundColor="#808080;" color="white">MY VEHICLE</Button> */}
                 </Link>
+                </Box>
                 :
                 console.log(null)
               }
@@ -111,9 +148,21 @@ export default function NavBar() {
              
              {
                 email.length > 0 ?
-                <Link to="/feedback"> 
-                <Button backgroundColor="#808080;" color="white">FEEDBACK</Button>
-                </Link>
+                <Box
+                _hover={{
+                 transform: 'scale(1.2)', bg:'orange'
+               }} 
+               >
+             <Link to="/feedback"  style={{color:"white"}}>
+             FEEDBACK
+               {/* <Button backgroundColor="#808080;" color="white"> FEEDBACK</Button> */}
+             </Link>
+             </Box>
+                // <Link to="/feedback"  > 
+                
+                // <Button backgroundColor="#808080;" color="white" >FEEDBACK</Button>
+                // </Link>
+               
                 :
                 console.log(null)
               }
@@ -123,12 +172,17 @@ export default function NavBar() {
     
               {
                 email.length == 0 ?
+                
                 <Link to="/login"> 
-                <Button backgroundColor="#808080;" color="white">SIGNUP/SIGNIN</Button>
+                {/* SIGNUP/SIGNIN */}
+                <Button backgroundColor="orange;" color="white" _hover={{
+                 transform: 'scale(1.1)', bg:'orange'
+               }} >SIGNUP/SIGNIN</Button>
                 </Link>
+                
                 :
                 <Link to="/">
-                <Button onClick={getLogout}>Logout</Button>
+                <Button onClick={getLogout} backgroundColor="red">Logout</Button>
                 </Link>
                 // <Button backgroundColor="#FFFAF0">PROFILE</Button>
               }

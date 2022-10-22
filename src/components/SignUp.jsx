@@ -84,7 +84,8 @@ import axios from 'axios';
         alert("please enter the data")
       }
       else{
-         await axios.post("https://hypekarapi.herokuapp.com/reg/", text)
+        //  await axios.post("https://hypekarapi.herokuapp.com/reg/", text)
+         await axios.post("https://hypekar-backend.herokuapp.com/reg/", text)
          .then(Response=>console.log("response is ",Response))
          .then(alert("Registered successfully"))
          .then(setText({first_name : "", last_name : "", email : "", username : "", password: ""}))

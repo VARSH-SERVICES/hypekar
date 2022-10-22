@@ -61,7 +61,7 @@ export default function NavBar2() {
 
   return (
     <>
-      <Box bg='#FFFAF0' px={4}>
+      <Box bg='#212529' px={4}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <IconButton
             size={'md'}
@@ -85,7 +85,7 @@ export default function NavBar2() {
                 <NavLink key={link}>{link}</NavLink>
               ))} */}
               <Link to="/">
-                <Button backgroundColor="#FFFAF0">HOME</Button>
+                <Button backgroundColor="#212529">HOME</Button>
               </Link>
               <Link to="/services">
                 <Button backgroundColor="#FFFAF0">SERVICES</Button>

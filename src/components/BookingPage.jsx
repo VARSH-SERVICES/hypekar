@@ -97,8 +97,8 @@ import { useNavigate } from 'react-router-dom'; // I imported useNavigate from r
     // Below funciton is for fetching all the data from the api which is containing all the brands
     // of the car
     const getBrand = async(e) => {
-      const res = await axios.get("https://hypekarapi.herokuapp.com/carbrand")
-      setBrand(res.data)
+      const res = await axios.get("https://hypekar-backend.herokuapp.com/carbrand")
+      setBrand(res.data,"ghgggg")
       const {id, value} = e.target
       setText({...text, [id] : value})
     }
@@ -123,7 +123,7 @@ import { useNavigate } from 'react-router-dom'; // I imported useNavigate from r
 
     // Below getData function is for getting all the models of the selected brand.
     const getData = async() => {
-      const res = await axios.get(`https://hypekarapi.herokuapp.com/carmodel?brand=${model}`) // Here i am passing the model dynamically in the API
+      const res = await axios.get(`https://hypekar-backend.herokuapp.com/carmodel?brand=${model}`) // Here i am passing the model dynamically in the API
       setTotalModel(res.data) // I stored all the models to the totalModel state
     } 
 
@@ -148,7 +148,7 @@ import { useNavigate } from 'react-router-dom'; // I imported useNavigate from r
       }
       else{
       displayRazorpay(service_charge) // This is the payment function
-      await axios.post("https://hypekarapi.herokuapp.com/book/", text) // Here I am posting all the data to the API
+      await axios.post("https://hypekar-backend.herokuapp.com/book/", text) // Here I am posting all the data to the API
       .then(alert("Booked successfully"))
       .then(setText({brand : "", model_Name : "", fuel_Type : "", customer_address : "", customer_name : "", year_Of_Model : ""
       , vehicle_number : "", mobile_number : "", time_slot : ""})) // here I am making input boxes empty.
@@ -284,16 +284,16 @@ import { useNavigate } from 'react-router-dom'; // I imported useNavigate from r
             </FormControl>
 
             <FormControl>
-              <FormLabel>Service Type</FormLabel>
+              <FormLabel>Fuel Type</FormLabel>
               <Select value={text.service_type} id="service_type" onChange={handlChange2} >
                 <option value='Fuel'>Fuel Type</option>
-                <option value='basic'>Basic</option>
-                <option value='standard'>Standard</option>
-                <option value="Premium">Premium</option>
+                <option value='basic'>Petrol</option>
+                <option value='standard'>Disel</option>
+                {/* <option value="Premium">Premium</option> */}
               </Select>
             </FormControl>
            
-                <Heading size="md">Booking charge is : 250/-</Heading>
+                {/* <Heading size="md">Booking charge is : 250/-</Heading> */}
                 
             <Calendar onChange={changeDate}/>
             {
@@ -321,15 +321,15 @@ import { useNavigate } from 'react-router-dom'; // I imported useNavigate from r
             </FormControl>
 
             <Stack spacing={6}>
-              <Button  onClick={()=>{submitDetails() }} colorScheme={'blue'} variant={'solid'}>
+              <Button  onClick={()=>{submitDetails() }} colorScheme={'orange'}>
                 SUBMIT
               </Button>
             </Stack>
           </Stack>
         </Flex>
-        <Flex flex={1} padding="5" w={[385,600,150]} >
+        {/* <Flex flex={1} padding="5" w={[385,600,150]} >
           <CaptionCarousel/>
-        </Flex>
+        </Flex> */}
       </Stack>
       }
       </>

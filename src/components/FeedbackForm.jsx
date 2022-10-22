@@ -12,12 +12,15 @@ import {
   Stack,
   Image,
   Select,
+  Box,
 } from '@chakra-ui/react';
 import axios from 'axios';
 import { GameStateContext } from './context/Context';
 import React, {useState, useEffect, useContext} from "react"
 
 export default function Feedback() {
+
+  
 
   // Below line is email from the gamestate context
   const {email, setEmail} = useContext(GameStateContext)
@@ -48,9 +51,13 @@ export default function Feedback() {
         alert("please enter the data")
       }
       else{
-        await axios.post("https://hypekarapi.herokuapp.com/feedback/", text)
+       const {data}= await axios.post("https://hypekar-backend.herokuapp.com/feedback/", text)
         .then(alert("submitted successfully"))
         .then(setText({description : "", rating : ""}))
+      // const {data}= await axios.post("https://hypekar-backend.herokuapp.com/feedback/", text)
+      // console.log(data,"ddqq");
+      
+
     }
   }
 
@@ -58,9 +65,24 @@ export default function Feedback() {
   return (
 
     // Below whole code is for designing. 
-    
-    <Stack  minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
-      <Flex p={8} flex={1} align={'center'} justify={'center'}>
+    <Flex  align={'center'}
+        justify={'center'}
+       mt={50}   minH={'100vh'}>
+        <Stack>
+        {/* <Box  h={500} >
+        <img src="https://media.istockphoto.com/photos/customer-review-satisfaction-feedback-survey-concept-rating-service-picture-id1386241242?b=1&k=20&m=1386241242&s=170667a&w=0&h=eSdg_oWKms6jn9EFncmzb9Y_tPgtDAMCOV3ehbcJWFM=" alt="" />
+        </Box> */}
+        </Stack>
+      
+    <Stack  w={500}  rounded={'lg'}
+        
+          boxShadow={'lg'}
+         >
+      <Box >
+        <img src="https://media.istockphoto.com/photos/customer-review-satisfaction-feedback-survey-concept-rating-service-picture-id1386241242?b=1&k=20&m=1386241242&s=170667a&w=0&h=eSdg_oWKms6jn9EFncmzb9Y_tPgtDAMCOV3ehbcJWFM=" alt="" height={100}  />
+        </Box>
+      <Flex  mt={5} align={'center'}
+        justify={'center'} >
         <Stack  spacing={4} w={'full'} maxW={'md'}>
           <Heading fontFamily={"AUDIOWIDE"} fontSize={'2xl'}>Give your Feedback</Heading>
           <FormControl id="email">
@@ -78,9 +100,9 @@ export default function Feedback() {
               <option value="5">5</option>
             </Select>
           </FormControl>
-          <Stack spacing={6}>
+          <Stack >
           
-            <Button colorScheme={'blue'} variant={'solid'} onClick={feedbackSubmit}>
+            <Button colorScheme={'orange'}  onClick={feedbackSubmit} style={{marginBottom:"50px"}} >
               SUBMIT
             </Button>
           </Stack>
@@ -88,5 +110,6 @@ export default function Feedback() {
       </Flex>
 
     </Stack>
+    </Flex>
   );
 }

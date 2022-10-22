@@ -23,6 +23,7 @@
     "react-icons": "^4.4.0",
     "react-images-uploading": "^3.1.7",
     "react-in-viewport": "^1.0.0-alpha.28",
+    "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.4.1",
     "react-slick": "^0.29.0",
     "react-spinners": "^0.13.4",
@@ -34,6 +35,6 @@
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "@vitejs/plugin-react": "^2.1.0",
-    "vite": "^3.1.0"
+    "vite": "^3.1.7"
   }
 }
